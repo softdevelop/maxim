@@ -51,7 +51,7 @@ get_header(); ?>
 						?>
 					</div>
 					<div class="half">
-						<h3><?php _e('Send us a message:', 'silver'); ?></h3>
+						<!-- <h3><?php _e('Send us a message:', 'silver'); ?></h3> -->
 						<?php $cform = ot_get_option('cform'); if($cform) echo do_shortcode($cform); ?>
 					</div>
 

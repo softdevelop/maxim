@@ -336,12 +336,12 @@ span.tweet_time { display: none; }
 
 #clients .clients { float: right; background: #fff; width: 700px; padding-bottom: 30px; }
 
-#clients ul.clients { position: relative; height: 545px; }
+#clients ul.clients { position: relative; height: 520px; }
 #clients ul.clients li { position: absolute; top: 0; right: 0; display: none; transition: all 0.3s; } /* transition 0.3s */
 #clients ul.clients li:first-child { display: block; }
 
-#clients .clients img { width: 100%; height: auto; }
-#clients .clients h1 { font-size: 18px; line-height: 29px; margin: 15px 30px 10px 30px; }
+#clients .clients img { width: 700px; height: 425px; }
+#clients .clients h1 { font-size: 18px; line-height: 29px; margin: 5px 30px 10px 30px; }
 #clients .clients p { font-size: 14px; line-height: 17px; margin: 0 30px 10px 30px; }
 
 #clients .clients a.read-more { margin-left: 30px; }
@@ -832,3 +832,35 @@ figcaption.wp-caption-text { background: rgba(0,0,0,0.05); padding: 5px; }
 #footer p.footer-right { text-align: right; }
 
 #footer.page-w-sidebar-l-footer p { margin-left: 285px; }
+
+/** SOFTDEVELOP CUSTOME **/
+
+.wpcf7-form p {
+	margin-bottom: 5px;
+	min-height: 70px;
+}
+.wpcf7-form input, .wpcf7-textarea {
+	margin-bottom: 0px;
+}
+input.wpcf7-captchar {
+	margin-right: 10px;
+	width: 160px!important;
+}
+.captcha-856 {
+	float: left;
+}
+.captcha-856 .wpcf7-not-valid-tip {
+	clear: both;;
+}
+.div.wpcf7-response-output {
+	margin-top: 0.5em;
+}
+.wpcf7-validation-errors {
+	display: block;
+	position: absolute;
+	top: 0;
+	margin-left: 0px;
+}
+.page-template-template-contact-php #main {
+	position: relative;
+}
