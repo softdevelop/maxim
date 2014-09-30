@@ -64,7 +64,7 @@ background:#ecf0f1;
 .fliter_step003 h2{padding: 10px 17px 20px;color:#fff;font-size:18px;font-family:'Open Sans';}
 .fliter_step004{background:url("images/step01.png") no-repeat ;float:left;margin-left: 90px;margin-top: 5px;position: relative;}
 .fliter_step004 h2{padding: 10px 17px 20px;color:#fff;font-size:18px;font-family:'Open Sans';}
-.fliter_step005{background:url("images/step02.png") no-repeat ;float:left;margin-left: 90px;margin-top: 0px;margin-right: 0px;position: relative;}
+.fliter_step005{background:url("images/step01.png") no-repeat ;float:left;margin-left: 90px;margin-top: 0px;margin-right: 0px;position: relative;}
 .fliter_step005 h2{padding: 19px 17px 19px;color: #fff;font-size: 12px;font-family: 'Open Sans';font-weight: 100;}
 .popup_top{position:absolute;top:50px;background:url("images/popup_top_box.png") no-repeat center;padding: 9px 0px 0px;width: 100px;left: -24px;display:none;text-align:center;}
 .fliter_step001:hover .popup_top{display:block;}
@@ -803,3 +803,136 @@ border: 1px solid #ccc;
 
 .pte_controls{position:relative;float:eft;}
 .pte_controls a:hover .popup_top1{display:block;}
+
+/** SOFTDEVELOP ADD FORM 1**/
+/** STEP 1 **/
+.fliter_step006 {
+	background: url("images/step02.png") no-repeat;
+	float: left;
+	margin-left: 50px;
+	margin-top: 0px;
+	margin-right: 0px;
+	position: relative;
+}
+.fliter_step006 h2 {
+	padding: 19px 17px 19px;
+	color: #fff;
+	font-size: 12px;
+	font-family: 'Open Sans';
+	font-weight: 100;
+}
+.fliter_step001 {
+	margin-left: 110px;
+}
+.fliter_step002, .fliter_step003, .fliter_step004, .fliter_step005  {
+	margin-left: 70px;
+}
+.fliter_step005 h2 {
+	font-size: 18px;
+	padding: 10px 17px 19px;
+	font-weight: 600;
+}
+.fliter_step005 {
+	margin-top: 5px;
+}
+/** STEP 2 **/
+.fliter1_step001 {
+	margin-left: 110px;
+} 
+.fliter1_step002, .fliter1_step003, .fliter1_step004, .fliter1_step005  {
+	margin-left: 70px;
+}
+
+/** STEP 2 **/
+.fliter2_step001 {
+	margin-left: 110px;
+} 
+.fliter2_step002, .fliter2_step003, .fliter2_step004, .fliter2_step005  {
+	margin-left: 70px;
+}
+
+/** STEP 3 **/
+
+.step3-part-options {
+	clear: both;
+	text-align: left;
+}
+
+.step3-part-options .question {
+	float: left;
+	width: 100%;
+	margin: 10px 5px;
+	position: relative;
+}
+.step3-part-options .question p {
+	float: left;
+	padding: 0 10px;
+	font-weight: 600;
+	margin-left: 28px;
+	width: 89%;
+}
+.step3-part-options .question label {
+	position: absolute;
+	right: 10px;
+}
+.step3-part-options > p:first-child {
+	text-align: left;
+	font-size: 18px;
+	font-weight: 600;
+	margin-left: 45px;
+}
+.step3-part-options > span:first-child {
+	font-style: italic;
+	font-size: 12px;
+	font-weight: 600
+}
+.line {
+	height: 3px;
+	clear: both;
+	background: #DDD;
+	margin-top: 120px;
+}
+
+/** STEP 4 **/
+#slice_3 .form001 p:first-child {
+	text-align: left;
+	margin-left: 18px;
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+#slice_3 .form001 .condition_box {
+	margin-bottom: 10px;
+}
+
+#slice_3 .form001 .property {
+	margin-left: 20px;
+}
+#slice_3 .form001 .uppgifter {
+	float: left;
+	text-align: left;
+}
+#slice_3 .form001 .uppgifter .contain-switch p {
+	text-align: left;
+}
+#slice_3 .form001 .uppgifter .contain-switch p:last-child {
+	margin-left: 18px;
+	padding: 0;
+	width: 350px;
+}
+#slice_3 .form001 .uppgifter p.your_answer_step4 p {
+	width: 400px;
+	font-weight: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
