@@ -864,3 +864,7 @@ input.wpcf7-captchar {
 .page-template-template-contact-php #main {
 	position: relative;
 }
+
+#homepage img:first-child {
+	width: 100%!important;
+}
