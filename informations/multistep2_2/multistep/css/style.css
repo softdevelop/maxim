@@ -991,9 +991,17 @@ border: 1px solid #ccc;
 	width: 100%;
 	margin: 10px 0;
 	background: #DDD;
+	padding: 10px 0;
+	font-size: 14px;
+	color: #666;
+	padding: 0 0 13px;
+	font-weight: 600;
 }
-.condition002 .review span{
-	font-size: 18px;
+.condition002 h1{
+	padding: 5px 0 !important;
+}
+.condition002 .reviews span{
+	font-size: 14px;
 	color: #666;
 	padding: 0 0 13px;
 	font-weight: 600;

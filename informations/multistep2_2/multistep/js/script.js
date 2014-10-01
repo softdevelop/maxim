@@ -181,19 +181,38 @@ $(document).ready(function(){
 });
 
 $(function() {		
-	$('.add_pte').on("click",function(){
+	$('.add_pte_1').on("click",function(){
 		var newElement  ='';
-		newElement = '<div class="pte_cont" >';
-			newElement += '<input type="text" name="property_to_exclude[]" value="" class="register2 pte_element" > ';			
+		newElement = '<div class="pte_cont_1" >';
+			newElement += '<input type="text" name="property_to_exclude_1[]" value="" class="register2 pte_element" > ';			
 		newElement += '</div>';
 		
-		$('#property_new_elements_cont').append(newElement);
+		$('#property_new_elements_cont_1').append(newElement);
 	});
 	
-	$('.remove_pte').on("click",function(){
-		var noPteElements = $('#property_new_elements_cont .pte_element').length;
+	$('.remove_pte_1').on("click",function(){
+		var noPteElements = $('#property_new_elements_cont_1 .pte_element').length;
 		var i = 0;
-		$('#property_new_elements_cont .pte_element').each(function(){ 
+		$('#property_new_elements_cont_1 .pte_element').each(function(){ 
+			if(++i >= noPteElements) $(this).remove();
+		});		
+	});
+
+});
+$(function() {		
+	$('.add_pte_2').on("click",function(){
+		var newElement  ='';
+		newElement = '<div class="pte_cont_2" >';
+			newElement += '<input type="text" name="property_to_exclude_2[]" value="" class="register2 pte_element" > ';			
+		newElement += '</div>';
+		
+		$('#property_new_elements_cont_2').append(newElement);
+	});
+	
+	$('.remove_pte_2').on("click",function(){
+		var noPteElements = $('#property_new_elements_cont_2 .pte_element').length;
+		var i = 0;
+		$('#property_new_elements_cont_2 .pte_element').each(function(){ 
 			if(++i >= noPteElements) $(this).remove();
 		});		
 	});
@@ -436,48 +455,48 @@ function isValidForm3_withoutMsg() {
 }
 
 function prefillReview() { 
-	$('#review_man_name').html($('#man_name').val());
-	$('#review_man_name_ip').val($('#man_name').val());
+	$('.review_man_name').html($('#man_name').val());
+	$('.review_man_name_ip').val($('#man_name').val());
 
-	$('#review_man_address').html($('#man_address').val());
-	$('#review_man_address_ip').val($('#man_address').val());
+	$('.review_man_address').html($('#man_address').val());
+	$('.review_man_address_ip').val($('#man_address').val());
 
-	$('#review_man_pin').html($('#man_pin').val());
-	$('#review_man_pin_ip').val($('#man_pin').val());
+	$('.review_man_pin').html($('#man_pin').val());
+	$('.review_man_pin_ip').val($('#man_pin').val());
 
-	$('#review_man_postort').html($('#man_postort').val());
-	$('#review_man_postort_ip').val($('#man_postort').val());
+	$('.review_man_postort').html($('#man_postort').val());
+	$('.review_man_postort_ip').val($('#man_postort').val());
 
 
-	$('#review_man_phone').html($('#man_phone').val());
-	$('#review_man_phone_ip').val($('#man_phone').val());
+	$('.review_man_phone').html($('#man_phone').val());
+	$('.review_man_phone_ip').val($('#man_phone').val());
 
-	$('#review_man_email').html($('#man_email').val());
-	$('#review_man_email_ip').val($('#man_email').val());
+	$('.review_man_email').html($('#man_email').val());
+	$('.review_man_email_ip').val($('#man_email').val());
 
-	$('#review_man_identity').html($('#man_identity').val());
-	$('#review_man_identity_ip').val($('#man_identity').val());
+	$('.review_man_identity').html($('#man_identity').val());
+	$('.review_man_identity_ip').val($('#man_identity').val());
 	
-	$('#review_women_name').html($('#women_name').val());
-	$('#review_women_name_ip').val($('#women_name').val());
+	$('.review_women_name').html($('#women_name').val());
+	$('.review_women_name_ip').val($('#women_name').val());
 
-	$('#review_women_address').html($('#women_address').val());
-	$('#review_women_address_ip').val($('#women_address').val());
+	$('.review_women_address').html($('#women_address').val());
+	$('.review_women_address_ip').val($('#women_address').val());
 
-	$('#review_women_pin').html($('#women_pin').val());
-	$('#review_women_pin_ip').val($('#women_pin').val());
+	$('.review_women_pin').html($('#women_pin').val());
+	$('.review_women_pin_ip').val($('#women_pin').val());
 
-	$('#review_women_postort').html($('#women_postort').val());
-	$('#review_women_postort_ip').val($('#women_postort').val());
+	$('.review_women_postort').html($('#women_postort').val());
+	$('.review_women_postort_ip').val($('#women_postort').val());
 
-	$('#review_women_phone').html($('#women_phone').val());
-	$('#review_women_phone_ip').val($('#women_phone').val());
+	$('.review_women_phone').html($('#women_phone').val());
+	$('.review_women_phone_ip').val($('#women_phone').val());
 
-	$('#review_women_email').html($('#women_email').val());
-	$('#review_women_email_ip').val($('#women_email').val());
+	$('.review_women_email').html($('#women_email').val());
+	$('.review_women_email_ip').val($('#women_email').val());
 
-	$('#review_women_identity').html($('#women_identity').val());
-	$('#review_women_identity_ip').val($('#women_identity').val());
+	$('.review_women_identity').html($('#women_identity').val());
+	$('.review_women_identity_ip').val($('#women_identity').val());
 
 	
 	if($('#checkboxThreeInput').is(":checked")){
@@ -489,38 +508,37 @@ function prefillReview() {
 		$('#review_cohabiting_ip').val('NEJ');
 	}
 
-	$('#review_cohabiting_date').html($('#cohabiting_date').val());
-	$('#review_cohabiting_date_ip').val($('#cohabiting_date').val());
+	$('.review_cohabiting_date').html($('#cohabiting_date').val());
+	$('.review_cohabiting_date_ip').val($('#cohabiting_date').val());
 	
 	var purpose = $('input[name=purpose]:checked').val();
-	$('#review_purpose').html(purpose);
-	$('#review_purpose_ip').val(purpose);
+	$('.review_purpose').html(purpose);
+	$('.review_purpose_ip').val(purpose);
 
 	if(purpose == 'Vi vill helt avtala bort sambolagens regler.') {
-		$("#review_property_to_exclude").hide();
-		$("#review_property_to_exclude_label").hide();
+		$(".review_property_to_exclude").hide();
+		$(".review_property_to_exclude_label").hide();
 	} else {
-		$("#review_property_to_exclude").show();
-		$("#review_property_to_exclude_label").show();
+		$(".review_property_to_exclude").show();
+		$(".review_property_to_exclude_label").show();
 	}
-	
-	var property_cont1 = [];
-	$('#property_cont1 .pte_element').each(function( index ){
-		property_cont1[index] = $(this).val();
-		console.log(property_cont1);
-	});
-	$('#property_new_elements_cont .pte_element').each(function( index ){
-		property_cont2[index] = $(this).val();
-	});
-
-	var ptes = $('.pte_element').length;
-	if(ptes) {
-		var pteReviews = '';
-		$('.pte_element').each(function(){
-			if($(this).val()) pteReviews += '<span class="review_pte">'+$(this).val()+'</span><br>';
+	var ptes_1 = $('.pte_element_1').length;
+	if(ptes_1) {
+		var pteReviews_1 = '';
+		$('.pte_element_1').each(function(){
+			if($(this).val()) pteReviews_1 += '<span class="review_pte">'+$(this).val()+'</span><br>';
 		});
-		$('#review_property_to_exclude').html(pteReviews);
-	} else $('#review_property_to_exclude').html('Nothing specified');
+		$('.review_property_to_exclude').html(pteReviews_1);
+	} else $('.review_property_to_exclude_1').html('Nothing specified');
+
+	var ptes_2 = $('.pte_element_2').length;
+	if(ptes_2) {
+		var pteReviews_2 = '';
+		$('.pte_element_2').each(function(){
+			if($(this).val()) pteReviews_2 += '<span class="review_pte">'+$(this).val()+'</span><br>';
+		});
+		$('.review_property_to_exclude_2').html(pteReviews_2);
+	} else $('.review_property_to_exclude').html('Nothing specified');
 }
 
 function IsValidEmail(email) { 
