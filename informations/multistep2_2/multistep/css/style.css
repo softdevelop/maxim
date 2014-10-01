@@ -532,19 +532,45 @@ color: #666;
 font-family:'Open Sans';
 margin-right: -17px;
 }
-.your_answer001 span{
-
-float:right;
-padding:5px;
-border:2px solid #ccc;
-border-radius:5px;
-margin-top: 0px;
-font-size: 12px;
-color: #666;
-font-family:'Open Sans';
-width:98%;
+.your_answer001{
+	display: inline-block;
+	margin: 10px 20px;
 }
-
+.your_answer001 .review{
+	display: inline-block;
+	float: left;
+	border:2px solid #ccc;
+	border-radius:5px;
+	width: 100%;
+}
+.your_answer001 .review .left{
+	float: left !important;
+}
+.your_answer001 .review .right{
+	float: right !important;
+}
+.your_answer001 span{
+	padding:5px 10px;
+	margin-top: 0px;
+	font-size: 12px;
+	color: #666;
+	font-family:'Open Sans';
+}
+.your_answer002{
+	display: inline-block;
+	float: left;
+	border:2px solid #ccc;
+	border-radius:5px;
+	width:734px;
+	background: #DDD;
+	margin: 10px 0;
+}
+.your_answer002 .review span{
+	font-size: 18px;
+	color: #666;
+	padding: 0 0 13px;
+	font-weight: 600;
+}
 .property1{float:left;padding-bottom:5px;}
 
 .property1 span{
@@ -563,17 +589,11 @@ text-align: left;
 }
 
 .your_answer002{
-width: 773px;
-text-align: center;
-font-size: 14px;
-color: #666;
-font-family: 'Open Sans';
-font-weight: 600;
-background: #ddd;
-float: left;
-margin: 12px -30px 0px;
-border-radius: 5px;
-padding: 10px;
+	display: inline-block;
+	float: left;
+	border:2px solid #ccc;
+	border-radius:5px;
+	width:98%;
 }
 .your_answer002 p{padding:0px;font-size: 11px;}
 
@@ -910,20 +930,74 @@ border: 1px solid #ccc;
 #slice_3 .form001 .uppgifter {
 	float: left;
 	text-align: left;
+	width: 730px;
+}
+#slice_3 .form001 .uppgifter .contain-switch{
+	display: inline-block;
 }
 #slice_3 .form001 .uppgifter .contain-switch p {
 	text-align: left;
+	margin-left: 18px;
+	margin-bottom: 10px;
+	font-weight: 600;
 }
+#slice_3 .form001 .uppgifter .contain-switch .contain-switch-item{
+	display: inline-block;
+	width: 730px;
+}
+#slice_3 .form001 .uppgifter .contain-switch .contain-switch-item p{
+	width: 400px;
+	font-weight: normal;
+	padding: 0;
+	float: left;
+	margin-left: 18px;
+}
+
 #slice_3 .form001 .uppgifter .contain-switch p:last-child {
 	margin-left: 18px;
 	padding: 0;
 	width: 350px;
 }
-#slice_3 .form001 .uppgifter p.your_answer_step4 p {
+#slice_3 .form001 .uppgifter .your_answer_step4 p{
+	float: left;
+	display: inline-block;
+}
+#slice_3 .form001 .uppgifter p , .your_answer_step4 p {
 	width: 400px;
 	font-weight: normal;
+	padding: 0;
 }
-
+#slice_3 .form001 .uppgifter .your_answer_step4 .contain-radio-option{
+	float: left;
+	display: inline-block;
+}
+#slice_3 .form001 .uppgifter .your_answer_step4 .contain-radio-option .radio_option{
+	display: block !important;
+	float: none !important;
+}
+#slice_3 .form001 .uppgifter .your_answer_step4 .contain-radio-option .radio_option label{
+	padding-left: 50px !important;
+	line-height: 30px !important;
+}
+.center{
+	text-align: center;
+}
+.condition001{
+	margin: 10px 20px;
+}
+.condition002{
+	display: inline-block;
+	border-radius: 5px;
+	width: 100%;
+	margin: 10px 0;
+	background: #DDD;
+}
+.condition002 .review span{
+	font-size: 18px;
+	color: #666;
+	padding: 0 0 13px;
+	font-weight: 600;
+}
 
 
 
