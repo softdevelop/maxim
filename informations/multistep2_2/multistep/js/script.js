@@ -504,6 +504,8 @@ function prefillReview() {
 		$("#review_property_to_exclude_label").show();
 	}
 	
+	var property_cont1 = new array();
+
 	var ptes = $('.pte_element').length;
 	if(ptes) {
 		var pteReviews = '';
