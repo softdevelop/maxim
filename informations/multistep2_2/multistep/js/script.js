@@ -504,7 +504,14 @@ function prefillReview() {
 		$("#review_property_to_exclude_label").show();
 	}
 	
-	var property_cont1 = new array();
+	var property_cont1 = [];
+	$('#property_cont1 .pte_element').each(function( index ){
+		property_cont1[index] = $(this).val();
+		console.log(property_cont1);
+	});
+	$('#property_new_elements_cont .pte_element').each(function( index ){
+		property_cont2[index] = $(this).val();
+	});
 
 	var ptes = $('.pte_element').length;
 	if(ptes) {
@@ -514,8 +521,6 @@ function prefillReview() {
 		});
 		$('#review_property_to_exclude').html(pteReviews);
 	} else $('#review_property_to_exclude').html('Nothing specified');
-	
-	
 }
 
 function IsValidEmail(email) { 

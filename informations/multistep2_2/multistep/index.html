@@ -536,21 +536,69 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 						</div>
 						<div class="your_answer001">
 							<div class="review">
-								<span id="review_purpose" class="left">Vi vill helt avtala bort sambolagens regler.</span>
+								<span id="review_purpose" class="left"></span>
+								<input type="hidden" name="review_purpose" id="review_purpose_ip" >
 								<span id="review_cohabiting_date" class="right"></span> | 
+								<input type="hidden" name="review_cohabiting_date" id="review_cohabiting_date_ip" >
 								<span id="review_cohabiting" class="right"></span>
+								<input type="hidden" name="review_cohabiting_date" id="review_cohabiting_ip" >
 							</div>
 						</div>
 						<div class="condition002 center">
 							<h1>Vi önskar att:</h1>
 							<div class="review">
-								<span id="review_purpose" class="left">Vi vill helt avtala bort sambolagens regler.</span> 
+								<span id="review_purpose" class="left"></span> 
+								<input type="hidden" name="review_cohabiting_date" id="review_purpose_ip" >
 							</div>
+						</div>
+						<div class="your_answer001">
+							<span id="review_purpose">Vi vill helt avtala bort sambolagens regler.</span>
+							
+							<p id="review_property_to_exclude_label">Var vänlig ange den egendom ni önskar undanta från en framtida bodelning:</p>
+							<div class="property1" id="review_property_to_exclude">
+								
+							</div>
+							
 						</div>
 						<div class="condition002 center">
 							<h1>följande nedtecknad egendom skall omfattas av äktenskapsförordet:</h1>
 							<div class="review">
-								<span id="review_purpose" class="left">Vi vill helt avtala bort sambolagens regler.</span> 
+								<span id="review_man_name" class="left"></span> 
+							</div>
+							<div class="sub_review_property_cont1">
+								<script>
+									var index;
+									for	(index = 0; index < property_cont1.length; index++) {
+									    $('sub_review_property_cont1').append(''+property_cont1[index]);
+								     	$('sub_review_property_cont1').append('<input type="hidden" name="property_cont1" value="'+property_cont1[index]+'"');
+									}
+								</script>
+							</div>
+							<div class="review">
+								<span id="review_women_name" class="left"></span> 
+							</div>
+							<div class="sub_review_property_cont2">
+								<script>
+									var index;
+									for	(index = 0; index < property_cont2.length; index++) {
+									    $('sub_review_property_cont2').append(''+property_cont2[index]);
+									    $('sub_review_property_cont2').append('<input type="hidden" name="property_cont2" value="'+property_cont2[index]+'"');
+									}
+								</script>
+							</div>
+						</div>
+						<div class="condition002 center">
+							<h1>Övriga uppgifter</h1>
+							<div class="review">
+								<span class="left">Vi önskar att eventuell avkastning från enskild egendom skall vara enskild.</span> 
+								<input type="hidden" name="review_cohabiting_date" id="checkboxThree" >
+							</div>
+						</div>
+						<div class="condition002 center">
+							<h1>Vi önskar att egendom som träder istället för enskild egendom, exempelvis genom att enskild egendom har försålts och annan egendom har införskaffats, skall vara:</h1>
+							<div class="review">
+								<span class="left">Vi önskar att eventuell avkastning från enskild egendom skall vara enskild.</span> 
+								<input type="hidden" name="review_cohabiting_date" id="purpose_5_ip" >
 							</div>
 						</div>
 					</form>
