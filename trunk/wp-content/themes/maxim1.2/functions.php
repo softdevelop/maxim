@@ -477,7 +477,9 @@ function maxim_blog_single_span_class_meta() { ?>
 
 	<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 		<span class="comments"><?php comments_popup_link( __( 'Leave a comment', 'silver' ), __( '1 Comment', 'silver' ), __( '% Comments', 'silver' ) ); ?></span>
-	<?php endif; ?>
+	<?php endif; ?>&nbsp;
+	<span class="buy-template"><a href="#"><?php _e('buy template', 'silver') ?>&nbsp; </a></span>
+	<span class="buy-form"><a href="#"><?php _e('by form', 'silver') ?></a></span>
 
 	</span>
 <?php };

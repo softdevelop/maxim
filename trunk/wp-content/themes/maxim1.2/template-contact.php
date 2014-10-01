@@ -14,44 +14,9 @@ get_header(); ?>
 					<h1><?php the_title(); ?></h1>
 				</div>
 				<div class="contact-container">
+					
 					<div class="half">
-						<?php
-							$script = get_template_directory_uri() . '/js/jquery.gmap.min.js';
-							$address = ot_get_option('map_address') != "" ? ot_get_option('map_address') : 'New York, United States, Flushing Ave';
-							$desc = ot_get_option('map_desc') != "" ? ot_get_option('map_desc') : 'This is the map description.';
-							
-							
-							
-							$output = '
-							
-								<!-- Google Maps -->
-								<div id="googlemaps" class="google-map google-map-full" style="height: 425px;"></div>
-
-								<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-								<script src="'.$script.'"></script>
-							
-								<script type="text/javascript">
-									jQuery("#googlemaps").gMap({
-										maptype: "ROADMAP",
-										scrollwheel: true,
-										zoom: 15,
-										markers: [
-											{
-												address: "'.$address.'", // Your Adress Here
-												html: "'.$desc.'",
-												popup: true,
-											}
-
-										],
-										
-									});
-								</script>';
-
-							echo $output;
-						?>
-					</div>
-					<div class="half">
-						<h3><?php _e('Send us a message:', 'silver'); ?></h3>
+						<!-- <h3><?php _e('Send us a message:', 'silver'); ?></h3> -->
 						<?php $cform = ot_get_option('cform'); if($cform) echo do_shortcode($cform); ?>
 					</div>
 

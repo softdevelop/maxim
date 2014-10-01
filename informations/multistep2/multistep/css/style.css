@@ -48,7 +48,7 @@ background:#ecf0f1;
 }
 
 
-.header01 h1{font-size:30px;color:#666;text-align:center;font-family:'Open Sans';padding:10px 0px;font-weight: 600;border:none;}
+.header01 h1{font-size:28px;color:#666;text-align:center;font-family:'Open Sans';padding:20px 0px;font-weight: 600;border:none;}
 .header01 b{color:#1bbc9b;font-weight:bold;}
 .filter001{background:url("images/filter_back01.png") no-repeat ;padding: 0px 0px;float: left;margin: 0px 8px;}
 .filter002{background:url("images/filter_back02.png") no-repeat ;padding: 0px 0px;float: left;margin: 0px 8px;}
@@ -420,39 +420,39 @@ input[type=checkbox] {
 
 .checkboxThree {
 	float:right;
-	width: 105px;
-	height: 40px;
+	float: right;
+	width: 63px;
+	height: 35px;
 	background: #e0e0e0;
 	margin: 5px 0px;
-
 	border-radius: 5px;
-	position: relative;
+	position: relative
 }
 .checkboxThree:before {
-font-family:'Open Sans';
+	font-family: 'Open Sans';
 	content: 'JA';
 	position: absolute;
-	top: 10px;
+	top: 8px;
 	left: 13px;
 	height: 2px;
 	color: #72c0be;
-	font-size: 16px;
+	font-size: 14px;
 }
 .checkboxThree:after {
-font-family:'Open Sans';
+	font-family:'Open Sans';
 	content: 'NEJ';
 	position: absolute;
-	top: 10px;
-	left: 65px;
+	top: 8px;
+	left: 35px;
 	height: 2px;
 	color: #fff;
-	font-size: 16px;
+	font-size: 14px;
 }
 
 .checkboxThree label {
 	display: block;
-	width: 20px;
-	height: 22px;
+	width: 10px;
+	height: 18px;
 	border-radius: 5px;
 
 	-webkit-transition: all .5s ease;
@@ -463,12 +463,12 @@ font-family:'Open Sans';
 	cursor: pointer;
 	position: absolute;
 	top: 9px;
-	left: 12px;
+	left: 8px;
 	background: #fff;
 	z-index:1;
 }
 .checkboxThree input[type=checkbox]:checked + label {
-	left: 60px;
+	left: 32px;
 	background: #72c0be;
 }
 
