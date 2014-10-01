@@ -294,7 +294,6 @@ function maxim_homepage_posts() { ?>
 
 function maxim_homepage_boxes($box) {
 	$maxim_twitter_box = ot_get_option('homepage-twitter') ? ot_get_option('homepage-twitter') : 'default';
-	
 	switch ($box) {
 		case 'one': ?>
 			<div <?php 
