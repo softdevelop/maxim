@@ -12,39 +12,67 @@
 	<script src="js/jquery-ui.min.js"></script>
 	<script src="js/masking.js" ></script>
 	<script src="js/script.js" ></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.min.js"></script>
+
 	<script>
-	
-	$(function() {
-		$( "#cohabiting_date" ).datepicker({
-			showOn: "button",
-			buttonImage: "images/datepick.png",		
-			dateFormat: 'dd/mm/yy',
-			changeMonth: true,
-			changeYear: true,
-			
+		$(function() {
+			$( "#cohabiting_date" ).datepicker({
+				showOn: "button",
+				buttonImage: "images/datepick.png",		
+				dateFormat: 'dd/mm/yy',
+				changeMonth: true,
+				changeYear: true,
+				
+			});
 		});
-	});
-	
-	jQuery(function($){
-	   $("#man_pin").mask("999999999999");
-	   $("#women_pin").mask("9999999999999");
-	   $("#man_phone").mask("999999999999999");
-	   $("#women_phone").mask("9999999999999999");
-	   $("#man_identity").mask("9999999999999999");
-	   $("#women_identity").mask("9999999999999999");
-	   $("#cohabiting_date").mask("99/99/9999");
-	});
+		
+		jQuery(function($){
+		   $("#man_pin").mask("999999999999");
+		   $("#women_pin").mask("9999999999999");
+		   $("#man_phone").mask("999999999999999");
+		   $("#women_phone").mask("9999999999999999");
+		   $("#man_identity").mask("9999999999999999");
+		   $("#women_identity").mask("9999999999999999");
+		   $("#cohabiting_date").mask("99/99/9999");
+		});
+
+		var myApp = angular.module('myApp', ['ngRoute']);
+	  	function MainCtrl($scope) {
+			$scope.count = 0;
+		}
+		// //Directive for adding buttons on click that show an alert on click
+		// myApp.directive("addbuttons", function($compile) {
+		// 	return function(scope, element, attrs){
+		// 		element.bind("click", function() {
+		// 			scope.count++;
+		// 			var tag = angular.element('<input type="text" name="property_to_exclude_1[]" id="" value="" class="register2 pte_element_1" placeholder="Min röda Volvo årsmodell 2012" ng-model="property_to_exclude_man">');
+		// 			angular.element($('.mans_info1 .pte_cont_1')).append($compile(tag)(scope));
+		// 		});
+		// 	};
+		// });
+
+		// //Directive for adding buttons on click that show an alert on click
+		// myApp.directive("addbuttons2", function($compile) {
+		// 	return function(scope, element, attrs){
+		// 		element.bind("click", function() {
+		// 			scope.count++;
+		// 			var tag = angular.element('<input type="text" name="property_to_exclude_2[]" id="" value="" class="register2 pte_element_1" placeholder="Min röda Volvo årsmodell 2012" ng-model="property_to_exclude_women">');
+		// 			angular.element($('.mans_info1 .pte_cont_1')).append($compile(tag)(scope));
+		// 		});
+		// 	};
+		// });
+
 	</script>
 
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="MainCtrl" >
     <div id="infoCont" class="infoCont">
 		<div class="infoHeader"><a id="closeInfoCont"><img src="images/close_button.png"></a> </div>
 		<div class="infoContent">
 			Det Första alternativet innebär att vid en bodelning endast saker som är inköpta för gemensamt bruk delas på, era egna saker åsidosätts bodelningen.<br/><br/>
-
-Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodelningsregler genom att uppräkna viss gemensam egendom som skall hållas utanför en framtida bodelning
+			Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodelningsregler genom att uppräkna viss gemensam egendom som skall hållas utanför en framtida bodelning
 		</div>
 	</div>
 	
@@ -55,21 +83,19 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 		</div>
 	</div>	
 
-<div id="infoCont2" class="infoCont">
+	<div id="infoCont2" class="infoCont">
 		<div class="infoHeader"><a id="closeInfoCont2"><img src="images/close_button.png"></a> </div>
 		<div class="infoContent">
 			Sambos är två personer som stadigvarande bor tillsammans i ett parförhållande och har gemensamt hushåll(1§ sambolagen)
 		</div>
 	</div>	
 
-<div id="infoCont3" class="infoCont">
+	<div id="infoCont3" class="infoCont">
 		<div class="infoHeader"><a id="closeInfoCont3"><img src="images/close_button.png"></a> </div>
 		<div class="infoContent">
 			Stjärnelunds Juristhus är inte ansvarig för ekonomisk skada indirekt eller direkt, som kan uppstå genom att användandet av denna tjänst, genom att tjänst ej kan nyttjas eller på grund av fel eller brister i den information som ges. Ansvaret gentemot brukaren av våra tjänster kan aldrig bli större än den avgift som erlagts för tjänstens nyttjande.
 		</div>
 	</div>	
-										
-	<form name="frmReg" action="" method="post" >
 		<!-- SLICE 1  -->
 		<div class="container01" id="slice_0">
 			<div class="header1">
@@ -146,37 +172,37 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 						<div class="mans_info">
 							<h1>Personuppgifter för första person</h1>
 							<div class="man_info">
-								<input type="text" name="man_name" id="man_name" placeholder="Ange Fullständigt Namn"  class="register user" > 
+								<input type="text" name="man_name" id="man_name" placeholder="Ange Fullständigt Namn"  class="register user" ng-model="man_name"> 
 								<p class="error_msg" id="error_man_name" ></p>
 							</div>
 							
 							<div class="man_info">
-								<input type="text" name="man_address" id="man_address" placeholder="Ange din Adress"  class="register address" > 
+								<input type="text" name="man_address" id="man_address" placeholder="Ange din Adress"  class="register address" ng-model="man_address" > 
 								<p class="error_msg" id="error_man_address"></p>
 							</div>
 							
 							<div class="man_info">
-								<input type="text" name="man_pin" id="man_pin" placeholder="Ange ditt Postnummer"  class="register pincode" > 
+								<input type="text" name="man_pin" id="man_pin" placeholder="Ange ditt Postnummer"  class="register pincode" ng-model="man_pin"> 
 								<p class="error_msg" id="error_man_pin"></p>
 							</div>
 							
 							<div class="man_info">
-								<input type="text" name="man_postort" id="man_postort" placeholder="Ange din Postort"  class="register post" > 
+								<input type="text" name="man_postort" id="man_postort" placeholder="Ange din Postort"  class="register post" ng-model="man_postort"> 
 								<p class="error_msg" id="error_man_postort"></p>
 							</div>
 							
 							<div class="man_info">
-								<input type="text" name="man_phone" id="man_phone" placeholder="Ange ditt telefonnummer"  class="register phone" > 
+								<input type="text" name="man_phone" id="man_phone" placeholder="Ange ditt telefonnummer"  class="register phone" ng-model="man_phone"> 
 								<p class="error_msg" id="error_man_phone"></p>
 							</div>
 							
 							<div class="man_info">
-								<input type="text" name="man_email" id="man_email" placeholder="Ange din e-postadress"  class="register email" > 
+								<input type="text" name="man_email" id="man_email" placeholder="Ange din e-postadress"  class="register email" ng-model="man_email" > 
 								<p class="error_msg" id="error_man_email"></p>
 							</div>
 							
 							<div class="man_info">
-								<input type="text" name="man_identity" id="man_identity" placeholder="Ange ditt personnummer (XXXXXXxxxx)"  class="register uid" > 							
+								<input type="text" name="man_identity" id="man_identity" placeholder="Ange ditt personnummer (XXXXXXxxxx)"  class="register uid" ng-model="man_identity"> 							
 								<p class="error_msg" id="error_man_identity"></p>
 							</div>
 						
@@ -185,37 +211,37 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 						<div class="womens_info" style="display:none !important;">
 							<h1>Personuppgifter för andra person</h1>
 							<div class="man_info">
-								<input type="text" name="women_name" id="women_name" placeholder="Ange Fullständigt Namn"  class="register user" > 
+								<input type="text" name="women_name" id="women_name" placeholder="Ange Fullständigt Namn"  class="register user" ng-model="women_name"> 
 								<p class="error_msg" id="error_women_name"></p>
 							</div>
 							
 							<div class="man_info">
-								<input type="text" name="women_address" id="women_address" placeholder="Ange din Adress"  class="register address" > 
+								<input type="text" name="women_address" id="women_address" placeholder="Ange din Adress"  class="register address" ng-model="women_address" > 
 								<p class="error_msg" id="error_women_address"></p>
 							</div>
 							
 							<div class="man_info">
-								<input type="text" name="women_pin" id="women_pin" placeholder="Ange ditt Postnummer"  class="register pincode" > 
+								<input type="text" name="women_pin" id="women_pin" placeholder="Ange ditt Postnummer"  class="register pincode" ng-model="women_pin" > 
 								<p class="error_msg" id="error_women_pin"></p>
 							</div>
 							
 							<div class="man_info">
-								<input type="text" name="women_postort" id="women_postort" placeholder="Ange din Postort"  class="register post" > 
+								<input type="text" name="women_postort" id="women_postort" placeholder="Ange din Postort"  class="register post" ng-model="women_postort" > 
 								<p class="error_msg" id="error_women_postort"></p>
 							</div>
 							
 							<div class="man_info">
-								<input type="text" name="women_phone" id="women_phone" placeholder="Ange ditt telefonnummer"  class="register phone" > 
+								<input type="text" name="women_phone" id="women_phone" placeholder="Ange ditt telefonnummer"  class="register phone" ng-model="women_phone" > 
 								<p class="error_msg" id="error_women_phone"></p>
 							</div>
 							
 							<div class="man_info">
-								<input type="text" name="women_email" id="women_email" placeholder="Ange din e-postadress"  class="register email" > 
+								<input type="text" name="women_email" id="women_email" placeholder="Ange din e-postadress"  class="register email" ng-model="women_email" > 
 								<p class="error_msg" id="error_women_email"></p>
 							</div>
 							
 							<div class="man_info">
-								<input type="text" name="women_identity" id="women_identity" placeholder="Ange ditt personnummer (XXXXXXxxxx)"  class="register uid" > 							
+								<input type="text" name="women_identity" id="women_identity" placeholder="Ange ditt personnummer (XXXXXXxxxx)"  class="register uid" ng-model="women_identity" > 							
 								<p class="error_msg" id="error_women_identity"></p>
 							</div>
 							
@@ -263,7 +289,7 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 
 							<div class="">
 							<div class="checkboxThree">
-								<input type="checkbox" value="1" id="checkboxThreeInput" name="checkboxThreeInput" checked="checked" />
+								<input type="checkbox" value="1" id="checkboxThreeInput" name="checkboxThreeInput" checked="checked" ng-model="checkboxThreeInput" />
 								<label for="checkboxThreeInput"></label>
 							</div>
 													
@@ -273,7 +299,7 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 						<div class="condition02">
 							<p id="checkboxThreeInput_label" ></p>		
 							
-							<input type="text" name="checkboxThreeInput_date"  id="cohabiting_date"  class="register1" placeholder="DD/MM/ÅÅÅÅ" style="padding-left:10px !important; margin-right:5px;" disabled>
+							<input type="text" name="checkboxThreeInput_date"  id="cohabiting_date"  class="register1" placeholder="DD/MM/ÅÅÅÅ" style="padding-left:10px !important; margin-right:5px;" disabled ng-model="checkboxThreeInput_date">
 							<p class="error_msg" id="error_cohabiting_date"></p>
 						</div><!-- condition02 -->
 						<div class="line"></div>
@@ -285,7 +311,7 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 								<div class="question">
 									<p>all egendom vi äger, eller ägde, vid äktenskapets ingående skall omfattas av äktenskapsförordet. </p>
 									<div class="radio_option">
-										<input type="radio" name="purpose" id="purpose_1" class="css-checkbox prop_answers" checked="checked" value="Vi vill helt avtala bort sambolagens regler."/>
+										<input type="radio" name="purpose" id="purpose_1" class="css-checkbox prop_answers" checked="checked" value="all egendom vi äger, eller ägde, vid äktenskapets ingående skall omfattas av äktenskapsförordet." ng-mode="purpose"/>
 											<label for="purpose_1" class="css-label radGroup1"></label>
 									</div>
 								</div>
@@ -307,7 +333,7 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 								<div class="question">
 									<p>all egendom vi äger, eller ägde, vid äktenskapets ingående skall omfattas av äktenskapsförordet. </p>
 									<div class="radio_option">
-										<input type="radio" name="purpose" id="purpose_2" class="css-checkbox prop_answers" checked="checked" value="Vi vill helt avtala bort sambolagens regler."/>
+										<input type="radio" name="purpose" id="purpose_2" class="css-checkbox prop_answers" checked="checked" value="all egendom vi äger, eller ägde, vid äktenskapets ingående skall omfattas av äktenskapsförordet" ng-mode="purpose"/>
 											<label for="purpose_2" class="css-label radGroup1"></label>
 									</div>
 								</div>
@@ -329,7 +355,7 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 								<div class="question">
 									<p>all egendom som var och en av oss utfått och i framtiden eventuellt kommer att erhålla genom arv, gåva och testamente skall omfattas av äktenskapsförordet. </p>
 									<div class="radio_option">
-										<input type="radio" name="purpose" id="purpose_3" class="css-checkbox prop_answers" checked="checked" value="Vi vill helt avtala bort sambolagens regler."/>
+										<input type="radio" name="purpose" id="purpose_3" class="css-checkbox prop_answers" checked="checked" value="all egendom som var och en av oss utfått och i framtiden eventuellt kommer att erhålla genom arv, gåva och testamente skall omfattas av äktenskapsförordet." ng-mode="purpose"/>
 											<label for="purpose_3" class="css-label radGroup1"></label>
 									</div>
 
@@ -397,32 +423,32 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 						</div>
 
 						<div class="mans_info1">
-							<p><span id="review_women_name"></span> &nbsp;enskilda egendom:</p>
+							<p><span id="">{{man_name}}</span> &nbsp;enskilda egendom:</p>
 							<div class="property" id="property_cont1">
 																		
 								<div class="pte_cont_1">
-									<input type="text" name="property_to_exclude_1[]" id="property_to_exclude_1" value="" class="register2 pte_element_1" placeholder="Min röda Volvo årsmodell 2012"> 									
+									<input type="text" name="property_to_exclude_1[]" id="" value="" class="register2 pte_element_1" placeholder="Min röda Volvo årsmodell 2012" ng-model="property_to_exclude_man"> 									
 								</div> 
 								<div id="property_new_elements_cont_1">
 								</div>		
 								<div class="pte_controls">
-									<a class="add_pte_1" id="add_pte_1"><img src="images/plus_button.png"><div class="popup_top1"><p>Lägg till rad</p></div></a>
+									<a class="add_pte_1" id="add_pte_1" addbuttons><img src="images/plus_button.png"><div class="popup_top1"><p>Lägg till rad</p></div></a>
 									<a class="remove_pte_1"><img src="images/close_button.png"><div class="popup_top1"><p>Ta bort rad</p></div></a>
 								</div>						 
 							</div>
 						</div><!-- mans_info1 -->
 						
 						<div class="womens_info1">
-							<p><span id="review_women_name"></span> &nbsp;enskilda egendom:</p>
+							<p><span id="">{{women_name}}</span> &nbsp;enskilda egendom:</p>
 							<div class="property" id="property_cont2">
 																		
 								<div class="pte_cont_2">
-									<input type="text" name="property_to_exclude_2[]" id="property_to_exclude_2" value="" class="register2 pte_element_2" placeholder="Min röda Volvo årsmodell 2012"> 									
+									<input type="text" name="property_to_exclude_2[]" id="property_to_exclude_2" value="" class="register2 pte_element_2" placeholder="Min röda Volvo årsmodell 2012" ng-model="property_to_exclude_women"> 									
 								</div> 
 								<div id="property_new_elements_cont_2">
 								</div>		
 								<div class="pte_controls">
-									<a class="add_pte_2" id="add_pte_2"><img src="images/plus_button.png"><div class="popup_top1"><p>Lägg till rad</p></div></a>
+									<a class="add_pte_2" id="add_pte_2" addbuttons2><img src="images/plus_button.png"><div class="popup_top1"><p>Lägg till rad</p></div></a>
 									<a class="remove_pte_2"><img src="images/close_button.png"><div class="popup_top1"><p>Ta bort rad</p></div></a>
 								</div>						 
 							</div>
@@ -433,9 +459,9 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 								<p>Övriga uppgifter <span> (välj de alternativ som passar er bäst)</span> </p>
 								<div class="contain-switch-item">
 									<p>Vi önskar att eventuell avkastning från enskild egendom skall vara enskild.</p>
-									<div class="checkboxThree">
-										<input type="checkbox" value="1" id="checkboxThree" name="checkboxThree" checked="checked" />
-										<label for="checkboxThree"></label>
+									<div class="checkboxThree2">
+										<input type="checkbox" value="1" id="checkboxThree2" name="checkboxThree2" checked="checked" />
+										<label for="checkboxThree2"></label>
 									</div>
 								</div>
 							</div>
@@ -443,12 +469,12 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 								<p>Vi önskar att egendom som träder istället för enskild egendom, exempelvis genom att enskild egendom har försålts och annan egendom har införskaffats, skall vara: </p>
 								<div class='contain-radio-option'>
 									<div class="radio_option">
-										<input type="radio" name="purpose" id="purpose_4" class="css-checkbox prop_answers" checked="checked" value="Vi vill helt avtala bort sambolagens regler.">
+										<input type="radio" name="purpose_leo" id="purpose_4" class="css-checkbox prop_answers" checked="checked" value="Enskild egendom" ng-model="purpose_leo">
 										<label for="purpose_4" class="css-label radGroup1">Enskild egendom</label>
 																		
 									</div>
 									<div class="radio_option">
-										<input type="radio" name="purpose" id="purpose_5" class="css-checkbox prop_answers" value="Vi vill delvis avtala bort sambolagens regler.">
+										<input type="radio" name="purpose_leo" id="purpose_5" class="css-checkbox prop_answers" value="Giftorättsgods" ng-model="purpose_leo">
 										<label for="purpose_5" class="css-label radGroup1">Giftorättsgods</label>
 																		
 									</div>
@@ -471,12 +497,12 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 			<div class="header1">
 				<div class="wrapper">
 					<div class="header01">
-						<h1>OMFATTNING AV ÄKTENSKAPSFÖRORDET</h1>
-						<div class="filter004">
+						<h1>Juridiska Villkor</h1>
+						<div class="filter005">
 							<div class="fliter2_step001"><a class="navCircle" id="sl2Navigate_1" style="cursor:pointer;"><h2>1</h2><div class="popup_top" ><p>Personuppgifter</p></div></a></div>
-							<div class="fliter1_step002"><a class="parallelNav" id="sl_2_Navigate_2" ><h2>2</h2><div class="popup_top"><p>Samboregler</p></div></a></div>
-							<div class="fliter_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2><div class="popup_top" style="display:block;"><p>Översikt</p></div><a></div>
-							<div class="fliter_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Meddelande</p></div></a></div>
+							<div class="fliter3_step002"><a class="parallelNav" id="sl_2_Navigate_2" ><h2>2</h2><div class="popup_top"><p>Samboregler</p></div></a></div>
+							<div class="fliter4_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2><div class="popup_top" ><p>Översikt</p></div></a></div>
+							<div class="fliter_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" style="display:block;" ><p>Meddelande</p></div></a></div>
 							<div class="fliter_step005"><a class="parallelNav" id="sl_2_Navigate_5" ><h2>5</h2></a></div>
 							<div class="fliter_step006"><a class="parallelNav" id="sl_2_Navigate_6" ><h2>End</h2></a></div>
 						</div><!-- filter001 -->
@@ -488,92 +514,90 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 			<div class="form01">
 				<div class="wrapper">
 					<div class="form001" style="border: 1px solid #ccc;padding: 10px;margin-left: -30px;border-radius: 5px;">
-					<form>
-						<div class="mans_info1">
-							<h1>Personuppgifter för första person</h1>
-							<p><b>Namn :</b><span class="review_man_name"></span></p>
-							<input type="hidden" name="review_man_name" class="review_man_name_ip">
-							<p><b>Adress :</b><span class="review_man_address"></span></p>
-							<input type="hidden" name="review_man_address" class="review_man_address_ip">
-							<p><b>Postnummer :</b><span class="review_man_pin"></span></p>
-							<input type="hidden" name="review_man_pin" class="review_man_pin_ip">
-							<p><b>Postort :</b><span class="review_man_postort"></span></p>
-							<input type="hidden" name="review_man_postort" class="review_man_postort_ip">
-							<p><b>Telefonnummer :</b><span class="review_man_phone"></span></p>
-							<input type="hidden" name="review_man_phone" class="review_man_phone_ip">
-							<p><b>E-post :</b><span class="review_man_email"></span></p>
-							<input type="hidden" name="review_man_email" class="review_man_email_ip">
-							<p><b>Personnummer :</b><span class="review_man_identity"></span></p>
-							<input type="hidden" name="review_man_identity" class="review_man_identity_ip">
-						</div><!-- mans_info1 -->
-						
-						<div class="womens_info1">
-							<h1>Personuppgifter för andra person</h1>
-							<p><b>Namn :</b><span class="review_women_name"></span></p>
-							<input type="hidden" name="review_women_name" class="review_women_name_ip">
-							<p><b>Adress:</b><span class="review_women_address"></span></p>
-							<input type="hidden" name="review_women_address" class="review_women_address_ip">
-							<p><b>Postnummer:</b><span class="review_women_pin"></span></p>
-							<input type="hidden" name="review_women_pin" class="review_women_pin_ip">
-							<p><b>Postort:</b><span class="review_women_postort"></span></p>	
-							<input type="hidden" name="review_women_postort" class="review_women_postort_ip">
-							<p><b>Telefonnummer :</b><span class="review_women_phone"></span></p>
-							<input type="hidden" name="review_women_phone" class="review_women_phone_ip">
-							<p><b>E-post:</b><span class="review_women_email"></span></p>
-							<input type="hidden" name="review_women_email" class="review_women_email_ip">
-							<p><b>Personnummer:</b><span class="review_women_identity"></span></p>
-							<input type="hidden" name="review_women_identity" class="review_women_identity_ip">
-						</div><!-- womens_info1 -->
-						
-						<div class="condition001">
-							<h1>OMFATTNING AV ÄKTENSKAPSFÖRORDET</h1>
-						</div>
-						<div class="your_answer001">
-							<div class="review">
-								<span class="review_purpose left"></span>
-								<input type="hidden" name="review_purpose" class="review_purpose_ip" >
-								<span class="review_cohabiting_date right"></span>
-								<input type="hidden" name="review_cohabiting_date" class="review_cohabiting_date_ip" >
-								<span class="review_cohabiting right"></span> |
-								<input type="hidden" name="review_cohabiting_date" class="review_cohabiting_ip" >
+						<form>
+							<div class="mans_info1">
+								<h1>Personuppgifter för första person</h1>
+								<p><b>Namn :</b><span>{{man_name}}</span></p>
+								<p><b>Adress :</b><span class="">{{man_address}}</span></p>
+								<p><b>Postnummer :</b><span class="">{{man_pin}}</span></p>
+								<p><b>Postort :</b><span class="review_man_postort">{{man_postort}}</span></p>
+								<p><b>Telefonnummer :</b><span class="review_man_phone"><{{man_phone}}/span></p>
+								<p><b>E-post :</b><span class="review_man_email">{{man_email}}</span></p>
+								<p><b>Personnummer :</b><span class="review_man_identity">{{man_identity}}</span></p>
+								
+							</div><!-- mans_info1 -->
+							
+							<div class="womens_info1">
+								<h1>Personuppgifter för andra person</h1>
+								<p><b>Namn :</b><span class="review_women_name">{{women_name}}</span></p>
+								
+								<p><b>Adress:</b><span class="review_women_address">{{women_address}}</span></p>
+								
+								<p><b>Postnummer:</b><span class="review_women_pin">{{women_pin}}</span></p>
+								
+								<p><b>Postort:</b><span class="review_women_postort">{{women_postort}}</span></p>	
+								
+								<p><b>Telefonnummer :</b><span class="review_women_phone">{{women_phone}}</span></p>
+								
+								<p><b>E-post:</b><span class="review_women_email">{{women_email}}</span></p>
+								
+								<p><b>Personnummer:</b><span class="review_women_identity">{{women_identity}}</span></p>
+								
+							</div><!-- womens_info1 -->
+							
+							<div class="condition001">
+								<h1>OMFATTNING AV ÄKTENSKAPSFÖRORDET</h1>
 							</div>
-						</div>
-						<div class="condition002 center">
-							<h1>Vi önskar att:</h1>
-							<div class="reviews">
-								<span class="review_purpose left"></span> 
-								<input type="hidden" name="review_cohabiting_date" class="review_purpose_ip" >
+							<div class="your_answer001">
+								<div class="review">
+									<span class="left" style="float:left;">Är ni gifta sedan tidigare?</span>
+									<div style="float:right;margin-top: 5px;">
+										<input type="hidden" name="review_purpose" id="review_cohabiting_ip" class="" >
+										<span class="review_cohabiting_date right" id="review_cohabiting"></span> |
+										<span class="">{{checkboxThreeInput_date}}</span>
+										<input type="hidden" name="review_cohabiting_date" class="" value="{{checkboxThreeInput_date}}">
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="your_answer001">
-						<div class="condition002 center">
-							<h1>följande nedtecknad egendom skall omfattas av äktenskapsförordet:</h1>
-							<div class="reviews">
-								<span class="review_man_name"></span>  enskilda egendom: 
-								<div class="property1" class="review_property_to_exclude_1"></div>
+							<div class="condition002 center" width="98%">
+								<h1>Vi önskar att:</h1>
+								<div class="reviews">
+									<span class="review_purpose"></span> 
+									<input type="hidden" name="review_cohabiting_date" class="review_purpose_ip">
+								</div>
 							</div>
-							<div class="reviews">
-								<span class="review_women_name"></span>  enskilda egendom:
-								<div class="property1" class="review_property_to_exclude_2"></div> 
+							<div class="your_answer001">
+								<div class="condition002 center">
+									<h1>följande nedtecknad egendom skall omfattas av äktenskapsförordet:</h1>
+									<div class="reviews">
+										<span class="">{{man_name}}</span>  enskilda egendom: 
+										<div class="review_property_to_exclude"></div>
+										<input name="" value type="hidden"/>
+									</div>
+									<div class="reviews">
+										<span class="">{{women_name}}</span>  enskilda egendom:
+										<div class="review_property_to_exclude_2"></div> 
+										<input name="" value type="hidden"/>
+									</div>
+								</div>
+								<div class="condition002 center">
+									<h1>Övriga uppgifter</h1>
+									<div class="reviews">
+										<span class="left">Vi önskar att eventuell avkastning från enskild egendom skall vara enskild.</span> 
+										<p id="review_checkboxThree2"></p>
+										<input type="hidden" name="review_cohabiting_date" id="review_checkboxThree2_pi">
+									</div>
+								</div>
+								<div class="condition002 center">
+									<div class="reviews">
+										<span>Vi önskar att egendom som träder istället för enskild egendom, exempelvis genom att enskild egendom har försålts och annan egendom har införskaffats, skall vara:</span><br/>
+									</div>
+									<div class="reviews">
+										<input type="hidden" name="" class="" value="{{purpose_leo}}">{{purpose_leo}}
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="condition002 center">
-							<h1>Övriga uppgifter</h1>
-							<div class="reviews">
-								<span class="left">Vi önskar att eventuell avkastning från enskild egendom skall vara enskild.</span> 
-								<input type="hidden" name="review_cohabiting_date" id="checkboxThree" >
-							</div>
-						</div>
-						<div class="condition002 center">
-							<div class="reviews">
-								<span>Vi önskar att egendom som träder istället för enskild egendom, exempelvis genom att enskild egendom har försålts och annan egendom har införskaffats, skall vara:</span>
-							</div>
-							<div class="reviews">
-								<span class="left">Vi önskar att eventuell avkastning från enskild egendom skall vara enskild.</span> 
-								<input type="hidden" name="review_cohabiting_date" class="purpose_5_ip" >
-							</div>
-						</div>
-					</form>
+						</form>
 					</div><!-- form001 -->
 				</div><!-- wrapper -->
 			</div><!-- form01 -->
@@ -585,18 +609,18 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 				</div>
 			</div><!-- bottom -->		
 		</div>
-		<!-- SLICE 4  -->
-		<div class="container01" id="slice_5" style="display:none;" >
+		<!-- SLICE 5  -->
+		<div class="container01" id="slice_5" style="display: none;" >
 			<div class="header1">
 				<div class="wrapper">
 					<div class="header01">
-						<h1>Juridiska Villkor</h1>
-						<div class="filter005">
+						<h1>Betalning</h1>
+						<div class="filter006">
 							<div class="fliter2_step001"><a class="navCircle" id="sl2Navigate_1" style="cursor:pointer;"><h2>1</h2><div class="popup_top" ><p>Personuppgifter</p></div></a></div>
-							<div class="fliter1_step002"><a class="parallelNav" id="sl_2_Navigate_2" ><h2>2</h2><div class="popup_top"><p>Samboregler</p></div></a></div>
-							<div class="fliter_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2><div class="popup_top" style="display:block;"><p>Översikt</p></div><a></div>
-							<div class="fliter_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Meddelande</p></div></a></div>
-							<div class="fliter_step005"><a class="parallelNav" id="sl_2_Navigate_5" ><h2>5</h2></a></div>
+							<div class="fliter3_step002"><a class="parallelNav" id="sl_2_Navigate_2" ><h2>2</h2><div class="popup_top"><p>Samboregler</p></div></a></div>
+							<div class="fliter4_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2><div class="popup_top"><p>Översikt</p></div></a></div>
+							<div class="fliter5_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Meddelande</p></div></a></div>
+							<div class="fliter_step005"><a class="parallelNav" id="sl_2_Navigate_5" ><h2>5</h2><div class="popup_top" style="display: block;"><p>Översikt</p></div></a></div>
 							<div class="fliter_step006"><a class="parallelNav" id="sl_2_Navigate_6" ><h2>End</h2></a></div>
 						</div><!-- filter001 -->
 					</div><!-- header01 -->
@@ -613,16 +637,18 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 							<textarea rows="4" cols="85" class="other_info" name="other_info" id="other_info" ></textarea>
 							<img src="images/terms.jpeg">
 							<p>Jag har härmed lämnat information för skapande av ett Samboavtal. Jag har läst och godkänner Stjärnelunds Juristhus juridiska villkor för användande av denna tjänst samt beställning härigenom. </p>
-							<div class="agree_terms">
-								<input type="radio" name="agree_terms" id="agree_terms_1" class="css-checkbox" checked="checked"/>
-									<label for="agree_terms_1" class="css-label radGroup1" value="1"  style="padding-left: 50px;height: 23px;">Jag godkänner</label>
-								
-								
-								<input type="radio" name="agree_terms" id="agree_terms_2" class="css-checkbox" value="0"/>
-									<label for="agree_terms_2" class="css-label radGroup1"  style="padding-left: 50px;height: 23px;">Jag godkänner inte</label>
-								 <a id="infoTrigger3" style="cursor:pointer;padding-top: 5px;" ><img src="images/info.png"><span>Läs mer</span></a>
-								<p class="error_msg" id="error_agree_terms"></p>
-							</div><!-- agree_terms -->
+							<div class="container-agree-terms" with="100%">
+								<div class="agree_terms">
+									<input type="radio" name="agree_terms" id="agree_terms_1" class="css-checkbox" checked="checked"/>
+										<label for="agree_terms_1" class="css-label radGroup1" value="1"  style="padding-left: 50px;height: 23px;">Jag godkänner</label>
+									
+									
+									<input type="radio" name="agree_terms" id="agree_terms_2" class="css-checkbox" value="0"/>
+										<label for="agree_terms_2" class="css-label radGroup1"  style="padding-left: 50px;height: 23px;">Jag godkänner inte</label>
+									 <a id="infoTrigger3" style="cursor:pointer;padding-top: 5px;" ><img src="images/info.png"><span>Läs mer</span></a>
+									<p class="error_msg" id="error_agree_terms"></p>
+								</div><!-- agree_terms -->
+							</div><!-- continer-agree_terms -->
 							
 						</div><!-- terms_conditions -->
 					</div><!-- form001 -->
@@ -643,13 +669,13 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 				<div class="wrapper">
 					<div class="header01">
 						<h1>Betalning</h1>
-						<div class="filter006">
+						<div class="filter007">
 							<div class="fliter2_step001"><a class="navCircle" id="sl2Navigate_1" style="cursor:pointer;"><h2>1</h2><div class="popup_top" ><p>Personuppgifter</p></div></a></div>
-							<div class="fliter1_step002"><a class="parallelNav" id="sl_2_Navigate_2" ><h2>2</h2><div class="popup_top"><p>Samboregler</p></div></a></div>
-							<div class="fliter_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2><div class="popup_top" style="display:block;"><p>Översikt</p></div><a></div>
-							<div class="fliter_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Meddelande</p></div></a></div>
-							<div class="fliter_step005"><a class="parallelNav" id="sl_2_Navigate_5" ><h2>5</h2></a></div>
-							<div class="fliter_step006"><a class="parallelNav" id="sl_2_Navigate_6" ><h2>End</h2></a></div>	
+							<div class="fliter3_step002"><a class="parallelNav" id="sl_2_Navigate_2" ><h2>2</h2><div class="popup_top"><p>Samboregler</p></div></a></div>
+							<div class="fliter4_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2><a></div>
+							<div class="fliter5_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Meddelande</p></div></a></div>
+							<div class="fliter6_step005"><a class="parallelNav" id="sl_2_Navigate_5" ><h2>5</h2></a></div>
+							<div class="fliter_step006"><a class="parallelNav" id="sl_2_Navigate_6" ><h2>End</h2><div class="popup_top" style="display:block;"><p>End</p></div></a></div>	
 						</div><!-- filter001 -->
 					</div><!-- header01 -->
 				</div><!-- wrapper -->
@@ -672,7 +698,6 @@ Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodeln
 			</div><!-- bottom -->		
 			
 		</div>
-	</form>
 </body>
 
 </html>

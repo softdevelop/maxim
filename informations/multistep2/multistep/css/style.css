@@ -803,3 +803,17 @@ border: 1px solid #ccc;
 
 .pte_controls{position:relative;float:eft;}
 .pte_controls a:hover .popup_top1{display:block;}
+
+#review_checkboxThree2 {
+	float: right;
+	padding: 5px;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	margin-top: 0px;
+	font-size: 12px;
+	color: #666;
+	font-family: 'Open Sans';
+	width: 98%;
+	text-align: center;
+	margin-top: 10px;
+}

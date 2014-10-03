@@ -451,7 +451,7 @@ input[type=checkbox] {
 
 .checkboxThree label {
 	display: block;
-	width: 10px;
+	width: 25px;
 	height: 18px;
 	border-radius: 5px;
 
@@ -543,12 +543,7 @@ margin-right: -17px;
 	border-radius:5px;
 	width: 100%;
 }
-.your_answer001 .review .left{
-	float: left !important;
-}
-.your_answer001 .review .right{
-	float: right !important;
-}
+
 .your_answer001 span{
 	padding:5px 10px;
 	margin-top: 0px;
@@ -826,6 +821,10 @@ border: 1px solid #ccc;
 
 /** SOFTDEVELOP ADD FORM 1**/
 /** STEP 1 **/
+.fliter3_step002, .fliter4_step003 {
+	margin-left: 70px;
+}
+
 .fliter_step006 {
 	background: url("images/step02.png") no-repeat;
 	float: left;
@@ -859,7 +858,7 @@ border: 1px solid #ccc;
 .fliter1_step001 {
 	margin-left: 110px;
 } 
-.fliter1_step002, .fliter1_step003, .fliter1_step004, .fliter1_step005  {
+.fliter1_step002, .fliter1_step003, .fliter1_step004, .fliter1_step005, .fliter5_step004, .fliter6_step005  {
 	margin-left: 70px;
 }
 
@@ -974,6 +973,7 @@ border: 1px solid #ccc;
 #slice_3 .form001 .uppgifter .your_answer_step4 .contain-radio-option .radio_option{
 	display: block !important;
 	float: none !important;
+	margin-bottom: 10px;
 }
 #slice_3 .form001 .uppgifter .your_answer_step4 .contain-radio-option .radio_option label{
 	padding-left: 50px !important;
@@ -1007,11 +1007,48 @@ border: 1px solid #ccc;
 	font-weight: 600;
 }
 
+/** STEP 6 **/
+.fliter6_step005 {
+	background: url("images/step03.png") no-repeat;
+	float: left;
+	margin-left: 70px;
+	margin-top: 5px;
+	position: relative;
+}
+.filter006 {
+	background: url("images/filter_back06.png");
+	padding: 0px 0px;
+	float: left;
+	margin: 0px 8px;
+}
+.filter007 {
+	background: url("images/filter_back07.png");
+	padding: 0px 0px;
+	float: left;
+	margin: 0px 8px;
+}
+.fliter6_step005 h2 {
+	padding: 10px 17px 20px;
+	color: #fff;
+	font-size: 18px;
+	font-family: 'Open Sans';
+}
+.popup_top1 {
+	position: absolute;
+	top: -27px;
+	background: #fff;
+	padding: 5px 15px 0px;
+	display: none;
+	text-align: center;
+	right: 25px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	width: 100px;
+}
 
-
-
-
-
+.condition01 img {
+	float: none;
+}
 
 
 
