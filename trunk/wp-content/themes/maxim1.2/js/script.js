@@ -1,8 +1,7 @@
 $(document).ready(function(){
 	var completedForms = [0, 0, 0, 0, 0, 0, 0];
 	
-	$('.next').on("click",function(){
-		
+	$('.next').on("click",function() {
 		$('.error_msg').html('');
 		var elementId = $(this).attr('id');
 		var entityId = elementId.split('_')[1];
@@ -24,11 +23,9 @@ $(document).ready(function(){
 			completedForms[entityId] = 	0;
 			return false;
 		}
-		
-		
 	});
 	
-	$('.prev').click(function(){
+	$('.prev').click(function() {
 		$('.mans_info').show();$('.womens_info').show();
 		var elementId = $(this).attr('id');
 		var entityId = elementId.split('_')[1];
@@ -41,14 +38,14 @@ $(document).ready(function(){
 		}
 	});
 	
-	$('.register').click(function(){
+	$('.register').click(function() {
 		$(this).removeClass('error_input');
 		$(this).removeClass('success_input');
 		var elementId = $(this).attr('id');
 		$('#error_'+elementId).html('');
 	});
 	
-	$('.register').focusout(function(){
+	$('.register').focusout(function() {
 		var elementId = $(this).attr('id');
 		var isValidField = false;
 		var hasError = false;

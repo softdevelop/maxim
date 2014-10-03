@@ -41,27 +41,57 @@
 	  	function MainCtrl($scope) {
 			$scope.count = 0;
 		}
-		// //Directive for adding buttons on click that show an alert on click
-		// myApp.directive("addbuttons", function($compile) {
-		// 	return function(scope, element, attrs){
-		// 		element.bind("click", function() {
-		// 			scope.count++;
-		// 			var tag = angular.element('<input type="text" name="property_to_exclude_1[]" id="" value="" class="register2 pte_element_1" placeholder="Min röda Volvo årsmodell 2012" ng-model="property_to_exclude_man">');
-		// 			angular.element($('.mans_info1 .pte_cont_1')).append($compile(tag)(scope));
-		// 		});
-		// 	};
-		// });
+		//Directive for adding buttons on click that show an alert on click
+		myApp.directive("addbuttons", function($compile) {
+			return function(scope, element, attrs){
+				element.bind("click", function() {
+					scope.count++;
+					var total_tags = $('.pte_element_1 ').length + 1;
+					var tag = angular.element('<input type="text" name="property_to_exclude_1[]" id="property_to_exclude_1_' + total_tags + '" value="" class="register2 pte_element_1" placeholder="Min röda Volvo årsmodell 2012" ng-model="property_to_exclude_man_' + total_tags + '" />');
+					var tag_review = angular.element('<span id ="review_pte_1_' + total_tags + '" class="review_pte review_pte_' + total_tags + '">{{property_to_exclude_man_' +total_tags + '}}</span>');
 
-		// //Directive for adding buttons on click that show an alert on click
-		// myApp.directive("addbuttons2", function($compile) {
-		// 	return function(scope, element, attrs){
-		// 		element.bind("click", function() {
-		// 			scope.count++;
-		// 			var tag = angular.element('<input type="text" name="property_to_exclude_2[]" id="" value="" class="register2 pte_element_1" placeholder="Min röda Volvo årsmodell 2012" ng-model="property_to_exclude_women">');
-		// 			angular.element($('.mans_info1 .pte_cont_1')).append($compile(tag)(scope));
-		// 		});
-		// 	};
-		// });
+					angular.element($('.mans_info1 .pte_cont_1')).append($compile(tag)(scope));
+
+					angular.element($('.review_property_to_exclude_1')).append($compile(tag_review)(scope));
+				});
+			};
+		});
+
+		myApp.directive("remove", function($compile) {
+			return function(scope, element, attrs){
+				element.bind("click", function() {
+					var total_tags = $('.pte_element_1').length;
+					angular.element($('#property_to_exclude_1_' + total_tags)).remove();
+					angular.element($('#review_pte_1_' + total_tags)).remove();
+				});
+			};
+		});
+
+		//Directive for adding buttons on click that show an alert on click
+		myApp.directive("addbuttons2", function($compile) {
+			return function(scope, element, attrs){
+				element.bind("click", function() {
+					scope.count++;
+					var total_tags = $('.pte_element_2').length + 1;
+					var tag = angular.element('<input type="text" name="property_to_exclude_2[]" id="property_to_exclude_2_' + total_tags + '" value="" class="register2 pte_element_2" placeholder="Min röda Volvo årsmodell 2012" ng-model="property_to_exclude_woman_' + total_tags + '" />');
+					var tag_review = angular.element('<span id ="review_pte_2_' + total_tags + '" class="review_pte review_pte_' + total_tags + '">{{property_to_exclude_woman_' +total_tags + '}}</span>');
+
+					angular.element($('.womens_info1 .pte_cont_2')).append($compile(tag)(scope));
+
+					angular.element($('.review_property_to_exclude_2x')).append($compile(tag_review)(scope));
+				});
+			};
+		});
+
+		myApp.directive("remove2", function($compile) {
+			return function(scope, element, attrs){
+				element.bind("click", function() {
+					var total_tags = $('.pte_element_2').length;
+					angular.element($('#property_to_exclude_2_' + total_tags)).remove();
+					angular.element($('#review_pte_2_' + total_tags)).remove();
+				});
+			};
+		});
 
 	</script>
 
@@ -96,6 +126,7 @@
 			Stjärnelunds Juristhus är inte ansvarig för ekonomisk skada indirekt eller direkt, som kan uppstå genom att användandet av denna tjänst, genom att tjänst ej kan nyttjas eller på grund av fel eller brister i den information som ges. Ansvaret gentemot brukaren av våra tjänster kan aldrig bli större än den avgift som erlagts för tjänstens nyttjande.
 		</div>
 	</div>	
+		<form name="frmReg" action="" method="post">
 		<!-- SLICE 1  -->
 		<div class="container01" id="slice_0">
 			<div class="header1">
@@ -427,13 +458,13 @@
 							<div class="property" id="property_cont1">
 																		
 								<div class="pte_cont_1">
-									<input type="text" name="property_to_exclude_1[]" id="" value="" class="register2 pte_element_1" placeholder="Min röda Volvo årsmodell 2012" ng-model="property_to_exclude_man"> 									
+									<input type="text" name="property_to_exclude_1[]" id="property_to_exclude_1_1" value="" class="register2 pte_element_1" placeholder="Min röda Volvo årsmodell 2012" ng-model="property_to_exclude_man"> 									
 								</div> 
 								<div id="property_new_elements_cont_1">
 								</div>		
 								<div class="pte_controls">
 									<a class="add_pte_1" id="add_pte_1" addbuttons><img src="images/plus_button.png"><div class="popup_top1"><p>Lägg till rad</p></div></a>
-									<a class="remove_pte_1"><img src="images/close_button.png"><div class="popup_top1"><p>Ta bort rad</p></div></a>
+									<a class="remove_pte_1" remove><img src="images/close_button.png"><div class="popup_top1"><p>Ta bort rad</p></div></a>
 								</div>						 
 							</div>
 						</div><!-- mans_info1 -->
@@ -443,13 +474,13 @@
 							<div class="property" id="property_cont2">
 																		
 								<div class="pte_cont_2">
-									<input type="text" name="property_to_exclude_2[]" id="property_to_exclude_2" value="" class="register2 pte_element_2" placeholder="Min röda Volvo årsmodell 2012" ng-model="property_to_exclude_women"> 									
+									<input type="text" name="property_to_exclude_2[]" id="property_to_exclude_2_1" value="" class="register2 pte_element_2" placeholder="Min röda Volvo årsmodell 2012" ng-model="property_to_exclude_women"> 									
 								</div> 
 								<div id="property_new_elements_cont_2">
 								</div>		
 								<div class="pte_controls">
 									<a class="add_pte_2" id="add_pte_2" addbuttons2><img src="images/plus_button.png"><div class="popup_top1"><p>Lägg till rad</p></div></a>
-									<a class="remove_pte_2"><img src="images/close_button.png"><div class="popup_top1"><p>Ta bort rad</p></div></a>
+									<a class="remove_pte_2" remove2><img src="images/close_button.png"><div class="popup_top1"><p>Ta bort rad</p></div></a>
 								</div>						 
 							</div>
 						</div><!-- womens_info1 -->
@@ -521,7 +552,7 @@
 								<p><b>Adress :</b><span class="">{{man_address}}</span></p>
 								<p><b>Postnummer :</b><span class="">{{man_pin}}</span></p>
 								<p><b>Postort :</b><span class="review_man_postort">{{man_postort}}</span></p>
-								<p><b>Telefonnummer :</b><span class="review_man_phone"><{{man_phone}}/span></p>
+								<p><b>Telefonnummer :</b><span class="review_man_phone">{{man_phone}}</span></p>
 								<p><b>E-post :</b><span class="review_man_email">{{man_email}}</span></p>
 								<p><b>Personnummer :</b><span class="review_man_identity">{{man_identity}}</span></p>
 								
@@ -559,7 +590,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="condition002 center" width="98%">
+							<div class="condition002 center" width="95%">
 								<h1>Vi önskar att:</h1>
 								<div class="reviews">
 									<span class="review_purpose"></span> 
@@ -571,13 +602,18 @@
 									<h1>följande nedtecknad egendom skall omfattas av äktenskapsförordet:</h1>
 									<div class="reviews">
 										<span class="">{{man_name}}</span>  enskilda egendom: 
-										<div class="review_property_to_exclude"></div>
-										<input name="" value type="hidden"/>
+										
+										<div class="review_property_to_exclude_1">
+											<span class="review_pte" id="review_pte_1_1">{{property_to_exclude_man}}</span>
+										</div>
+										
 									</div>
 									<div class="reviews">
 										<span class="">{{women_name}}</span>  enskilda egendom:
-										<div class="review_property_to_exclude_2"></div> 
-										<input name="" value type="hidden"/>
+										<div class="review_property_to_exclude_2x">
+											<span class="review_pte" id="review_pte_2_1">{{property_to_exclude_women}}</span>
+										</div> 
+										
 									</div>
 								</div>
 								<div class="condition002 center">
@@ -597,7 +633,7 @@
 									</div>
 								</div>
 							</div>
-						</form>
+						
 					</div><!-- form001 -->
 				</div><!-- wrapper -->
 			</div><!-- form01 -->
@@ -672,7 +708,7 @@
 						<div class="filter007">
 							<div class="fliter2_step001"><a class="navCircle" id="sl2Navigate_1" style="cursor:pointer;"><h2>1</h2><div class="popup_top" ><p>Personuppgifter</p></div></a></div>
 							<div class="fliter3_step002"><a class="parallelNav" id="sl_2_Navigate_2" ><h2>2</h2><div class="popup_top"><p>Samboregler</p></div></a></div>
-							<div class="fliter4_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2><a></div>
+							<div class="fliter4_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2></a></div>
 							<div class="fliter5_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Meddelande</p></div></a></div>
 							<div class="fliter6_step005"><a class="parallelNav" id="sl_2_Navigate_5" ><h2>5</h2></a></div>
 							<div class="fliter_step006"><a class="parallelNav" id="sl_2_Navigate_6" ><h2>End</h2><div class="popup_top" style="display:block;"><p>End</p></div></a></div>	
@@ -698,6 +734,7 @@
 			</div><!-- bottom -->		
 			
 		</div>
+	</form>
 </body>
 
 </html>

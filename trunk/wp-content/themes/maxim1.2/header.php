@@ -29,12 +29,14 @@
 <?php if(ot_get_option('apple_icon')) { ?><link rel="apple-touch-icon" href="<?php echo ot_get_option('apple_icon'); ?>"><?php }; ?>
 <?php if(ot_get_option('apple_icon72')) { ?><link rel="apple-touch-icon" sizes="72x72" href="<?php echo ot_get_option('apple_icon72'); ?>"><?php }; ?>
 <?php if(ot_get_option('apple_icon114')) { ?><link rel="apple-touch-icon" sizes="114x114" href="<?php echo ot_get_option('apple_icon114'); ?>"><?php }; ?>
+	
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300' rel='stylesheet' type='text/css'>
 
 <?php wp_head(); ?>
 
 </head>
 <body <?php body_class(); ?>>
-<div class="loader"></div>
+<!-- <div class="loader"></div> -->
 <?php maxim_set_background(); ?>
 
 <div id="page">

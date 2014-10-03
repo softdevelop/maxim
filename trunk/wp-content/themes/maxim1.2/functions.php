@@ -698,3 +698,41 @@ function my_theme_register_required_plugins() {
     tgmpa( $plugins, $config );
 
 }
+
+function my_scripts_method() {
+	wp_enqueue_script(
+		'libs',
+		get_template_directory_uri() . '/js/jquery.js',
+		array('jquery')
+	);
+	wp_enqueue_script(
+		'script',
+		get_template_directory_uri() . '/js/script.js',
+		array('jquery')
+	);
+	wp_enqueue_script(
+		'jq-ui',
+		get_template_directory_uri() . '/js/jquery-ui.min.js',
+		array('jquery')
+	);
+	wp_enqueue_script(
+		'angular.min',
+		get_template_directory_uri() . '/js/angular.min.js',
+		array('jquery')
+	);
+	wp_enqueue_script(
+		'angular-route',
+		get_template_directory_uri() . '/js/angular-route.min.js',
+		array('jquery')
+	);
+
+	wp_enqueue_style(
+		'jquery-ui',get_template_directory_uri() . '/css/jquery-ui.css'
+	);
+	wp_enqueue_style(
+		'style',get_template_directory_uri() . '/css/style.css'
+	);
+	
+
+}
+add_action('wp_enqueue_scripts', 'my_scripts_method');
