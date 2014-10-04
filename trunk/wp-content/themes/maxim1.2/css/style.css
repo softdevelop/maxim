@@ -191,7 +191,7 @@ form label{display:inline-block;padding-left:15px;text-indent:-15px;font-family:
 input:-moz-placeholder,input::-moz-placeholder{color:#b9b9b9;position:relative;padding-left:0;-moz-transition:padding .5s;transition:padding .5s}
 input:hover:-moz-placeholder,input:focus:-moz-placeholder,input:hover::-moz-placeholder,input:focus::-moz-placeholder,input:hover:-ms-input-placeholder,input:focus:-ms-input-placeholder{padding-left:60px}
 
-.btn_register{position:relative;margin-top:15px;font-family:'Open Sans';right:10px!important;text-align:center;background:url("images/start_button.png") no-repeat;padding: 10px 23px;font-size: 24px;color: #fff;}
+.btn_register{position:relative;margin-top:15px;font-family:'Open Sans';right:10px!important;text-align:center;background:url("images/start_button.png") no-repeat !important;padding: 10px 23px;font-size: 24px;color: #fff;}
 .btn_register:hover{color:#fff;opacity:0.5;}
 .btn_register1{position:relative;margin-top:15px;font-family:'Open Sans';right:10px!important;text-align:center;background:url("images/start_button.png") no-repeat;padding: 14px 34px;font-size: 20px;color: #fff;}
 .btn_register1:hover{color:#fff;opacity:0.5;}
@@ -1080,5 +1080,54 @@ border: 1px solid #ccc;
 	padding:0;
 }
 
-
-
+.checkboxThree2 {
+	float: right;
+	float: right;
+	width: 63px;
+	height: 35px;
+	background: #e0e0e0;
+	margin: 5px 0px;
+	border-radius: 5px;
+	position: relative;
+}
+.checkboxThree2 input[type=checkbox]:checked + label {
+	left: 29px;
+	background: #72c0be;
+}
+.checkboxThree2:before {
+	font-family: 'Open Sans';
+	content: 'JA';
+	position: absolute;
+	top: 8px;
+	left: 13px;
+	height: 2px;
+	color: #72c0be;
+	font-size: 14px;
+}
+.checkboxThree2:after {
+	font-family: 'Open Sans';
+	content: 'NEJ';
+	position: absolute;
+	top: 8px;
+	left: 35px;
+	height: 2px;
+	color: #fff;
+	font-size: 14px;
+}
+.checkboxThree2 label {
+	display: block;
+	width: 12px;
+	height: 18px;
+	border-radius: 5px;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 9px;
+	left: 8px;
+	background: #fff;
+	z-index: 1;
+}

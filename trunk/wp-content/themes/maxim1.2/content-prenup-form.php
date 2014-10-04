@@ -745,7 +745,7 @@
 		</div><!-- form01 -->
 		
 		<div class="bottom">
-			<input type="submit" name="btn_submit" value="Betala" class="btn_register"  />				
+			<input type="submit" name="btn_submit" value="Betala" class="btn_register">			
 		</div><!-- bottom -->		
 		
 	</div>
