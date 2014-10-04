@@ -706,6 +706,11 @@ function my_scripts_method() {
 		array('jquery')
 	);
 	wp_enqueue_script(
+		'masking',
+		get_template_directory_uri() . '/js/masking.js',
+		array('jquery')
+	);
+	wp_enqueue_script(
 		'script',
 		get_template_directory_uri() . '/js/script.js',
 		array('jquery')

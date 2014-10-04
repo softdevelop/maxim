@@ -35,7 +35,7 @@
 <?php wp_head(); ?>
 
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> ng-app="myApp" ng-controller="MainCtrl">
 <!-- <div class="loader"></div> -->
 <?php maxim_set_background(); ?>
 
