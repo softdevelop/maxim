@@ -2,7 +2,7 @@
 
 <?php maxim_blog_search_layout(); ?>
 
-<div id="content" class="site-content">
+<div id="content_page" class="site-content">
 
 	<main id="main" class="site-main" role="main">
 		<div id="blog" class="<?php echo $maxim_blog_layout; ?>">

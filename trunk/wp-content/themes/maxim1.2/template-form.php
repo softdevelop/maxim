@@ -4,8 +4,8 @@
 
 get_header(); ?>
 
-<div id="content" class="site-content">
-	<main id="main" class="site-main clearfix" role="main">
+<div id="content_page" class="site-content">
+	<main id="main_form" class="site-main clearfix" role="main">
 		<?php
 
 			switch ($_GET['type']) {

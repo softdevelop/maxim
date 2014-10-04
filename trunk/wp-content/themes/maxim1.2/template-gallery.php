@@ -4,7 +4,7 @@
 
 get_header(); ?>
 
-<div id="content" class="site-content">
+<div id="content_page" class="site-content">
 	<main id="main" class="site-main" role="main">
 		<div class="page-title-div"><h1 class="page-title"><?php the_title(); ?></h1></div>
 		<div id="std-page" class="page the-page">

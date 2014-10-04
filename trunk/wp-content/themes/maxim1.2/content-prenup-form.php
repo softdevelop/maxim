@@ -3,7 +3,7 @@
 	$(function() {
 		$( "#cohabiting_date" ).datepicker({
 			showOn: "button",
-			buttonImage: "images/datepick.png",		
+			buttonImage: "<?php echo get_template_directory_uri();?>/images/datepick.png",		
 			dateFormat: 'dd/mm/yy',
 			changeMonth: true,
 			changeYear: true,
@@ -80,10 +80,11 @@
 </script>
 
 </head>
-
-<body ng-app="myApp" ng-controller="MainCtrl" >
+</body>
 <div id="infoCont" class="infoCont">
-	<div class="infoHeader"><a id="closeInfoCont"><img src="images/close_button.png"></a> </div>
+	<div class="infoHeader"><a id="closeInfoCont"><img src="
+
+<?php echo get_template_directory_uri();?>/images/close_button.png"></a> </div>
 	<div class="infoContent">
 		Det Första alternativet innebär att vid en bodelning endast saker som är inköpta för gemensamt bruk delas på, era egna saker åsidosätts bodelningen.<br/><br/>
 		Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodelningsregler genom att uppräkna viss gemensam egendom som skall hållas utanför en framtida bodelning
@@ -91,21 +92,27 @@
 </div>
 
 <div id="infoCont1" class="infoCont">
-	<div class="infoHeader"><a id="closeInfoCont1"><img src="images/close_button.png"></a> </div>
+	<div class="infoHeader"><a id="closeInfoCont1"><img src="
+
+<?php echo get_template_directory_uri();?>/images/close_button.png"></a> </div>
 	<div class="infoContent">
 		Lämna ett meddelande till oss. 
 	</div>
 </div>	
 
 <div id="infoCont2" class="infoCont">
-	<div class="infoHeader"><a id="closeInfoCont2"><img src="images/close_button.png"></a> </div>
+	<div class="infoHeader"><a id="closeInfoCont2"><img src="
+
+<?php echo get_template_directory_uri();?>/images/close_button.png"></a> </div>
 	<div class="infoContent">
 		Sambos är två personer som stadigvarande bor tillsammans i ett parförhållande och har gemensamt hushåll(1§ sambolagen)
 	</div>
 </div>	
 
 <div id="infoCont3" class="infoCont">
-	<div class="infoHeader"><a id="closeInfoCont3"><img src="images/close_button.png"></a> </div>
+	<div class="infoHeader"><a id="closeInfoCont3"><img src="
+
+<?php echo get_template_directory_uri();?>/images/close_button.png"></a> </div>
 	<div class="infoContent">
 		Stjärnelunds Juristhus är inte ansvarig för ekonomisk skada indirekt eller direkt, som kan uppstå genom att användandet av denna tjänst, genom att tjänst ej kan nyttjas eller på grund av fel eller brister i den information som ges. Ansvaret gentemot brukaren av våra tjänster kan aldrig bli större än den avgift som erlagts för tjänstens nyttjande.
 	</div>
@@ -300,7 +307,9 @@
 			<div class="wrapper">
 				<div class="form001">
 					<div class="condition01">
-						<p>Är ni gifta sedan tidigare? <a id="infoTrigger2" style="cursor:pointer;" ><img src="images/info.png"><span>Läs mer</span></a></p>
+						<p>Är ni gifta sedan tidigare? <a id="infoTrigger2" style="cursor:pointer;" ><img src="
+
+<?php echo get_template_directory_uri();?>/images/info.png"><span>Läs mer</span></a></p>
 
 						<div class="">
 						<div class="checkboxThree">
@@ -314,7 +323,7 @@
 					<div class="condition02">
 						<p id="checkboxThreeInput_label" ></p>		
 						
-						<input type="text" name="checkboxThreeInput_date"  id="cohabiting_date"  class="register1" placeholder="DD/MM/ÅÅÅÅ" style="padding-left:10px !important; margin-right:5px;" disabled ng-model="checkboxThreeInput_date">
+						<input type="text" name="checkboxThreeInput_date"  id="cohabiting_date"  class="register1" placeholder="DD/MM/ÅÅÅÅ" style="padding-left:10px !important; margin-right:5px; margin-top: 10px;" disabled ng-model="checkboxThreeInput_date">
 						<p class="error_msg" id="error_cohabiting_date"></p>
 					</div><!-- condition02 -->
 					<div class="line"></div>
@@ -333,7 +342,9 @@
 							<div class="asw">
 								<div class="condition_box">
 									<div class="condition_box02">
-									<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
+									<a id="infoTrigger" style="cursor:pointer;"><img src="
+
+<?php echo get_template_directory_uri();?>/images/info.png"><span>Läs mer</span></a>
 									</div>
 									<p>
 										Alternativet innebär att all egendom som var och en av oss ägt innan äktenskapets ingående förblir dennes enskilda egendom även efter giftermålet. All annan egendom som förvärvats efter äktenskapets ingående skall vid en bodelning behandlas som giftorättsgods och således delas lika. 
@@ -355,7 +366,9 @@
 							<div class="asw">
 								<div class="condition_box">
 									<div class="condition_box02">
-									<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
+									<a id="infoTrigger" style="cursor:pointer;"><img src="
+
+<?php echo get_template_directory_uri();?>/images/info.png"><span>Läs mer</span></a>
 									</div>
 									<p>
 										Alternativet innebär att all egendom, gammal som ny, kommer att behandlas som enskild egendom vid en bodelning och därför inte delas lika vid denne.  
@@ -378,7 +391,9 @@
 							<div class="asw">
 								<div class="condition_box">
 									<div class="condition_box02">
-									<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
+									<a id="infoTrigger" style="cursor:pointer;"><img src="
+
+<?php echo get_template_directory_uri();?>/images/info.png"><span>Läs mer</span></a>
 									</div>
 									<p>
 										Alternativet innebär att det som var och en av er idag redan har eller i framtiden kommer att få behandlas som enskild egendom vid en bodelning och därför inte delas lika vid denne.
@@ -428,7 +443,9 @@
 					<p>följande nedtecknad egendom skall omfattas av äktenskapsförordet: </p>
 					<div class="condition_box">
 						<div class="condition_box02">
-						<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
+						<a id="infoTrigger" style="cursor:pointer;"><img src="
+
+<?php echo get_template_directory_uri();?>/images/info.png"><span>Läs mer</span></a>
 						</div>
 						<p>
 							Detta innebär en specifikation av den egendom som ni anser skall behandlas som enskild och således inte ingå i vid en framtida bodelning (dvs. inte delas lika).
@@ -447,8 +464,12 @@
 							<div id="property_new_elements_cont_1">
 							</div>		
 							<div class="pte_controls">
-								<a class="add_pte_1" id="add_pte_1" addbuttons><img src="images/plus_button.png"><div class="popup_top1"><p>Lägg till rad</p></div></a>
-								<a class="remove_pte_1" remove><img src="images/close_button.png"><div class="popup_top1"><p>Ta bort rad</p></div></a>
+								<a class="add_pte_1" id="add_pte_1" addbuttons><img src="
+
+<?php echo get_template_directory_uri();?>/images/plus_button.png"><div class="popup_top1"><p>Lägg till rad</p></div></a>
+								<a class="remove_pte_1" remove><img src="
+
+<?php echo get_template_directory_uri();?>/images/close_button.png"><div class="popup_top1"><p>Ta bort rad</p></div></a>
 							</div>						 
 						</div>
 					</div><!-- mans_info1 -->
@@ -463,8 +484,12 @@
 							<div id="property_new_elements_cont_2">
 							</div>		
 							<div class="pte_controls">
-								<a class="add_pte_2" id="add_pte_2" addbuttons2><img src="images/plus_button.png"><div class="popup_top1"><p>Lägg till rad</p></div></a>
-								<a class="remove_pte_2" remove2><img src="images/close_button.png"><div class="popup_top1"><p>Ta bort rad</p></div></a>
+								<a class="add_pte_2" id="add_pte_2" addbuttons2><img src="
+
+<?php echo get_template_directory_uri();?>/images/plus_button.png"><div class="popup_top1"><p>Lägg till rad</p></div></a>
+								<a class="remove_pte_2" remove2><img src="
+
+<?php echo get_template_directory_uri();?>/images/close_button.png"><div class="popup_top1"><p>Ta bort rad</p></div></a>
 							</div>						 
 						</div>
 					</div><!-- womens_info1 -->
@@ -653,9 +678,13 @@
 				<div class="form001">
 					<div class="terms_conditions">
 						<h3>Meddelande</h3>
-						<a id="infoTrigger1" style="cursor:pointer;" ><img src="images/info.png"><span>Läs mer</span></a>
+						<a id="infoTrigger1" style="cursor:pointer;" ><img src="
+
+<?php echo get_template_directory_uri();?>/images/info.png"><span>Läs mer</span></a>
 						<textarea rows="4" cols="85" class="other_info" name="other_info" id="other_info" ></textarea>
-						<img src="images/terms.jpeg">
+						<img src="
+
+<?php echo get_template_directory_uri();?>/images/terms.jpeg">
 						<p>Jag har härmed lämnat information för skapande av ett Samboavtal. Jag har läst och godkänner Stjärnelunds Juristhus juridiska villkor för användande av denna tjänst samt beställning härigenom. </p>
 						<div class="container-agree-terms" with="100%">
 							<div class="agree_terms">
@@ -665,7 +694,9 @@
 								
 								<input type="radio" name="agree_terms" id="agree_terms_2" class="css-checkbox" value="0"/>
 									<label for="agree_terms_2" class="css-label radGroup1"  style="padding-left: 50px;height: 23px;">Jag godkänner inte</label>
-								 <a id="infoTrigger3" style="cursor:pointer;padding-top: 5px;" ><img src="images/info.png"><span>Läs mer</span></a>
+								 <a id="infoTrigger3" style="cursor:pointer;padding-top: 5px;" ><img src="
+
+<?php echo get_template_directory_uri();?>/images/info.png"><span>Läs mer</span></a>
 								<p class="error_msg" id="error_agree_terms"></p>
 							</div><!-- agree_terms -->
 						</div><!-- continer-agree_terms -->

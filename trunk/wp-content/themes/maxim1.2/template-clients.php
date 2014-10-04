@@ -4,7 +4,7 @@
 
 get_header(); ?>
 
-<div id="content" class="site-content">
+<div id="content_page" class="site-content">
 	<main id="main" class="site-main" role="main">
 		<div id="clients">
 			<div class="clients-list">

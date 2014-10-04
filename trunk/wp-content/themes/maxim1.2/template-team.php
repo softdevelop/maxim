@@ -4,7 +4,7 @@
 
 get_header(); ?>
 
-<div id="content" class="site-content">
+<div id="content_page" class="site-content">
 	<main id="main" class="site-main" role="main">
 		<div id="team">
 			<?php 
@@ -34,7 +34,7 @@ get_header(); ?>
 						<?php
 						$links = get_post_meta( get_the_ID( ), 'social-links', true );
 						if($links) {
-							echo '<ul class="social">';
+							echo '<ul class="social_team">';
 							foreach($links as $link) {
 								echo '<li><a class="p323232 transition hover-color" href="'.$link['link'].'"><i class="fa fa-'.$link['icon'].'"></i></a></li>';
 							}

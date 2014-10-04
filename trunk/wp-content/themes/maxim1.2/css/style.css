@@ -149,13 +149,12 @@ padding-top:45px;
 }
 
 #box{background:#f9f9f9;width:850px;height:360px;display:block;overflow:hidden;color:gray;-webkit-border-radius:1px;-moz-border-radius:1px;border-radius:1px;box-shadow:0 0 2px #d3d3d3, inset 0 -3px 0 #e6e6e6;-webkit-box-shadow:2px 3px 8px #a7a7a7;-moz-box-shadow:2px 3px 8px #a7a7a7;margin:100px auto 0}
-#content{width:795px!important;height:315px!important;padding:23px 28px}
 #login{padding:13px 0 0}
 .footer{display:block;background-color:transparent;color:gray;width:600px;height:auto;text-align:center;margin:30px auto 0}
 .tou_popup,.about_popup,.contact_popup,.info_popup{padding:20px}
 .social{height:60px;padding:13px 0 0}
-.twt{position:relative;background:url(../images/social/twt.png) no-repeat;background-size:193px;background-color:transparent;height:35px;width:190px;display:block;float:right;margin-top:10px;outline:none;cursor:pointer}
-.fb{position:relative;background:url(../images/social/fb.png) no-repeat;background-color:transparent;height:35px;width:200px;display:block;float:left;margin-top:10px;outline:none;cursor:pointer}
+.twt{position:relative;background:url(images/social/twt.png) no-repeat;background-size:193px;background-color:transparent;height:35px;width:190px;display:block;float:right;margin-top:10px;outline:none;cursor:pointer}
+.fb{position:relative;background:url(images/social/fb.png) no-repeat;background-color:transparent;height:35px;width:200px;display:block;float:left;margin-top:10px;outline:none;cursor:pointer}
 .check_box{width:30px;height:30px;vertical-align:bottom;position:relative;top:3px;overflow:hidden;outline:none;-webkit-transition:width 1s ease;-moz-transition:width 1s ease;-o-transition:width 1s ease;-ms-transition:width 1s ease;transition:width 1s ease;margin:0;padding:0}
 .check_box:checked{width:30px}
 input{outline:none}
@@ -250,7 +249,7 @@ input:hover:-moz-placeholder,input:focus:-moz-placeholder,input:hover::-moz-plac
 .check1{width:25px;height:25px;background-color:#fff;border:1px solid #ccc;}
 
 .property{float:left;width:730px;}
-.property img{float:left;margin-top:8px;}
+.property img{float:left;}
 .property input{float:left;}
 
 .register2{font-size:14px;color:#c2c2c2;font-family:'Open Sans';background-color:#fdfdfd;width:595px;display:block;border:1px solid #c2c2c2;box-shadow:inset 2px 2px 4px #f1f1f1;-webkit-border-radius:1px;-moz-border-radius:1px;border-radius:5px;outline:none;margin: 10px 2px 10px 0px;padding: 7px 15px 7px 15px;}
@@ -451,7 +450,7 @@ input[type=checkbox] {
 
 .checkboxThree label {
 	display: block;
-	width: 25px;
+	width: 12px;
 	height: 18px;
 	border-radius: 5px;
 
@@ -468,7 +467,7 @@ input[type=checkbox] {
 	z-index:1;
 }
 .checkboxThree input[type=checkbox]:checked + label {
-	left: 32px;
+	left: 29px;
 	background: #72c0be;
 }
 

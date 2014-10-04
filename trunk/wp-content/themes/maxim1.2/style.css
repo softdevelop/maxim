@@ -868,3 +868,11 @@ input.wpcf7-captchar {
 #homepage img:first-child {
 	width: 100%!important;
 }
+/*=========CUSTOM========*/
+#main_form{
+	display: inline-block;
+	background: #FFFFFF;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}

@@ -4,7 +4,7 @@
 
 get_header(); ?>
 
-<div id="content" class="site-content">
+<div id="content_page" class="site-content">
 	<main id="main" class="site-main clearfix" role="main">
 		
 		<?php while ( have_posts() ) : the_post(); ?>
