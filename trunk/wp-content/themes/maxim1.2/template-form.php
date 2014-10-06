@@ -2,10 +2,11 @@
 
 /* Template Name: Form */
 
-get_header(); ?>
+get_header();?>
 
 <div id="content_page" class="site-content">
 	<main id="main_form" class="site-main clearfix" role="main">
+		
 		<?php
 
 			switch ($_GET['type']) {
@@ -19,7 +20,6 @@ get_header(); ?>
 			}
 
 		?>
-		
 		
 	</main>
 </div>

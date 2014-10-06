@@ -1,10 +1,58 @@
+<?php
+	// handle post
+	if (!empty($_POST)) 
+	{
 
+		$wpdb->insert( 
+			$wpdb->prefix . 'preup', 
+			array( 
+				'man_name' => $_POST['man_name'],
+				'man_pin' => $_POST['man_pin'], 
+				'man_phone' => $_POST['man_phone'], 
+				'man_identity' => $_POST['man_identity'], 
+				'man_address' => $_POST['man_address'], 
+				'man_postort' => $_POST['man_postort'], 
+				'man_email' => $_POST['man_email'], 
+				'women_name' => $_POST['women_name'], 
+				'women_pin' => $_POST['women_pin'],
+				'women_phone' => $_POST['women_phone'],
+				'women_identity' => $_POST['women_identity'],
+				'women_address' => $_POST['women_address'],
+				'women_postort' => $_POST['women_postort'],
+				'women_email' => $_POST['women_email'],
+				'is_ready' => $_POST['is_ready'],
+				'cohabiting_date' => $_POST['review_cohabiting_date'],
+				'property_single' => $_POST['property_single'],
+				'lieu_of_private_property' => $_POST['lieu_of_private_property'],
+				'other_info' => $_POST['other_info'],
+				'agree_terms' => $_POST['agree_terms'],
+				'property_to_exclude_1' => isset($_POST['property_to_exclude_1']) ? json_encode($_POST['property_to_exclude_1']) : '',
+				'property_to_exclude_2' => isset($_POST['property_to_exclude_2']) ? json_encode($_POST['property_to_exclude_2']) : '',
+				'purpose' => $_POST['purpose'],
+
+			), 
+			array( 
+			
+			) 
+		);
+		unset($_POST);
+		if (!$wpdb->show_errors) {
+			echo '<script>
+					$(function() {
+				    	$(".message-success").fadeIn(1000).fadeOut(3000);
+				  	});
+				  </script>';
+
+		}
+	}
+
+?>
 <script>
 	$(function() {
 		$( "#cohabiting_date" ).datepicker({
 			showOn: "button",
 			buttonImage: "<?php echo get_template_directory_uri();?>/images/datepick.png",		
-			dateFormat: 'dd/mm/yy',
+			dateFormat: 'dd-mm-yy',
 			changeMonth: true,
 			changeYear: true,
 			
@@ -79,8 +127,6 @@
 
 </script>
 
-</head>
-</body>
 <div id="infoCont" class="infoCont">
 	<div class="infoHeader"><a id="closeInfoCont"><img src="
 
@@ -117,7 +163,7 @@
 		Stjärnelunds Juristhus är inte ansvarig för ekonomisk skada indirekt eller direkt, som kan uppstå genom att användandet av denna tjänst, genom att tjänst ej kan nyttjas eller på grund av fel eller brister i den information som ges. Ansvaret gentemot brukaren av våra tjänster kan aldrig bli större än den avgift som erlagts för tjänstens nyttjande.
 	</div>
 </div>	
-	<form name="frmReg" action="" method="post">
+	<form name="frmReg" action="<?php echo htmlspecialchars($_SERVER['REQUEST_URI']); ?>" method="post">
 	<!-- SLICE 1  -->
 	<div class="container01" id="slice_0">
 		<div class="header1">
@@ -313,7 +359,7 @@
 
 						<div class="">
 						<div class="checkboxThree">
-							<input type="checkbox" value="1" id="checkboxThreeInput" name="checkboxThreeInput" checked="checked" ng-model="checkboxThreeInput" />
+							<input type="checkbox" value="1" id="checkboxThreeInput" name="is_ready" checked="checked" ng-model="checkboxThreeInput" />
 							<label for="checkboxThreeInput"></label>
 						</div>
 												
@@ -323,7 +369,7 @@
 					<div class="condition02">
 						<p id="checkboxThreeInput_label" ></p>		
 						
-						<input type="text" name="checkboxThreeInput_date"  id="cohabiting_date"  class="register1" placeholder="DD/MM/ÅÅÅÅ" style="padding-left:10px !important; margin-right:5px; margin-top: 10px;" disabled ng-model="checkboxThreeInput_date">
+						<input type="text" name="cohabiting_date"  id="cohabiting_date"  class="register1" placeholder="DD/MM/ÅÅÅÅ" style="padding-left:10px !important; margin-right:5px; margin-top: 10px;" disabled ng-model="checkboxThreeInput_date">
 						<p class="error_msg" id="error_cohabiting_date"></p>
 					</div><!-- condition02 -->
 					<div class="line"></div>
@@ -500,7 +546,7 @@
 							<div class="contain-switch-item">
 								<p>Vi önskar att eventuell avkastning från enskild egendom skall vara enskild.</p>
 								<div class="checkboxThree2">
-									<input type="checkbox" value="1" id="checkboxThree2" name="checkboxThree2" checked="checked" />
+									<input type="checkbox" value="1" id="checkboxThree2" name="property_single" checked="checked" />
 									<label for="checkboxThree2"></label>
 								</div>
 							</div>
@@ -509,12 +555,12 @@
 							<p>Vi önskar att egendom som träder istället för enskild egendom, exempelvis genom att enskild egendom har försålts och annan egendom har införskaffats, skall vara: </p>
 							<div class='contain-radio-option'>
 								<div class="radio_option">
-									<input type="radio" name="purpose_leo" id="purpose_4" class="css-checkbox prop_answers" checked="checked" value="Enskild egendom" ng-model="purpose_leo">
+									<input type="radio" name="lieu_of_private_property" id="purpose_4" class="css-checkbox prop_answers" checked="checked" value="Enskild egendom" ng-model="purpose_leo">
 									<label for="purpose_4" class="css-label radGroup1">Enskild egendom</label>
 																	
 								</div>
 								<div class="radio_option">
-									<input type="radio" name="purpose_leo" id="purpose_5" class="css-checkbox prop_answers" value="Giftorättsgods" ng-model="purpose_leo">
+									<input type="radio" name="lieu_of_private_property" id="purpose_5" class="css-checkbox prop_answers" value="Giftorättsgods" ng-model="purpose_leo">
 									<label for="purpose_5" class="css-label radGroup1">Giftorättsgods</label>
 																	
 								</div>
@@ -603,7 +649,6 @@
 							<h1>Vi önskar att:</h1>
 							<div class="reviews">
 								<span class="review_purpose"></span> 
-								<input type="hidden" name="review_cohabiting_date" class="review_purpose_ip">
 							</div>
 						</div>
 						<div class="your_answer001">
@@ -630,7 +675,6 @@
 								<div class="reviews">
 									<span class="left">Vi önskar att eventuell avkastning från enskild egendom skall vara enskild.</span> 
 									<p id="review_checkboxThree2"></p>
-									<input type="hidden" name="review_cohabiting_date" id="review_checkboxThree2_pi">
 								</div>
 							</div>
 							<div class="condition002 center">
@@ -638,7 +682,7 @@
 									<span>Vi önskar att egendom som träder istället för enskild egendom, exempelvis genom att enskild egendom har försålts och annan egendom har införskaffats, skall vara:</span><br/>
 								</div>
 								<div class="reviews">
-									<input type="hidden" name="" class="" value="{{purpose_leo}}">{{purpose_leo}}
+									{{purpose_leo}}
 								</div>
 							</div>
 						</div>
@@ -688,7 +732,7 @@
 						<p>Jag har härmed lämnat information för skapande av ett Samboavtal. Jag har läst och godkänner Stjärnelunds Juristhus juridiska villkor för användande av denna tjänst samt beställning härigenom. </p>
 						<div class="container-agree-terms" with="100%">
 							<div class="agree_terms">
-								<input type="radio" name="agree_terms" id="agree_terms_1" class="css-checkbox" checked="checked"/>
+								<input type="radio" name="agree_terms" id="agree_terms_1" class="css-checkbox" checked="checked"  value="1"/>
 									<label for="agree_terms_1" class="css-label radGroup1" value="1"  style="padding-left: 50px;height: 23px;">Jag godkänner</label>
 								
 								

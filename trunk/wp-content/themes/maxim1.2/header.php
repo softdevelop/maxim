@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -62,3 +63,8 @@
 			</div>
 		<?php }; ?>
 	</header>
+	<div class="message message-success">
+		<?php 
+			echo "data saved";
+		?>
+	</div>

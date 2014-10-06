@@ -33,9 +33,9 @@ $(document).ready(function(){
 		$('.container01').hide(); 
 		$('#slice_'+targetSliceId).show();
 		
-		if(isValidForm3()) {
-			alert ('vaid form 3');
-		}
+		// if(isValidForm3()) {
+		// 	alert ('vaid form 3');
+		// }
 	});
 	
 	$('.register').click(function() {
@@ -461,14 +461,16 @@ function prefillReview() {
 		$('#review_cohabiting_ip').val('NEJ');
 	}
 
-	if($('#checkboxThree2').is(":checked")){
-		$('#review_checkboxThree2').html('JA');
-		$('#review_checkboxThree2_pi').val('JA');
-	} 
-	else {
-		$('#review_checkboxThree2').html('NEJ');
-		$('#review_checkboxThree_pi').val('NEJ');
-	}
+	$('#checkboxThree2').change(function() {
+		if ($(this).is(":checked")) {
+			$('#review_checkboxThree2').html('JA');
+			$('#review_checkboxThree2_pi').val('JA');
+		} 
+		else {
+			$('#review_checkboxThree2').html('NEJ');
+			$('#review_checkboxThree2_pi').val('NEJ');
+		}
+	});
 
 	// $('.review_cohabiting_date').html($('#cohabiting_date').val());
 	// $('.review_cohabiting_date_ip').val($('#cohabiting_date').val());
@@ -485,7 +487,7 @@ function prefillReview() {
 		$(".review_property_to_exclude_label").show();
 	}
 	var ptes_1 = $('.pte_element_1').length;
-	console.log(ptes_1);
+	
 	if(ptes_1) {
 		var pteReviews_1 = '';
 		$('.pte_element_1').each(function(){

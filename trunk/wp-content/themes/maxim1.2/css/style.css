@@ -1131,3 +1131,27 @@ border: 1px solid #ccc;
 	background: #fff;
 	z-index: 1;
 }
+
+.form001 input {
+	margin-bottom: 10px;
+}
+.condition002 .reviews span {
+	padding: 0 5px 5px;
+}
+.message-success {
+	display: none;
+}
+.message-success {
+	border: 2px solid rgb(33, 133, 23);
+	position: absolute;
+	width: 300px;
+	padding: 0px;
+	text-align: center;
+	font-size: 23px;
+	color: rgb(33, 133, 23);
+	font-style: oblique;
+	border-radius: 15px;
+	background: #FFF;
+	top: 200px;
+	right: 10px;
+}
