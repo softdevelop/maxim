@@ -1,3 +1,6 @@
+<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/script.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/css/style.css">
+
 <?php
 	// handle post
 	if (!empty($_POST)) 

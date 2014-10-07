@@ -174,46 +174,28 @@ $(document).ready(function(){
 		$('#infoCont3').hide();
 	});
 
+	/** ADD FOR FORM 2 **/
+	$('#slice_3 .choose_box select').change(function() {
+		var choose  = $( "select option:selected" ).val();
+		if (choose == 1) 
+		{
+			$('.person').show();
+			$('.person input').removeAttr('disabled');
+			$('.fond').hide()
+			$('.fond input').attr('disabled', 'disabled');
+
+		}
+		else 
+		{
+			$('.person').hide();
+			$('.person input').attr('disabled', 'disabled');
+			$('.fond').show();
+			$('.fond input').removeAttr('disabled');
+		}
+	})
 		
 });
 
-// $(function() {		
-// 	$('.add_pte_1').on("click",function(){
-// 		var newElement  ='';
-// 		newElement = '<div class="pte_cont_1" >';
-// 			newElement += '<input type="text" name="property_to_exclude_1[]" value="" class="register2 pte_element" > ';			
-// 		newElement += '</div>';
-		
-// 		$('#property_new_elements_cont_1').append(newElement);
-// 	});
-// 	$('.remove_pte_1').on("click",function(){
-// 		var noPteElements = $('#property_new_elements_cont_1 .pte_element').length;
-// 		var i = 0;
-// 		$('#property_new_elements_cont_1 .pte_element').each(function(){ 
-// 			if(++i >= noPteElements) $(this).remove();
-// 		});		
-// 	});
-
-// });
-// $(function() {		
-// 	$('.add_pte_2').on("click",function(){
-// 		var newElement  ='';
-// 		newElement = '<div class="pte_cont_2" >';
-// 			newElement += '<input type="text" name="property_to_exclude_2[]" value="" class="register2 pte_element" > ';			
-// 		newElement += '</div>';
-		
-// 		$('#property_new_elements_cont_2').append(newElement);
-// 	});
-	
-// 	$('.remove_pte_2').on("click",function(){
-// 		var noPteElements = $('#property_new_elements_cont_2 .pte_element').length;
-// 		var i = 0;
-// 		$('#property_new_elements_cont_2 .pte_element').each(function(){ 
-// 			if(++i >= noPteElements) $(this).remove();
-// 		});		
-// 	});
-
-// });
 	
 function isValidMansInfo() {
 	isValid = true;
@@ -288,60 +270,11 @@ function isValidForm1() {
 		isValid = false;
 	}
 	
-	if(!$('#women_name').val().trim() || $('#women_name').val().trim() == '' ) {		
-		$('#women_name').addClass('error_input');
-		$('#error_women_name').html(errorMsg);
-		isValid = false;
-	}
-	if(!$('#women_address').val().trim() || $('#women_address').val().trim() == '' ) {		
-		$('#women_address').addClass('error_input');
-		$('#error_women_address').html(errorMsg);
-		isValid = false;
-	}
-	if(!$('#women_pin').val().trim() || $('#women_pin').val().trim() == '' ) {		
-		$('#women_pin').addClass('error_input');
-		$('#error_women_pin').html(errorMsg);
-		isValid = false;
-	}
-	if(!$('#women_postort').val().trim() || $('#women_postort').val().trim() == '' ) {		
-		$('#women_postort').addClass('error_input');
-		$('#error_women_postort').html(errorMsg);
-		isValid = false;
-	}
-	if(!$('#women_phone').val().trim() || $('#women_phone').val().trim() == '' ) {		
-		$('#women_phone').addClass('error_input');
-		$('#error_women_phone').html(errorMsg);
-		isValid = false;
-	}
-	if(!$('#women_email').val().trim() || $('#women_email').val().trim() == '' ) {		
-		$('#women_email').addClass('error_input');
-		$('#error_women_email').html(errorMsg);
-		isValid = false;
-	} else if(!IsValidEmail($('#women_email').val())) { 		
-		errorMsg = 'This is not a valid email';
-		$('#women_email').addClass('error_input');
-		$('#error_women_email').html(errorMsg);
-		isValid = false;
-	}	
-	
-	if(!$('#women_identity').val().trim() || $('#women_identity').val().trim() == '' ) {		
-		$('#women_identity').addClass('error_input');
-		$('#error_women_identity').html(errorMsg);
-		isValid = false;
-	}
-	
 	return isValid;
 }
 
 function isValidForm2() {
 	var isValid = true;
-	var errorMsg = 'Obligatorisk fält';
-	if(!$('#cohabiting_date').val().trim() || $('#cohabiting_date').val().trim() == '' || $('#cohabiting_date').val().trim() == '//' ) {		
-		$('#cohabiting_date').addClass('error_input');
-		$('#error_cohabiting_date').html(errorMsg);
-		isValid = false;
-	}
-	
 	return isValid;
 }
 
@@ -393,39 +326,6 @@ function isValidForm1_withoutMsg() {
 		isValid = false;
 	}
 	
-	if(!$('#women_name').val().trim() || $('#women_name').val().trim() == '' ) {		
-		
-		isValid = false;
-	}
-	if(!$('#women_address').val().trim() || $('#women_address').val().trim() == '' ) {		
-		
-		isValid = false;
-	}
-	if(!$('#women_pin').val().trim() || $('#women_pin').val().trim() == '' ) {		
-		
-		isValid = false;
-	}
-	if(!$('#women_postort').val().trim() || $('#women_postort').val().trim() == '' ) {		
-		
-		isValid = false;
-	}
-	if(!$('#women_phone').val().trim() || $('#women_phone').val().trim() == '' ) {		
-		
-		isValid = false;
-	}
-	if(!$('#women_email').val().trim() || $('#women_email').val().trim() == '' ) {		
-		
-		isValid = false;
-	} else if(!IsValidEmail($('#women_email').val())) { 		
-		
-		isValid = false;
-	}	
-	
-	if(!$('#women_identity').val().trim() || $('#women_identity').val().trim() == '' ) {		
-		
-		isValid = false;
-	}
-	return true;
 	return isValid;
 }
 
@@ -510,3 +410,4 @@ function IsValidEmail(email) {
   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   return regex.test(email);
 }
+

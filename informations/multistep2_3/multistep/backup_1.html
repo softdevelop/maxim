@@ -1,0 +1,707 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Multistep Form</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300' rel='stylesheet' type='text/css'>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="css/jquery-ui.css" rel="stylesheet" type="text/css">	
+	<script src="js/jquery.js" ></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/masking.js" ></script>
+	<script src="js/script.js" ></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.min.js"></script>
+
+	<script>
+		$(function() {
+			$( "#cohabiting_date" ).datepicker({
+				showOn: "button",
+				buttonImage: "images/datepick.png",		
+				dateFormat: 'dd/mm/yy',
+				changeMonth: true,
+				changeYear: true,
+				
+			});
+		});
+		
+		jQuery(function($){
+		   $("#man_pin").mask("999999999999");
+		   $("#women_pin").mask("9999999999999");
+		   $("#man_phone").mask("999999999999999");
+		   $("#women_phone").mask("9999999999999999");
+		   $("#man_identity").mask("9999999999999999");
+		   $("#women_identity").mask("9999999999999999");
+		   $("#cohabiting_date").mask("99/99/9999");
+		});
+
+		var myApp = angular.module('myApp', ['ngRoute']);
+	  	function MainCtrl($scope) {
+			$scope.count = 0;
+		}
+		//Directive for adding buttons on click that show an alert on click
+		myApp.directive("addbuttons", function($compile) {
+			return function(scope, element, attrs){
+				element.bind("click", function() {
+					scope.count++;
+					var total_tags = $('.pte_element_1 ').length + 1;
+					var tag = angular.element('<input type="text" name="property_to_exclude_1[]" id="property_to_exclude_1_' + total_tags + '" value="" class="register2 pte_element_1" placeholder="Min röda Volvo årsmodell 2012" ng-model="property_to_exclude_man_' + total_tags + '" />');
+					var tag_review = angular.element('<span id ="review_pte_1_' + total_tags + '" class="review_pte review_pte_' + total_tags + '">{{property_to_exclude_man_' +total_tags + '}}</span>');
+
+					angular.element($('.mans_info1 .pte_cont_1')).append($compile(tag)(scope));
+
+					angular.element($('.review_property_to_exclude_1')).append($compile(tag_review)(scope));
+				});
+			};
+		});
+
+		
+
+	</script>
+
+</head>
+
+<body ng-app="myApp" ng-controller="MainCtrl" >
+    <div id="infoCont" class="infoCont">
+		<div class="infoHeader"><a id="closeInfoCont"><img src="images/close_button.png"></a> </div>
+		<div class="infoContent">
+			Det Första alternativet innebär att vid en bodelning endast saker som är inköpta för gemensamt bruk delas på, era egna saker åsidosätts bodelningen.<br/><br/>
+			Det Andra alternativet innebär att ni partiellt avtalar bort sambolagens bodelningsregler genom att uppräkna viss gemensam egendom som skall hållas utanför en framtida bodelning
+		</div>
+	</div>
+	
+    <div id="infoCont1" class="infoCont">
+		<div class="infoHeader"><a id="closeInfoCont1"><img src="images/close_button.png"></a> </div>
+		<div class="infoContent">
+			Lämna ett meddelande till oss. 
+		</div>
+	</div>	
+
+	<div id="infoCont2" class="infoCont">
+		<div class="infoHeader"><a id="closeInfoCont2"><img src="images/close_button.png"></a> </div>
+		<div class="infoContent">
+			Sambos är två personer som stadigvarande bor tillsammans i ett parförhållande och har gemensamt hushåll(1§ sambolagen)
+		</div>
+	</div>	
+
+	<div id="infoCont3" class="infoCont">
+		<div class="infoHeader"><a id="closeInfoCont3"><img src="images/close_button.png"></a> </div>
+		<div class="infoContent">
+			Stjärnelunds Juristhus är inte ansvarig för ekonomisk skada indirekt eller direkt, som kan uppstå genom att användandet av denna tjänst, genom att tjänst ej kan nyttjas eller på grund av fel eller brister i den information som ges. Ansvaret gentemot brukaren av våra tjänster kan aldrig bli större än den avgift som erlagts för tjänstens nyttjande.
+		</div>
+	</div>	
+		<form name="frmReg" action="" method="post">
+		<!-- SLICE 1  -->
+		<div class="container01" id="slice_0">
+			<div class="header1">
+				<div class="wrapper">
+					<div class="header01">
+						<h1>Beställning av Testamente</h1>
+						<div class="filter001">
+							
+							<div class="fliter_step001 step"><h2>1</h2><div class="popup_top" ><p>Personuppgifter</p></div></div><!-- fliter_step001 -->
+							
+							<div class="fliter_step002 step"><h2>2</h2><div class="popup_top"><p>OMFATTING AV AKTENSKAPSFORORDET</p></div></div>
+							
+							<div class="fliter_step003 step"><h2>3</h2><div class="popup_top"><p>Översikt</p></div></div>
+							
+							<div class="fliter_step004 step"><h2>4</h2><div class="popup_top"><p>Meddelande</p></div></div>
+							
+							<div class="fliter_step005 step"><h2>5</h2><div class="popup_top"><p>Meddelande</p></div></div>
+
+							<div class="fliter_step006 step"><h2>End</h2></div>
+							
+							
+						</div><!-- filter001 -->
+					</div><!-- header01 -->
+				</div><!-- wrapper -->
+			</div><!-- header1 -->
+			
+			
+			<div class="form01">
+				<div class="wrapper">
+					<div class="form001">
+                  		
+                  		<p>Här börjar din beställning av ett personligt utformat testamente. </p>
+
+						<p>Eftersom de uppgifter som genom formuläret tillhandahålles oss ligger till grund för utformandet av det personliga testamentet är det av stor vikt att dessa är korrekta. Vi ber dig därför att noga kontrollera de ifyllda uppgifterna innan du slutför beställningen. Vid tveksamheter vid behandlingen av uppgifterna kommer vi naturligtvis kontakta er för ett klargörande innan testamentet slutligen färdigställs. Dessutom har ni alltid rätt att återkomma till oss för ändringar inom en 14 dagars period. </p>
+
+						<p>Alla uppgifter behandlas i enlighet med personuppgiftslagen konfidentiellt och kommer därför inte att röjas eller utelämnas till tredje part.</p>
+					</div><!-- form001 -->
+				</div><!-- wrapper -->
+			</div><!-- form01 -->
+			
+			<div class="bottom">
+				<div class="bottom1">
+					<a id="next_0" class="btn_register next">Starta</a>
+			    </div>
+			</div><!-- bottom -->		
+			
+		</div><!-- container01 -->
+		<!-- SLICE 1  -->
+				
+		<!-- SLICE 2  -->
+		<div class="container01" style="display:none;" id="slice_1">
+			<div class="header1">
+				<div class="wrapper">
+					<div class="header01">
+						<h1>Enkelt testamente</h1>
+						<div class="filter002">
+							
+							<div class="fliter1_step001"><a class="parallelNav" id="sl_1_Navigate_1" ><h2>1</h2><div class="popup_top" style="display:block;"><p>Personuppgifter</p></div></a></div>
+							<div class="fliter1_step002"><a class="parallelNav" id="sl_1_Navigate_2" ><h2>2</h2><div class="popup_top" ><p>Samboregler</p></div></a></div>
+							<div class="fliter_step003"><a class="parallelNav" id="sl_1_Navigate_3" ><h2>3</h2><div class="popup_top"><p>Översikt</p></div></a></div>
+							<div class="fliter_step004"><a class="parallelNav" id="sl_1_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Meddelande</p></div></a></div>
+							<div class="fliter_step005"><a class="parallelNav" id="sl_1_Navigate_5" ><h2>5</h2></a></div>
+							<div class="fliter_step006"><a class="parallelNav" id="sl_1_Navigate_6" ><h2>End</h2></a></div>
+							
+						</div><!-- filter001 -->
+					</div><!-- header01 -->
+				</div><!-- wrapper -->
+			</div><!-- header1 -->
+			
+			
+			<div class="form01">
+				<div class="wrapper">
+					<div class="form001">
+						<div class="mans_info">
+							<div class="man_info">
+								<input type="text" name="name" id="man_name" placeholder="Ange Fullständigt Namn"  class="register user" ng-model="man_name"> 
+								<p class="error_msg" id="error_man_name" ></p>
+							</div>
+							
+							<div class="man_info">
+								<input type="text" name="address" id="man_address" placeholder="Ange din Adress"  class="register address" ng-model="man_address" > 
+								<p class="error_msg" id="error_man_address"></p>
+							</div>
+							
+							<div class="man_info">
+								<input type="text" name="pin" id="man_pin" placeholder="Ange ditt Postnummer"  class="register pincode" ng-model="man_pin"> 
+								<p class="error_msg" id="error_man_pin"></p>
+							</div>
+							
+							<div class="man_info">
+								<input type="text" name="postort" id="man_postort" placeholder="Ange din Postort"  class="register post" ng-model="man_postort"> 
+								<p class="error_msg" id="error_man_postort"></p>
+							</div>
+							
+							<div class="man_info">
+								<input type="text" name="phone" id="man_phone" placeholder="Ange ditt telefonnummer"  class="register phone" ng-model="man_phone"> 
+								<p class="error_msg" id="error_man_phone"></p>
+							</div>
+							
+							<div class="man_info">
+								<input type="text" name="email" id="man_email" placeholder="Ange din e-postadress"  class="register email" ng-model="man_email" > 
+								<p class="error_msg" id="error_man_email"></p>
+							</div>
+							
+							<div class="man_info">
+								<input type="text" name="identity" id="man_identity" placeholder="Ange ditt personnummer (XXXXXXxxxx)"  class="register uid" ng-model="man_identity"> 							
+								<p class="error_msg" id="error_man_identity"></p>
+							</div>
+						
+						</div><!-- mans_info -->				
+						
+					</div><!-- form001 -->
+				</div><!-- wrapper -->
+			</div><!-- form01 -->
+			
+			<div class="bottom">
+				<div class="bottom1">
+					<a class="btn_register2 prev" id="prev_1" >Tillbaka</a>
+					<a class="btn_register1 next" id="next_1" >Nästa</a>
+				</div>
+			</div><!-- bottom -->		
+			
+		</div><!-- container01 -->
+		<!-- SLICE 2 -->		
+				
+		<!-- SLICE 3 -->		
+		<div class="container01" style="display:none;" id="slice_2">
+			<div class="header1">
+				<div class="wrapper">
+					<div class="header01">
+						<h1>Kvarlåtenskap</h1>
+						<div class="filter003">
+							
+							<div class="fliter2_step001"><a class="navCircle" id="sl2Navigate_1" style="cursor:pointer;"><h2>1</h2><div class="popup_top" ><p>Personuppgifter</p></div></a></div>
+							<div class="fliter1_step002"><a class="parallelNav" id="sl_2_Navigate_2" ><h2>2</h2><div class="popup_top" style="display:block;"><p>Samboregler</p></div></a></div>
+							<div class="fliter_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2><div class="popup_top"><p>Översikt</p></div><a></div>
+							<div class="fliter_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Meddelande</p></div></a></div>
+							<div class="fliter_step005"><a class="parallelNav" id="sl_2_Navigate_5" ><h2>5</h2></a></div>
+							<div class="fliter_step006"><a class="parallelNav" id="sl_2_Navigate_6" ><h2>End</h2></a></div>
+						</div><!-- filter001 -->
+					</div><!-- header01 -->
+				</div><!-- wrapper -->
+			</div><!-- header1 -->
+			
+			
+			<div class="form01">
+				<div class="wrapper">
+					<div class="form001">
+
+						<div class="distribute-options" >
+							<!---
+								1 -> all
+								2 -> piece
+								3 -> both options above
+							-->
+							<div class="q-asw q-asw-1">
+								<div class="question">
+									<p>Önskar du fördela all din egendom till en person, eller fond/stiftelse?</p>
+									<div class="radio_option">
+										<input type="radio" name="distribute" id="distribute_1" class="css-checkbox prop_answers" checked="checked" value="1" ng-mode="distribute"/>
+											<label for="distribute_1" class="css-label radGroup1"></label>
+									</div>
+								</div>
+								<div class="asw">
+									<div class="condition_box">
+										<div class="condition_box02">
+										<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
+										</div>
+										<p>All din egendom (kvarlåtenskap) fördelas mellan testamentstagarna. s</p>
+										<p>
+											Genom detta val kommer du inte ges tillfälle att fördela specifik egendom till en eller flera personer eller fond/stiftelser. Du som önskar fördela även specifik egendom bör välja något av de andra alternativen.
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="q-asw q-asw-2">
+								<div class="question">
+									<p>Önskar du fördela din egendom del för del till flera personer, eller fond/stiftelser?</p>
+									<div class="radio_option">
+										<input type="radio" name="distribute" id="distribute_2" class="css-checkbox prop_answers" value="2" ng-mode="distribute"/>
+											<label for="distribute_2" class="css-label radGroup1"></label>
+									</div>
+								</div>
+								<div class="asw">
+									<div class="condition_box">
+										<div class="condition_box02">
+										<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
+										</div>
+										<p>
+											Din egendom (kvarlåtenskap) fördelas till testamentstagarna egendom för egendom. Du bestämmer med andra ord vilken egendom som skall testamenteras till vem. T.ex. Den gröna soffan skall gå till Lisa, pengarna på Nordeakontot skall gå till Sven och min skivsamling till Erika.
+										</p>
+										<p>
+											Detta alternativ kräver att du som testator (=du som skriver testamentet) har full koll på all din egendom. Om du missar att nämna någon egendom kommer denna inte ingå i testamentet. 
+										</p>
+										<p>Vi rekommenderar dig att välja det tredje alternativet vid osäkerhet.</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="q-asw q-asw-3">
+								<div class="question">
+									<p>Önskar du fördela din egendom enligt båda metoderna ovan (kombination)?</p>
+									<div class="radio_option">
+										<input type="radio" name="distribute" id="distribute_3" class="css-checkbox prop_answers" checked="checked" value="3" ng-mode="distribute"/>
+											<label for="distribute_3" class="css-label radGroup1"></label>
+									</div>
+
+									</div>
+								<div class="asw">
+									<div class="condition_box">
+										<div class="condition_box02">
+											<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
+										</div>
+										<p>
+											Enligt detta alternativ kommer din huvudsakliga egendom (kvarlåtenskap) att fördelas på den eller de personer, eller fond/stiftelser som du själv väljer. 
+										</p><p>
+											Övrig kvarlåtenskap fördelas enligt dina övriga instruktioner. T.ex. All din egendom fördelas jämnt mellan Lisa, Sven och Johan med undantag av den gröna soffan som Lisa skall få och min skivsamling som Erika skall få.
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="q-asw q-asw-4 note">
+								<div class="question">
+									<p>Observera!</p>
+								</div>
+								<div class="asw">
+									<div class="condition_box">
+										<div class="condition_box02">
+											<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
+										</div>
+										<p>
+											Du som valde det tredje alternativet ovan – kombinationsalternativet - kommer nu få svara på frågor om dels den generella fördelningen av din egendom, dels om den specifika fördelningen av din egendom. Vill du att en och samma person både skall ha rätt till både generell fördelning och specifik fördelning måste du uppge dennes uppgifter vid både generell samt specifik fördelning. 
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div><!-- form001 -->
+				</div><!-- wrapper -->
+			</div><!-- form01 -->
+			
+			<div class="bottom">
+				<div class="bottom1">
+					<a class="btn_register2 prev" id="prev_2" >Tillbaka</a>
+					<a class="btn_register1 next" id="next_2">Nästa</a>
+				</div>
+			</div><!-- bottom -->		
+			
+		</div><!-- container01 -->
+
+		<!-- SLICE 3  -->		
+		<div class="container01" style="display:none;" id="slice_3">
+			<div class="header1">
+				<div class="wrapper">
+					<div class="header01">
+						<h1>Generell fördelning</h1>
+						<div class="filter004">
+							
+							<div class="fliter2_step001"><a class="navCircle" id="sl3Navigate_1" style="cursor:pointer;"><h2>1</h2><div class="popup_top" ><p>Personuppgifter</p></div></a></div>
+							<div class="fliter3_step002"><a class="navCircle" id="sl3Navigate_2" style="cursor:pointer;"><h2>2</h2><div class="popup_top" ><p>Samboregler</p></div></a></div>
+							<div class="fliter_step003"><a class="parallelNav" id="sl_3_Navigate_3" ><h2>3</h2><div class="popup_top" style="display:block;"><p>Översikt</p></div></a></div>
+							<div class="fliter_step004"><a class="parallelNav" id="sl_3_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Meddelande</p></div></a></div>
+							<div class="fliter_step005"><a class="parallelNav" id="sl_3_Navigate_5" ><h2>5</h2></a></div>
+							<div class="fliter_step006"><a class="parallelNav" id="sl_3_Navigate_6" ><h2>End</h2></a></div>
+							
+						</div><!-- filter001 -->
+					</div><!-- header01 -->
+				</div><!-- wrapper -->
+			</div><!-- header1 -->
+			
+			
+			<div class="form01">
+				<div class="wrapper">
+					<div class="form001">
+						<div class="info_gottent">
+							<p>Testamentstagare</p>
+							<div class="choose_box">
+								<p>Testamentstagare 1 är en: </p>
+								<p>
+									<select name="type_gotten">
+										<option value='1' selected>Person</option>
+										<option value='2'>Fond/Stiftelse</option>
+									</select>
+								</p>
+							</div>
+							<div class="person">
+								<div class="person_info1">
+									<div class="person_info">
+										<input type="text" name="person_first_name" id="person_first_name" placeholder="Förnamn"  class="register user" ng-model="man_name"> 
+										<p class="error_msg" id="error_person_first_name" ></p>
+									</div>
+									
+									<div class="person_info">	
+										<input type="text" name="person_last_name" id="person_last_name" placeholder="Efternamn"  class="register address" ng-model="man_address" > 
+										<p class="error_msg" id="error_person_last_name"></p>
+									</div>
+
+									<div class="person_info">	
+										<input type="text" name="person_civic" id="person_civic" placeholder="Personnummer"  class="register address" ng-model="man_address" > 
+										<p class="error_msg" id="error_person_civic"></p>
+									</div>
+
+								</div><!-- person_info1 -->
+
+								<div class="q-asw">
+									<div class="question">
+										<div class="checkboxThree">
+											<input type="checkbox" value="1" id="person_aws_1" name="person_aws_1" checked="checked" ng-model="checkboxThreeInput_1" class="ng-pristine ng-valid">
+											<label for="person_aws_1"></label>
+										</div>
+									</div>
+									<div class="asw">
+										<div class="condition_box">
+											<div class="condition_box02">
+												<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
+											</div>
+											<p>
+												Jag önskar att allt som tillfaller någon genom detta testamente eller arv skall vara dennes enskilda egendom 
+											</p>
+											<p>
+												Att egendom betraktas som enskild innebär i juridisk mening att make/maka till testamentstagaren inte har rätt till värdemässig hälftendelning av den enskilda egendomen vid en eventuell bodelning, till följd av separation (utifall den du testamenterar till är gift). Med andra ord innebär detta alternativet att personen du testamenterar din egendom till och som är gift kommer att få behålla egendom ifall personen i framtiden skiljer sig. Annars gäller att all makarnas respektive egendom är så kallat giftorättsgods och skall värdemässigt delas på hälften vid en skilsmässa. 
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="q-asw">
+									<div class="question">
+										<div class="checkboxThree">
+											<input type="checkbox" value="1" id="person_aws_2" name="person_aws_2" checked="checked" ng-model="person_aws_2" class="ng-pristine ng-valid">
+											<label for="person_aws_2"></label>
+										</div>
+									</div>
+									<div class="asw">
+										<div class="condition_box">
+											<div class="condition_box02">
+												<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
+											</div>
+											<p>
+												Jag önskar att även det som tillkommer i egendomens ställe skall vara enskild egendom
+											</p>
+											<p>
+												T.ex. Peter har ärvt en tavla som enskild egendom från sina morföräldrar med följdkravet att vad som träder i tavlans ställe även fortsatt skall vara Peters enskilda egendom. Om Peter säljer tavlan för att köpa en bil kommer därför även bilen att betraktas som Peters enskilda egendom.  
+											</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="q-asw">
+									<div class="question">
+										<div class="checkboxThree">
+											<input type="checkbox" value="1" id="person_aws_3" name="person_aws_3" checked="checked" ng-model="person_aws_3" class="ng-pristine ng-valid">
+											<label for="person_aws_3"></label>
+										</div>
+									</div>
+									<div class="asw">
+										<div class="condition_box">
+											<div class="condition_box02">
+												<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
+											</div>
+											<p>
+												Jag önskar att avkastning av egendomen skall vara enskild egendom. 
+											</p>
+											<p>
+												T.ex. Avkastning på aktier.
+											</p>
+										</div>
+									</div>
+								</div>
+							</div><!-- person -->
+							<div class="fond">
+								<div class="fond_info1">
+									<div class="fond_info">
+										<input type="text" name="fond_name" id="fond_name" placeholder="namn"  class="register user" ng-model="fond_name"> 
+										<p class="error_msg" id="error_fond_name" ></p>
+									</div>
+									
+									<div class="fond_info">	
+										<input type="text" name="fond_account" id="fond_account" placeholder="konto"  class="register address" ng-model="man_address" > 
+										<p class="error_msg" id="error_fond_account"></p>
+									</div>
+
+								</div><!-- fond_info1 -->
+							</div>
+						</div>
+					</div><!-- form001 -->	
+				</div><!-- wrapper -->
+			</div><!-- form01 -->
+			<div class="bottom">
+				<div class="bottom1">
+					<a class="btn_register2 prev" id="prev_3" >Tillbaka</a>
+					<a class="btn_register1 next" id="next_3" >Nästa</a>
+				</div>
+			</div><!-- bottom -->
+		</div>
+
+		<!-- SLICE 4  -->
+		<div class="container01" style="display:none;" id="slice_4">
+			<div class="header1">
+				<div class="wrapper">
+					<div class="header01">
+						<h1>Juridiska Villkor</h1>
+						<div class="filter005">
+							<div class="fliter2_step001"><a class="navCircle" id="sl2Navigate_1" style="cursor:pointer;"><h2>1</h2><div class="popup_top" ><p>Personuppgifter</p></div></a></div>
+							<div class="fliter3_step002"><a class="parallelNav" id="sl_2_Navigate_2" ><h2>2</h2><div class="popup_top"><p>Samboregler</p></div></a></div>
+							<div class="fliter4_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2><div class="popup_top" ><p>Översikt</p></div></a></div>
+							<div class="fliter_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" style="display:block;" ><p>Meddelande</p></div></a></div>
+							<div class="fliter_step005"><a class="parallelNav" id="sl_2_Navigate_5" ><h2>5</h2></a></div>
+							<div class="fliter_step006"><a class="parallelNav" id="sl_2_Navigate_6" ><h2>End</h2></a></div>
+						</div><!-- filter001 -->
+					</div><!-- header01 -->
+				</div><!-- wrapper -->
+			</div><!-- header1 -->
+			
+			
+			<div class="form01">
+				<div class="wrapper">
+					<div class="form001" style="border: 1px solid #ccc;padding: 10px;margin-left: -30px;border-radius: 5px;">
+						<form>
+							<div class="mans_info1">
+								<h1>Personuppgifter för första person</h1>
+								<p><b>Namn :</b><span>{{man_name}}</span></p>
+								<p><b>Adress :</b><span class="">{{man_address}}</span></p>
+								<p><b>Postnummer :</b><span class="">{{man_pin}}</span></p>
+								<p><b>Postort :</b><span class="review_man_postort">{{man_postort}}</span></p>
+								<p><b>Telefonnummer :</b><span class="review_man_phone">{{man_phone}}</span></p>
+								<p><b>E-post :</b><span class="review_man_email">{{man_email}}</span></p>
+								<p><b>Personnummer :</b><span class="review_man_identity">{{man_identity}}</span></p>
+								
+							</div><!-- mans_info1 -->
+							
+							<div class="womens_info1">
+								<h1>Personuppgifter för andra person</h1>
+								<p><b>Namn :</b><span class="review_women_name">{{women_name}}</span></p>
+								
+								<p><b>Adress:</b><span class="review_women_address">{{women_address}}</span></p>
+								
+								<p><b>Postnummer:</b><span class="review_women_pin">{{women_pin}}</span></p>
+								
+								<p><b>Postort:</b><span class="review_women_postort">{{women_postort}}</span></p>	
+								
+								<p><b>Telefonnummer :</b><span class="review_women_phone">{{women_phone}}</span></p>
+								
+								<p><b>E-post:</b><span class="review_women_email">{{women_email}}</span></p>
+								
+								<p><b>Personnummer:</b><span class="review_women_identity">{{women_identity}}</span></p>
+								
+							</div><!-- womens_info1 -->
+							
+							<div class="condition001">
+								<h1>OMFATTNING AV ÄKTENSKAPSFÖRORDET</h1>
+							</div>
+							<div class="your_answer001">
+								<div class="review">
+									<span class="left" style="float:left;">Är ni gifta sedan tidigare?</span>
+									<div style="float:right;margin-top: 5px;">
+										<input type="hidden" name="review_purpose" id="review_cohabiting_ip" class="" >
+										<span class="review_cohabiting_date right" id="review_cohabiting"></span> |
+										<span class="">{{checkboxThreeInput_date}}</span>
+										<input type="hidden" name="review_cohabiting_date" class="" value="{{checkboxThreeInput_date}}">
+									</div>
+								</div>
+							</div>
+							<div class="condition002 center" width="95%">
+								<h1>Vi önskar att:</h1>
+								<div class="reviews">
+									<span class="review_purpose"></span> 
+									<input type="hidden" name="review_cohabiting_date" class="review_purpose_ip">
+								</div>
+							</div>
+							<div class="your_answer001">
+								<div class="condition002 center">
+									<h1>följande nedtecknad egendom skall omfattas av äktenskapsförordet:</h1>
+									<div class="reviews">
+										<span class="">{{man_name}}</span>  enskilda egendom: 
+										
+										<div class="review_property_to_exclude_1">
+											<span class="review_pte" id="review_pte_1_1">{{property_to_exclude_man}}</span>
+										</div>
+										
+									</div>
+									<div class="reviews">
+										<span class="">{{women_name}}</span>  enskilda egendom:
+										<div class="review_property_to_exclude_2x">
+											<span class="review_pte" id="review_pte_2_1">{{property_to_exclude_women}}</span>
+										</div> 
+										
+									</div>
+								</div>
+								<div class="condition002 center">
+									<h1>Övriga uppgifter</h1>
+									<div class="reviews">
+										<span class="left">Vi önskar att eventuell avkastning från enskild egendom skall vara enskild.</span> 
+										<p id="review_checkboxThree2"></p>
+										<input type="hidden" name="review_cohabiting_date" id="review_checkboxThree2_pi">
+									</div>
+								</div>
+								<div class="condition002 center">
+									<div class="reviews">
+										<span>Vi önskar att egendom som träder istället för enskild egendom, exempelvis genom att enskild egendom har försålts och annan egendom har införskaffats, skall vara:</span><br/>
+									</div>
+									<div class="reviews">
+										<input type="hidden" name="" class="" value="{{purpose_leo}}">{{purpose_leo}}
+									</div>
+								</div>
+							</div>
+						
+					</div><!-- form001 -->
+				</div><!-- wrapper -->
+			</div><!-- form01 -->
+			
+			<div class="bottom">
+				<div class="bottom1">
+					<a class="btn_register2 prev" id="prev_4" >Tillbaka</a>
+					<a class="btn_register1 next" id="next_4" >Nästa</a>
+				</div>
+			</div><!-- bottom -->		
+		</div>
+		<!-- SLICE 5  -->
+		<div class="container01" id="slice_5" style="display: none;" >
+			<div class="header1">
+				<div class="wrapper">
+					<div class="header01">
+						<h1>Betalning</h1>
+						<div class="filter006">
+							<div class="fliter2_step001"><a class="navCircle" id="sl2Navigate_1" style="cursor:pointer;"><h2>1</h2><div class="popup_top" ><p>Personuppgifter</p></div></a></div>
+							<div class="fliter3_step002"><a class="parallelNav" id="sl_2_Navigate_2" ><h2>2</h2><div class="popup_top"><p>Samboregler</p></div></a></div>
+							<div class="fliter4_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2><div class="popup_top"><p>Översikt</p></div></a></div>
+							<div class="fliter5_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Meddelande</p></div></a></div>
+							<div class="fliter_step005"><a class="parallelNav" id="sl_2_Navigate_5" ><h2>5</h2><div class="popup_top" style="display: block;"><p>Översikt</p></div></a></div>
+							<div class="fliter_step006"><a class="parallelNav" id="sl_2_Navigate_6" ><h2>End</h2></a></div>
+						</div><!-- filter001 -->
+					</div><!-- header01 -->
+				</div><!-- wrapper -->
+			</div><!-- header1 -->
+			
+			
+			<div class="form01">
+				<div class="wrapper">
+					<div class="form001">
+						<div class="terms_conditions">
+							<h3>Meddelande</h3>
+							<a id="infoTrigger1" style="cursor:pointer;" ><img src="images/info.png"><span>Läs mer</span></a>
+							<textarea rows="4" cols="85" class="other_info" name="other_info" id="other_info" ></textarea>
+							<img src="images/terms.jpeg">
+							<p>Jag har härmed lämnat information för skapande av ett Samboavtal. Jag har läst och godkänner Stjärnelunds Juristhus juridiska villkor för användande av denna tjänst samt beställning härigenom. </p>
+							<div class="container-agree-terms" with="100%">
+								<div class="agree_terms">
+									<input type="radio" name="agree_terms" id="agree_terms_1" class="css-checkbox" checked="checked"/>
+										<label for="agree_terms_1" class="css-label radGroup1" value="1"  style="padding-left: 50px;height: 23px;">Jag godkänner</label>
+									
+									
+									<input type="radio" name="agree_terms" id="agree_terms_2" class="css-checkbox" value="0"/>
+										<label for="agree_terms_2" class="css-label radGroup1"  style="padding-left: 50px;height: 23px;">Jag godkänner inte</label>
+									 <a id="infoTrigger3" style="cursor:pointer;padding-top: 5px;" ><img src="images/info.png"><span>Läs mer</span></a>
+									<p class="error_msg" id="error_agree_terms"></p>
+								</div><!-- agree_terms -->
+							</div><!-- continer-agree_terms -->
+							
+						</div><!-- terms_conditions -->
+					</div><!-- form001 -->
+				</div><!-- wrapper -->
+			</div><!-- form01 -->
+			
+			<div class="bottom">
+				<div class="bottom1">
+					<a class="btn_register2 prev" id="prev_5" >Tilllbaka</a>
+					<a class="btn_register1 next" id="next_5" >Nästa</a>		
+				</div>
+			</div><!-- bottom -->		
+			
+		</div>
+
+		<div class="container01" id="slice_6" style="display:none;">
+			<div class="header1">
+				<div class="wrapper">
+					<div class="header01">
+						<h1>Betalning</h1>
+						<div class="filter007">
+							<div class="fliter2_step001"><a class="navCircle" id="sl2Navigate_1" style="cursor:pointer;"><h2>1</h2><div class="popup_top" ><p>Personuppgifter</p></div></a></div>
+							<div class="fliter3_step002"><a class="parallelNav" id="sl_2_Navigate_2" ><h2>2</h2><div class="popup_top"><p>Samboregler</p></div></a></div>
+							<div class="fliter4_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2></a></div>
+							<div class="fliter5_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Meddelande</p></div></a></div>
+							<div class="fliter6_step005"><a class="parallelNav" id="sl_2_Navigate_5" ><h2>5</h2></a></div>
+							<div class="fliter_step006"><a class="parallelNav" id="sl_2_Navigate_6" ><h2>End</h2><div class="popup_top" style="display:block;"><p>End</p></div></a></div>	
+						</div><!-- filter001 -->
+					</div><!-- header01 -->
+				</div><!-- wrapper -->
+			</div><!-- header1 -->
+			
+			
+			<div class="form01">
+				<div class="wrapper">
+					<div class="form001">
+						<div class="terms_conditions">
+							<h3 style="text-align:center;">Din beställning är nu klar. Tryck på knappen nedan för att välja betalsätt samt genomföra denna.</h3>
+							
+						</div><!-- terms_conditions -->
+					</div><!-- form001 -->
+				</div><!-- wrapper -->
+			</div><!-- form01 -->
+			
+			<div class="bottom">
+				<input type="submit" name="btn_submit" value="Betala" class="btn_register"  />				
+			</div><!-- bottom -->		
+			
+		</div>
+	</form>
+</body>
+
+</html>

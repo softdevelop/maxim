@@ -1155,3 +1155,8 @@ border: 1px solid #ccc;
 	top: 200px;
 	right: 10px;
 }
+
+/** ADD FOR FORM 2 **/
+.fond {
+	display: none;
+}
