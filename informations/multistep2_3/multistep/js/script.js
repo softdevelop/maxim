@@ -1,16 +1,45 @@
 $(document).ready(function(){
 	var completedForms = [0, 0, 0, 0, 0, 0, 0];
 	
+	$('input[name=distribute]').change(function () {
+		var val = $(this).val();
+		if (val == 3) {
+			$('#slice_2 .note').show();
+		} else {
+			$('#slice_2 .note').hide();
+		}
+			
+	});
+
 	$('.next').on("click",function() {
 		$('.error_msg').html('');
 		var elementId = $(this).attr('id');
 		var entityId = elementId.split('_')[1];
 		var targetSliceId = parseInt(entityId)+1;
 		var isValidForm = true;
+
+		// softdevelop add
+		var distribute = $('.distribute-options input:checked').val();
+
+		if (distribute == 1 && entityId == 2) {
+			targetSliceId = 3;
+			$('#slice_3 input').removeAttr('disabled');
+			$('#slice_4 input').attr('disabled', 'disabled');
+			
+		} else if (distribute == 2 && entityId == 2 ) {
+			targetSliceId = 4;			
+			$('#slice_4 input').removeAttr('disabled');
+			$('#slice_3 input').attr('disabled', 'disabled');
+		}
+
+		if (distribute == 1 && entityId == 3) {
+			targetSliceId = 5;
+		}
+
 		if(targetSliceId == 2) {
 			isValidForm = isValidForm1();
-			$("#propVar").html($("#man_name").val());
 		}
+
 		if(targetSliceId == 3) isValidForm = isValidForm2();	
 		if(targetSliceId == 6) isValidForm = isValidForm4();	
 		
@@ -31,11 +60,21 @@ $(document).ready(function(){
 		var entityId = elementId.split('_')[1];
 		var targetSliceId = parseInt(entityId)-1;
 		$('.container01').hide(); 
+		// softdevelop add
+		var distribute = $('.distribute-options input:checked').val();
+
+		if (distribute != 3 && (entityId == 3 || entityId == 4)) {
+			targetSliceId = 2;
+			
+		} 
+
+		if (distribute == 1 && (entityId == 5)) {
+			targetSliceId = 3;
+			
+		} 
+
 		$('#slice_'+targetSliceId).show();
-		
-		// if(isValidForm3()) {
-		// 	alert ('vaid form 3');
-		// }
+
 	});
 	
 	$('.register').click(function() {

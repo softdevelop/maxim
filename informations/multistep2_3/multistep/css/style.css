@@ -1160,6 +1160,6 @@ border: 1px solid #ccc;
 .fond {
 	display: none;
 }
-.info_gotten {
+.info_gotten,  .info_gotten_specific {
 	float: left;
 }
