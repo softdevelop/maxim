@@ -14,7 +14,7 @@
 	<script src="js/script.js" ></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.min.js"></script>
-
+	<script src="js/app.js" ></script>
 	<script>
 		$(function() {
 			$( "#cohabiting_date" ).datepicker({
@@ -36,28 +36,6 @@
 		   $("#women_identity").mask("9999999999999999");
 		   $("#cohabiting_date").mask("99/99/9999");
 		});
-
-		var myApp = angular.module('myApp', ['ngRoute']);
-	  	function MainCtrl($scope) {
-			$scope.count = 0;
-		}
-		//Directive for adding buttons on click that show an alert on click
-		myApp.directive("addbuttons", function($compile) {
-			return function(scope, element, attrs){
-				element.bind("click", function() {
-					scope.count++;
-					var total_tags = $('.pte_element_1 ').length + 1;
-					var tag = angular.element('<input type="text" name="property_to_exclude_1[]" id="property_to_exclude_1_' + total_tags + '" value="" class="register2 pte_element_1" placeholder="Min röda Volvo årsmodell 2012" ng-model="property_to_exclude_man_' + total_tags + '" />');
-					var tag_review = angular.element('<span id ="review_pte_1_' + total_tags + '" class="review_pte review_pte_' + total_tags + '">{{property_to_exclude_man_' +total_tags + '}}</span>');
-
-					angular.element($('.mans_info1 .pte_cont_1')).append($compile(tag)(scope));
-
-					angular.element($('.review_property_to_exclude_1')).append($compile(tag_review)(scope));
-				});
-			};
-		});
-
-		
 
 	</script>
 
@@ -119,141 +97,160 @@
 			<div class="form01">
 				<div class="wrapper">
 					<div class="form001">
-						<div class="info_gottent">
-							<p>Testamentstagare</p>
-							<div class="choose_box">
-								<p>Testamentstagare 1 är en: </p>
-								<p>
-									<select name="type_gotten">
-										<option value='1' selected>Person</option>
-										<option value='2'>Fond/Stiftelse</option>
-									</select>
-								</p>
-							</div>
-							<div class="person">
-								<div class="person_info1">
-									<div class="person_info">
-										<input type="text" name="person_first_name" id="person_first_name" placeholder="Förnamn"  class="register user" ng-model="man_name"> 
-										<p class="error_msg" id="error_person_first_name" ></p>
-									</div>
-									
-									<div class="person_info">	
-										<input type="text" name="person_last_name" id="person_last_name" placeholder="Efternamn"  class="register address" ng-model="man_address" > 
-										<p class="error_msg" id="error_person_last_name"></p>
-									</div>
-
-									<div class="person_info">	
-										<input type="text" name="person_civic" id="person_civic" placeholder="Personnummer"  class="register address" ng-model="man_address" > 
-										<p class="error_msg" id="error_person_civic"></p>
-									</div>
-
-								</div><!-- person_info1 -->
-
-								<div class="q-asw">
-									<div class="question">
-										<div class="checkboxThree">
-											<input type="checkbox" value="1" id="person_aws_1" name="person_aws_1" checked="checked" ng-model="checkboxThreeInput_1" class="ng-pristine ng-valid">
-											<label for="person_aws_1"></label>
-										</div>
-									</div>
-									<div class="asw">
-										<div class="condition_box">
-											<div class="condition_box02">
-												<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
-											</div>
-											<p>
-												Jag önskar att allt som tillfaller någon genom detta testamente eller arv skall vara dennes enskilda egendom 
-											</p>
-											<p>
-												Att egendom betraktas som enskild innebär i juridisk mening att make/maka till testamentstagaren inte har rätt till värdemässig hälftendelning av den enskilda egendomen vid en eventuell bodelning, till följd av separation (utifall den du testamenterar till är gift). Med andra ord innebär detta alternativet att personen du testamenterar din egendom till och som är gift kommer att få behålla egendom ifall personen i framtiden skiljer sig. Annars gäller att all makarnas respektive egendom är så kallat giftorättsgods och skall värdemässigt delas på hälften vid en skilsmässa. 
-											</p>
-										</div>
-									</div>
+						<p>Testamentstagare</p>
+						<div class="info_gotten">
+							<div class="container" id="container_1">
+								<div class="choose_box">
+									<p class="order">Testamentstagare <span>1</span> är en: </p>
+									<p>
+										<select name="type_gotten_1" ng-init="type_gotten = 1" ng-change="changeGotten(1, {{type_gotten}})" ng-model="type_gotten" disable="disable">
+											<option value='1'>Person</option>
+											<option value='2'>Fond/Stiftelse</option>
+										</select>
+									</p>
 								</div>
-								<div class="q-asw">
-									<div class="question">
-										<div class="checkboxThree">
-											<input type="checkbox" value="1" id="person_aws_2" name="person_aws_2" checked="checked" ng-model="person_aws_2" class="ng-pristine ng-valid">
-											<label for="person_aws_2"></label>
+								<div class="person">
+									<div class="person_info1">
+										<div class="person_info">
+											<input type="text" name="person[][person_first_name]" id="person_first_name" placeholder="Förnamn"  class="register user" ng-model="man_name"> 
+											<p class="error_msg" id="error_person_first_name" ></p>
 										</div>
-									</div>
-									<div class="asw">
-										<div class="condition_box">
-											<div class="condition_box02">
-												<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
+										
+										<div class="person_info">	
+											<input type="text" name="person[][person_last_name]" id="person_last_name" placeholder="Efternamn"  class="register address" ng-model="man_address" > 
+											<p class="error_msg" id="error_person_last_name"></p>
+										</div>
+
+										<div class="person_info">	
+											<input type="text" name="person[][person_civic]" id="person_civic" placeholder="Personnummer"  class="register address" ng-model="man_address" > 
+											<p class="error_msg" id="error_person_civic"></p>
+										</div>
+
+									</div><!-- person_info1 -->
+
+									<div class="q-asw">
+										<div class="question">
+											<div class="checkboxThree">
+												<input type="checkbox" value="1" id="person_aws_1" name="person[][person_aws_1]" checked="checked" ng-model="checkboxThreeInput_1" class="ng-pristine ng-valid">
+												<label for="person_aws_1"></label>
 											</div>
-											<p>
-												Jag önskar att även det som tillkommer i egendomens ställe skall vara enskild egendom
-											</p>
-											<p>
-												T.ex. Peter har ärvt en tavla som enskild egendom från sina morföräldrar med följdkravet att vad som träder i tavlans ställe även fortsatt skall vara Peters enskilda egendom. Om Peter säljer tavlan för att köpa en bil kommer därför även bilen att betraktas som Peters enskilda egendom.  
-											</p>
 										</div>
-									</div>
-								</div>
-
-								<div class="q-asw">
-									<div class="question">
-										<div class="checkboxThree">
-											<input type="checkbox" value="1" id="person_aws_3" name="person_aws_3" checked="checked" ng-model="person_aws_3" class="ng-pristine ng-valid">
-											<label for="person_aws_3"></label>
-										</div>
-									</div>
-									<div class="asw">
-										<div class="condition_box">
-											<div class="condition_box02">
-												<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
+										<div class="asw">
+											<div class="condition_box">
+												<div class="condition_box02">
+													<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
+												</div>
+												<p>
+													Jag önskar att allt som tillfaller någon genom detta testamente eller arv skall vara dennes enskilda egendom 
+												</p>
+												<p>
+													Att egendom betraktas som enskild innebär i juridisk mening att make/maka till testamentstagaren inte har rätt till värdemässig hälftendelning av den enskilda egendomen vid en eventuell bodelning, till följd av separation (utifall den du testamenterar till är gift). Med andra ord innebär detta alternativet att personen du testamenterar din egendom till och som är gift kommer att få behålla egendom ifall personen i framtiden skiljer sig. Annars gäller att all makarnas respektive egendom är så kallat giftorättsgods och skall värdemässigt delas på hälften vid en skilsmässa. 
+												</p>
 											</div>
-											<p>
-												Jag önskar att avkastning av egendomen skall vara enskild egendom. 
-											</p>
-											<p>
-												T.ex. Avkastning på aktier.
-											</p>
 										</div>
 									</div>
-								</div>
-							</div><!-- person -->
-							<div class="fond">
-								<div class="fond_info1">
-									<div class="fond_info">
-										<input type="text" name="fond_name" id="fond_name" placeholder="namn"  class="register user" ng-model="fond_name"> 
-										<p class="error_msg" id="error_fond_name" ></p>
-									</div>
-									
-									<div class="fond_info">	
-										<input type="text" name="fond_account" id="fond_account" placeholder="konto"  class="register address" ng-model="man_address" > 
-										<p class="error_msg" id="error_fond_account"></p>
-									</div>
-
-								</div><!-- fond_info1 -->
-
-								<div class="q-asw">
-									
-									<div class="asw">
-										<div class="condition_box">
-											<div class="condition_box02">
-												<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
+									<div class="q-asw">
+										<div class="question">
+											<div class="checkboxThree">
+												<input type="checkbox" value="1" id="person_aws_2" name="person[][person_aws_2]" checked="checked" ng-model="person_aws_2" class="ng-pristine ng-valid">
+												<label for="person_aws_2"></label>
 											</div>
-											<p>
-												Ändamål:
-											</p>
-											<p>
-												Skriv här om medlen skall användas till något särskilt ändamål inom fonden/stiftelsen. 
-											</p>
+										</div>
+										<div class="asw">
+											<div class="condition_box">
+												<div class="condition_box02">
+													<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
+												</div>
+												<p>
+													Jag önskar att även det som tillkommer i egendomens ställe skall vara enskild egendom
+												</p>
+												<p>
+													T.ex. Peter har ärvt en tavla som enskild egendom från sina morföräldrar med följdkravet att vad som träder i tavlans ställe även fortsatt skall vara Peters enskilda egendom. Om Peter säljer tavlan för att köpa en bil kommer därför även bilen att betraktas som Peters enskilda egendom.  
+												</p>
+											</div>
 										</div>
 									</div>
-									<div class="question">
-										<div class="purpose">
-											<input type="textarea" value="1" id="fond_aws_1" name="purpose" checked="checked" ng-model="purpose" class="ng-pristine ng-valid">
-											<label for="fond_aws_1"></label>
-										</div>
-									</div>
-								</div>
 
+									<div class="q-asw">
+										<div class="question">
+											<div class="checkboxThree">
+												<input type="checkbox" value="1" id="person_aws_3" name="person[][person_aws_3]" checked="checked" ng-model="person_aws_3" class="ng-pristine ng-valid">
+												<label for="person_aws_3"></label>
+											</div>
+										</div>
+										<div class="asw">
+											<div class="condition_box">
+												<div class="condition_box02">
+													<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
+												</div>
+												<p>
+													Jag önskar att avkastning av egendomen skall vara enskild egendom. 
+												</p>
+												<p>
+													T.ex. Avkastning på aktier.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div><!-- person -->
+								<div class="fond">
+									<div class="fond_info1">
+										<div class="fond_info">
+											<input type="text" name="fond[][fond_name]" id="fond_name" placeholder="namn"  class="register user" ng-model="fond_name" disabled="disabled" > 
+											<p class="error_msg" id="error_fond_name" ></p>
+										</div>
+										
+										<div class="fond_info">	
+											<input type="text" name="fond[][fond_account]" id="fond_account" placeholder="konto"  class="register address" ng-model="man_address" disabled="disabled"> 
+											<p class="error_msg" id="error_fond_account"></p>
+										</div>
+
+									</div><!-- fond_info1 -->
+
+									<div class="q-asw">
+										<div class="question">
+											<div class="purpose">
+												<label>Ändamål:</label>
+												<textarea value="1" id="fond_aws_1" name="fond[][purpose]" checked="checked" ng-model="purpose" class="ng-pristine ng-valid" placeholder="Skriv här om medlen skall användas till något särskilt ändamål inom fonden/stiftelsen." > </textarea>
+												<label for="purpose"></label>
+											</div>
+										</div>
+									</div>
+
+								</div>	
+								
 							</div>
 						</div>
+
 					</div><!-- form001 -->	
+					<div class="percent" ng-model="numPeople" ng-show="numPeople">
+						<div class="condition_box">
+							<div class="condition_box02">
+								<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Fördelning vid flera testamentestagare</span></a>
+							</div>
+							<p>
+								Vid val av flera testamentestagare skall egendomen fördelas: 
+							</p>
+							<p>
+								Lika fördelning mellan testamentstagarna innebär att egendomen fördelas jämnt mellan dem. Fördelning enligt procentsats innebär att testamentstagarna erhåller kvarlåtenskapen enligt en angiven procentsats. T.ex. Jan Svensson 30%, Moa Svensson 30%, Cancerfonden 40%. Var uppmärksam på att vid procentangivning tilldela totalt 100%. 
+
+							</p>
+							<ul>
+								<li>• dem lika emellan </li>
+								<li>
+									• dem lika emellan
+									<ul>
+										<li></li>
+									</ul> 
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="action-new-people">
+						<p>Do you want to add new person/fond? </p>
+						<button addpeople>Add</button>
+						<button removepeople ng-hide="isRemove">Remove</button>
+					</div>
 				</div><!-- wrapper -->
 			</div><!-- form01 -->
 			<div class="bottom">

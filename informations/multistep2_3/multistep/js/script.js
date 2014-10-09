@@ -175,24 +175,24 @@ $(document).ready(function(){
 	});
 
 	/** ADD FOR FORM 2 **/
-	$('#slice_3 .choose_box select').change(function() {
-		var choose  = $( "select option:selected" ).val();
-		if (choose == 1) 
-		{
-			$('.person').show();
-			$('.person input').removeAttr('disabled');
-			$('.fond').hide()
-			$('.fond input').attr('disabled', 'disabled');
+	// $('#slice_3 .choose_box select').change(function() {
+	// 	var choose  = $( "select option:selected" ).val();
+	// 	if (choose == 1) 
+	// 	{
+	// 		$('.person').show();
+	// 		$('.person input').removeAttr('disabled');
+	// 		$('.fond').hide()
+	// 		$('.fond input').attr('disabled', 'disabled');
 
-		}
-		else 
-		{
-			$('.person').hide();
-			$('.person input').attr('disabled', 'disabled');
-			$('.fond').show();
-			$('.fond input').removeAttr('disabled');
-		}
-	})
+	// 	}
+	// 	else 
+	// 	{
+	// 		$('.person').hide();
+	// 		$('.person input').attr('disabled', 'disabled');
+	// 		$('.fond').show();
+	// 		$('.fond input').removeAttr('disabled');
+	// 	}
+	// })
 		
 });
 
