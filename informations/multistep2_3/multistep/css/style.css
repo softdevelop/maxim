@@ -121,7 +121,7 @@ background:#fff;
 text-align: center;
 float:left;
 }
-.form001 p{text-align:center;font-family:'Open Sans';color: #666;font-size: 14px;line-height: 27px;padding: 15px 0px 0px 0px;}
+.form001 p{font-family: 'Open Sans';color: #666;font-size: 14px;line-height: 27px;padding: 15px 0px 15px 20px;float: left;}
 
 .form001 form{text-align:center;}
 
@@ -197,8 +197,8 @@ input:hover:-moz-placeholder,input:focus:-moz-placeholder,input:hover::-moz-plac
 .btn_register1:hover{color:#fff;opacity:0.5;}
 .btn_register2{position:relative;margin-top:15px;font-family:'Open Sans';right:10px!important;text-align:center;background:url("images/start_button.png") no-repeat;padding: 14px 16px;font-size: 20px;color: #fff;}
 .btn_register2:hover{color:#fff;opacity:0.5;}
-.user{background:url("images/user.png") no-repeat center left;float:left;margin: 10px 26px 10px 26px;}
-.address{background:url("images/address.png") no-repeat center left;float:left;margin: 10px 26px 10px 26px;}
+.user{background:url("images/user.png") no-repeat center left;float:left;margin: 10px 26px 10px 20px;}
+.address{background:url("images/address.png") no-repeat center left;float:left;margin: 10px 26px 10px 20px;}
 .pincode{background:url("images/pincode.png") no-repeat center left;float:left;margin: 10px 26px 10px 26px;}
 .post{background:url("images/postal.png") no-repeat center left;float:left;margin: 10px 26px 10px 26px;}
 .phone{background:url("images/phone.png") no-repeat center left;float:left;margin: 10px 26px 10px 26px;}
@@ -425,7 +425,8 @@ input[type=checkbox] {
 	background: #e0e0e0;
 	margin: 5px 0px;
 	border-radius: 5px;
-	position: relative
+	position: relative;
+	margin-right: 27px;
 }
 .checkboxThree:before {
 	font-family: 'Open Sans';
@@ -642,7 +643,8 @@ input[type=radio].css-checkbox {
 
 float:right;
 margin-right:20px;
-
+margin-bottom: 5px;
+margin-top: 15px;
 }
 
 .terms_conditions{float:left;}
@@ -915,7 +917,7 @@ border: 1px solid #ccc;
 #slice_3 .form001 p:first-child {
 	text-align: left;
 	margin-left: 18px;
-	margin-bottom: 10px;
+	/*margin-bottom: 10px;*/
 	font-weight: 600;
 }
 #slice_3 .form001 .condition_box {
@@ -1161,5 +1163,44 @@ border: 1px solid #ccc;
 	display: none;
 }
 .info_gotten,  .info_gotten_specific {
+	float: left;
+}
+.person .person_info input,.fond .fond_info input{
+	width: 635px;
+}
+.question .purpose label{
+	float: left;
+	display: block;
+	width: 90%;
+	text-align: left;
+	margin-bottom: 5px;
+}
+.question .purpose textarea{
+	width: 650px;
+	height: 60px;
+	float: left;
+}
+.condition_box ul li ul.list_people li{
+	display: inline-block;
+	width: 100%;
+	padding-left: 15px;
+}
+.condition_box ul li ul.list_people li .radio_option{
+	margin: 5px;
+	float: left;
+}
+.action-new-people button{
+	float: right;
+	width: 100px;
+	margin-right: 25px;
+}
+.wrapper .action-new-people{
+	display: inline-block;
+	width: 100%;
+	margin-top: 10px;
+}
+.wrapper .action-new-people > p{
+	display: inline-block;
+	line-height: 45px;
 	float: left;
 }
