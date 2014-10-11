@@ -754,7 +754,7 @@
 			<div class="form01">
 				<div class="wrapper">
 					<div class="form001">
-						<p>Gåva and Begravning och Gravvård</p>
+						<p class="title-gift">Gåva and Begravning och Gravvård</p>
 						<div class="gift-container">
 							<div class="q-asw">
 								<div class="asw">
@@ -773,23 +773,64 @@
 								</div>
 								<div class="question">
 									<div class="checkboxThree">
-										<input type="checkbox" value="1" id="gift_aws_1" name="gift_aws_1" checked="checked" ng-model="gift_aws_1" class="ng-pristine ng-valid">
-										<label for="gift_aws_1"></label>
+										<input type="checkbox" value="1" id="gift_aws" name="gift_aws" checked="checked" ng-model="gift_aws" class="ng-pristine ng-valid" ng-change="gift()">
+										<label for="gift_aws"></label>
 									</div>
 								</div>
 							</div>
 
-							<div class="q-asw" style="display: none;">
+							<div class="q-asw" ng-show="isLessGift">
 								<div class="asw">
 									<div class="title">Gåvor upp till […] SEK skall inte räknas som förskott på arv. </div>
 								</div>
 								<div class="question">
 									<div class="">
-										<input type="text" id="gift_limit_number" name="gift_limit_number"  ng-model="gift_limit_number" class="ng-pristine ng-valid">
+										<input type="text" id="gift_limit_number" name="gift_limit_number"  ng-model="gift_limit_number" class="ng-pristine ng-valid" ng-disabled="!isLessGift">
 										<label for="gift_limit_number"></label>
 									</div>
 								</div>
 							</div>
+						</div>
+
+						<p>Begravning och Gravvård</p>
+						<div class="funeral-container">
+							<div class="q-asw">
+								<div class="asw">
+									<div class="title">Har du några särskilda önskemål kring din begravning och gravvård?</div>
+									
+								</div>
+								<div class="question">
+									<div class="checkboxThree">
+										<input type="checkbox" id="funeral_aws" name="funeral_aws" ng-model="funeral_aws" class="ng-pristine ng-valid" ng-change="funeral()">
+										<label for="funeral_aws"></label>
+									</div>
+								</div>
+							</div>
+
+							<div class="q-asw" ng-show="isLessFuneral">
+								<div class="asw">
+									<div class="title">Jag önskar att avsättning till min gravvård ska ske med:[...] SEK</div>
+								</div>
+								<div class="question">
+									<div class="">
+										<input type="text" id="transfer_limit_number" name="transfer_limit_number"  ng-model="transfer_limit_number" class="ng-pristine ng-valid" ng-disabled="!isTransferNum">
+										<label for="transfer_limit_number"></label>
+									</div>
+								</div>
+							</div>
+
+							<div class="q-asw" ng-show="isLessFuneral">
+								<div class="asw">
+									<div class="title">Kring min begravning önskar jag följande :</div>
+								</div>
+								<div class="question">
+									<div class="">
+										<textarea type="text" id="funeral_description" name="funeral_description"  ng-model="funeral_description" class="ng-pristine ng-valid" ng-disabled="!isLessFuneral"></textarea>
+										<label for="funeral_description"></label>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div><!-- form001 -->
 				</div><!-- wrapper -->

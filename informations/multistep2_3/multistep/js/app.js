@@ -72,6 +72,28 @@
 				}
 			}
 
+			$scope.gift = function () {
+				$scope.isLessGift = false;
+				var isChecked = $('#slice_5 #gift_aws').is(':checked');
+				console.log(isChecked);
+				if (isChecked) {
+					$scope.isLessGift = true;
+				} else {
+					$scope.isLessGift = false;
+				}
+			}
+
+			$scope.funeral = function () {
+				$scope.isLessFuneral = false;
+				var isChecked = $('#slice_5 #funeral_aws').is(':checked');
+				console.log(isChecked);
+				if (isChecked) {
+					$scope.isLessFuneral = true;
+				} else {
+					$scope.isLessFuneral = false;
+				}
+			}
+			
 	  		var people_num = $scope.numItems() - 1;
 			var name = angular.element('<li><div class="radio_option"><input type="radio" name="choose_one" id="choose_one_' + people_num + '" class="css-checkbox prop_answers" value="3"><label for="choose_one_' + people_num + '" class="css-label radGroup1"></label></div><span>{{person_first_name_' + people_num + '}}{{fond_name_' + people_num  + '}}</span></li>');
 			$compile(name)($scope).appendTo($('#slice_3 .list_people'));
