@@ -1,7 +1,7 @@
 (function() {
 	var app = angular.module('myApp', ['ngRoute']);
 
-	  	app.controller('MainCtrl', ['$scope', '$compile', function($scope, $compile) {
+	  	app.controller('MainCtrl', ['$scope', function($scope) {
 
 
 	  		$scope.changeGotten = function (order, model_value) {
@@ -50,32 +50,6 @@
 			    return  $("#slice_4 .info_gotten_specific").length + 1;
 			};
 
-			$scope.jumpQA = function(person) {
-				var isChecked = $('#container_' + person).find('.checkboxThree').first().find('input').is(':checked');
-				if (isChecked) {
-					$('#slice_3 #container_' + person).find('.q-asw:nth-child(3), .q-asw:nth-child(4)').show();
-					$('#slice_3 #container_' + person).find('.q-asw:nth-child(3), .q-asw:nth-child(4)').find('input').removeAttr('disabled');
-				} else {
-					$('#slice_3 #container_' + person).find('.q-asw:nth-child(3), .q-asw:nth-child(4)').hide();
-					$('#slice_3 #container_' + person).find('.q-asw:nth-child(3), .q-asw:nth-child(4)').find('input').attr('disabled', 'disabled');
-				}
-			}
-
-			$scope.jumpQASpecific = function(person) {
-				var isChecked = $('#slice_4 #container_' + person).find('.checkboxThree').first().find('input').is(':checked');
-				if (isChecked) {
-					$('#slice_4  #container_' + person).find('.q-asw:nth-child(4), .q-asw:nth-child(5)').show();
-					$('#slice_4  #container_' + person).find('.q-asw:nth-child(5), .q-asw:nth-child(4)').find('input').removeAttr('disabled');
-				} else {
-					$('#slice_4  #container_' + person).find('.q-asw:nth-child(5), .q-asw:nth-child(4)').hide();
-					$('#slice_4  #container_' + person).find('.q-asw:nth-child(5), .q-asw:nth-child(4)').find('input').attr('disabled', 'disabled');
-				}
-			}
-
-	  		var people_num = $scope.numItems() - 1;
-			var name = angular.element('<li><div class="radio_option"><input type="radio" name="choose_one" id="choose_one_' + people_num + '" class="css-checkbox prop_answers" value="3"><label for="choose_one_' + people_num + '" class="css-label radGroup1"></label></div>{{person_first_name_' + people_num + '}}{{fond_name_' + people_num  + '}}</li>');
-			$compile(name)($scope).appendTo($('#slice_3 .list_people'));
-
 	  	}]);
 	  	
 		//Directive for adding buttons on click that 
@@ -90,28 +64,7 @@
 					html.find(".container select").attr('ng-model', 'type_gotten_' + scope.numItems());
 					html.find(".container select").attr('ng-init', 'type_gotten_' + scope.numItems() + ' = 1');
 					html.find(".container select").attr('ng-change', 'changeGotten(' + scope.numItems() + ', {{type_gotten_' + scope.numItems() + '}})');
-
-					html.find(".container .checkboxThree").first().find('input').attr('ng-change', 'jumpQA(' + scope.numItems() + ')');
-
 					html.find(".container .person").attr('name', 'type_gotten_' + scope.numItems());
-
-					html.find("input[id^=person_first_name_]").attr('ng-model', 'person_first_name_' + scope.numItems());
-					html.find("input[id^=person_first_name_]").attr('id', 'person_first_name_' + scope.numItems());
-					
-					html.find("input[id^=person_last_name_]").attr('ng-model', 'person_last_name_' + scope.numItems());
-					html.find("input[id^=person_last_name_]").attr('id', 'person_last_name_' + scope.numItems());
-					
-					html.find("input[id^=person_civic_]").attr('ng-model', 'person_civic_' + scope.numItems());
-					html.find("input[id^=person_civic_]").attr('id', 'person_civic_' + scope.numItems());
-
-					html.find("input[id^=fond_name_]").attr('ng-model', 'fond_name_' + scope.numItems());
-					html.find("input[id^=fond_name_]").attr('id', 'fond_name_' + scope.numItems());
-					
-					html.find("input[id^=fond_account_]").attr('ng-model', 'fond_account_' + scope.numItems());
-					html.find("input[id^=fond_account_]").attr('id', 'fond_account_' + scope.numItems());
-
-					html.find("input[id^=purpose_]").attr('ng-model', 'purpose_' + scope.numItems());
-					html.find("input[id^=purpose_]").attr('id', 'purpose_' + scope.numItems());
 
 					html.find(".container .checkboxThree").each(function(index) {
 						index++;
@@ -121,18 +74,17 @@
 						$(this).find('input').attr('ng-model', 'person_aws_' + index + '_' + scope.numItems());
 					});
 
-					
+					// show list people
+					var people_num = scope.numItems() - 1;
+					var name = angular.element('<li>{{person_first_name_' + people_num + '}}{{fond_name_' + people_num  + '}}</li>');
+					$compile(name)(scope).appendTo($('#slice_3 .list_people'));
+
 					// show percent block
 					$('.percent ').show();
 					$('.action-new-people .btn-remove').show();
 					// append block
 					var tag = angular.element(html);
 					$compile(tag)(scope).appendTo($('#slice_3 .form001'));
-
-					// show list people
-					var people_num = scope.numItems() - 1;
-					var name = angular.element('<li><div class="radio_option"><input type="radio" name="choose_one" id="choose_one_' + people_num + '" class="css-checkbox prop_answers" value="3"><label for="choose_one_' + people_num + '" class="css-label radGroup1"></label></div>{{person_first_name_' + people_num + '}}{{fond_name_' + people_num  + '}}</li>');
-					$compile(name)(scope).appendTo($('#slice_3 .list_people'));
 
 					
 				});
@@ -149,7 +101,6 @@
 							  		$('.percent').hide();
 							  		$('.action-new-people .btn-remove').hide();
 							  	}
-						  	// $('#slice_3 .list_people li').last().remove();
 					    	});
 				  	});
 				  	
@@ -174,28 +125,6 @@
 					html.find(".container textarea").attr('name', 'person[specific][' + scope.numItemsSpecific() + '][property_description]');
 					html.find(".container .property_description label").attr('for', 'error_property_description_' + scope.numItemsSpecific());
 
-					html.find(".container .checkboxThree").first().find('input').attr('ng-change', 'jumpQASpecific(' + scope.numItemsSpecific() + ')');
-
-					html.find("input[id^=person_first_name_]").attr('ng-model', 'person_first_name_' + scope.numItemsSpecific());
-					html.find("input[id^=person_first_name_]").attr('id', 'person_first_name_' + scope.numItemsSpecific());
-					
-					html.find("input[id^=person_last_name_]").attr('ng-model', 'person_last_name_' + scope.numItemsSpecific());
-					html.find("input[id^=person_last_name_]").attr('id', 'person_last_name_' + scope.numItemsSpecific());
-					
-					html.find("input[id^=person_civic_]").attr('ng-model', 'person_civic_' + scope.numItemsSpecific());
-					html.find("input[id^=person_civic_]").attr('id', 'person_civic_' + scope.numItemsSpecific());
-
-					html.find("input[id^=fond_name_]").attr('ng-model', 'fond_name_' + scope.numItemsSpecific());
-					html.find("input[id^=fond_name_]").attr('id', 'fond_name_' + scope.numItemsSpecific());
-					
-					html.find("input[id^=fond_account_]").attr('ng-model', 'fond_account_' + scope.numItemsSpecific());
-					html.find("input[id^=fond_account_]").attr('id', 'fond_account_' + scope.numItemsSpecific());
-
-					html.find("input[id^=purpose_]").attr('ng-model', 'purpose_' + scope.numItemsSpecific());
-					html.find("input[id^=purpose_]").attr('id', 'purpose_' + scope.numItemsSpecific());
-
-					
-					
 					html.find(".container .checkboxThree").each(function(index) {
 						$(this).find('input').attr('name', 'person[specific][' + scope.numItemsSpecific() + '][person_aws_' + index + '_specific]');
 						$(this).find('input').attr('id', 'person_aws_' + index + '_' + scope.numItemsSpecific());

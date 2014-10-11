@@ -361,24 +361,29 @@
 								<div class="person">
 									<div class="person_info1">
 										<div class="person_info">
-											<input type="text" name="person[general][1][person_first_name]" id="person_first_name_1" placeholder="Förnamn"  class="register user" ng-model="person_first_name_1" > 
-											<p class="error_msg" id="error_person_first_name_1" ></p>
+											<input type="text" name="person[general][1][person_first_name]" id="person_first_name" placeholder="Förnamn"  class="register user" ng-model="person_first_name_1"> 
+											<p class="error_msg" id="error_person_first_name" ></p>
 										</div>
 										
 										<div class="person_info">	
-											<input type="text" name="person[general][1][person_last_name]" id="person_last_name_1" placeholder="Efternamn"  class="register address" ng-model="person_last_name_1" > 
-											<p class="error_msg" id="error_person_last_name_1"></p>
+											<input type="text" name="person[general][1][person_last_name]" id="person_last_name" placeholder="Efternamn"  class="register address" ng-model="person_last_name_1" > 
+											<p class="error_msg" id="error_person_last_name"></p>
 										</div>
 
 										<div class="person_info">	
-											<input type="text" name="person[general][1][person_civic]" id="person_civic_1" placeholder="Personnummer"  class="register address" ng-model="person_civic_1" > 
-											<p class="error_msg" id="error_person_civic_1"></p>
+											<input type="text" name="person[general][1][person_civic]" id="person_civic" placeholder="Personnummer"  class="register address" ng-model="person_civic_1" > 
+											<p class="error_msg" id="error_person_civic"></p>
 										</div>
 
 									</div><!-- person_info1 -->
 
 									<div class="q-asw">
-										
+										<div class="question">
+											<div class="checkboxThree">
+												<input type="checkbox" value="1" id="person_aws_1_1" name="person[general][1][person_aws_1]" checked="checked" ng-model="person_aws_1_1" class="ng-pristine ng-valid">
+												<label for="person_aws_1_1"></label>
+											</div>
+										</div>
 										<div class="asw">
 											<div class="condition_box">
 												<div class="condition_box02">
@@ -392,16 +397,14 @@
 												</p>
 											</div>
 										</div>
+									</div>
+									<div class="q-asw">
 										<div class="question">
 											<div class="checkboxThree">
-												<input type="checkbox" value="1" id="person_aws_1_1" name="person[general][1][person_aws_1]" checked="" ng-model="person_aws_1_1" class="ng-pristine ng-valid" ng-change="jumpQA(1)">
-												<label for="person_aws_1_1"></label>
+												<input type="checkbox" value="1" id="person_aws_2_1" name="person[general][1][person_aws_2]" checked="checked" ng-model="person_aws_2_1" class="ng-pristine ng-valid">
+												<label for="person_aws_2_1"></label>
 											</div>
 										</div>
-
-									</div>
-									<div class="q-asw" style="display: none;">
-										
 										<div class="asw">
 											<div class="condition_box">
 												<div class="condition_box02">
@@ -415,15 +418,15 @@
 												</p>
 											</div>
 										</div>
-										<div class="question">
-											<div class="checkboxThree">
-												<input type="checkbox" value="1" id="person_aws_2_1" name="person[general][1][person_aws_2]" checked="checked" ng-model="person_aws_2_1" class="ng-pristine ng-valid" disabled="disabled">
-												<label for="person_aws_2_1"></label>
-											</div>
-										</div>
 									</div>
 
-									<div class="q-asw" style="display: none;">
+									<div class="q-asw">
+										<div class="question">
+											<div class="checkboxThree">
+												<input type="checkbox" value="1" id="person_aws_3_1" name="person[general][1][person_aws_3]" checked="checked" ng-model="person_aws_3_1" class="ng-pristine ng-valid">
+												<label for="person_aws_3_1"></label>
+											</div>
+										</div>
 										<div class="asw">
 											<div class="condition_box">
 												<div class="condition_box02">
@@ -437,14 +440,6 @@
 												</p>
 											</div>
 										</div>
-
-										<div class="question">
-											<div class="checkboxThree">
-												<input type="checkbox" value="1" id="person_aws_3_1" name="person[general][1][person_aws_3]" checked="checked" ng-model="person_aws_3_1" class="ng-pristine ng-valid" disabled="disabled">
-												<label for="person_aws_3_1"></label>
-											</div>
-										</div>
-
 									</div>
 								</div><!-- person -->
 								<div class="fond">
@@ -553,72 +548,73 @@
 								<div class="person">
 									<div class="person_info1">
 										<div class="person_info">
-											<input type="text" name="person[specific][1][person_first_name]" id="person_first_name_specific_1" placeholder="Förnamn"  class="register user" ng-model="person_first_name_specific_1"> 
-											<p class="error_msg" id="error_person_first_name_specific_1"></p>
+											<input type="text" name="person[specific][1][person_first_name]" id="person_first_name_specific" placeholder="Förnamn"  class="register user" ng-model="person_first_name_1_specific"> 
+											<p class="error_msg" id="error_person_first_name_specific" ></p>
 										</div>
 										
 										<div class="person_info">	
-											<input type="text" name="person[specific][1][person_last_name]" id="person_last_name_specific_1" placeholder="Efternamn"  class="register address" ng-model="person_last_name_specific_1" > 
-											<p class="error_msg" id="error_person_last_name_specific_1"></p>
+											<input type="text" name="person[specific][1][person_last_name]" id="person_last_name_specific" placeholder="Efternamn"  class="register address" ng-model="person_last_name_1_specific" > 
+											<p class="error_msg" id="error_person_last_name_specific"></p>
 										</div>
 
 										<div class="person_info">	
-											<input type="text" name="person[specific][1][person_civic]" id="person_civic_specific_1" placeholder="Personnummer"  class="register address" ng-model="person_civic_specific_1" > 
-											<p class="error_msg" id="error_person_civic_specific_1"></p>
+											<input type="text" name="person[specific][1][person_civic]" id="person_civic_specific" placeholder="Personnummer"  class="register address" ng-model="person_civic_1_specific" > 
+											<p class="error_msg" id="error_person_civic_specific"></p>
 										</div>
 
 									</div><!-- person_info1 -->
 
+
 									<div class="q-asw">
+
+										<div class="question">
+											<div class="property_description">
+												<p>Ejendoms Beskrivning : </p>
+												<textarea id="property_description_1" name="person[specific][1][property_description]" ng-model="property_description_1" class="ng-pristine ng-valid"></textarea>
+												<label for="error_property_description_1"></label>
+											</div>
+										</div>
 										<div class="asw">
 											<div class="condition_box">
 												<div class="condition_box02">
 													<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"></a>
 												</div>
 												<p>
-												 	Försök att fylla i så uppdaterad och tillförlitlig information som möjligt för att undvika framtida missförstånd eller funderingar. Glöm inte att vid egendomsbeskrivningen tillsätta det antal egendomen avser. 
-												</p>
-												<p>
+													Försök att fylla i så uppdaterad och tillförlitlig information som möjligt för att undvika framtida missförstånd eller funderingar. Glöm inte att vid egendomsbeskrivningen tillsätta det antal egendomen avser. 
 													T.ex. Min gröna soffa. Pengarna på mitt Nordea konto, kontonummer: XXXXX. Ericsson aktier, aktieslag B, antal 1000.
+
 												</p>
-													
+												
 											</div>
 										</div>
 
 										<div class="question">
-											<div class="property_description">
-												<p>Ejendoms Beskrivning : </p>
-												<textarea id="person_property_description_1" name="person[specific][1][person_property_description]" ng-model="person_property_description_1" class="ng-pristine ng-valid"></textarea>
-												<label for="error_person_property_description_1"></label>
+											<div class="checkboxThree">
+												<input type="checkbox" value="1" id="person_aws_1_1_specific" name="person[specific][1][person_aws_1_specific]" checked="checked" ng-model="person_aws_1_1_specific" class="ng-pristine ng-valid">
+												<label for="person_aws_1_1_specific"></label>
 											</div>
 										</div>
-										
-										
-									</div>
-
-									<div class="q-asw">
 										<div class="asw">
 											<div class="condition_box">
 												<div class="condition_box02">
 													<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
 												</div>
 												<p>
-													Jag önskar att allt som tillfaller någon genom detta testamente eller arv skall vara vederbörandes enskilda egendom 
+													Jag önskar att allt som tillfaller någon genom detta testamente eller arv skall vara dennes enskilda egendom 
 												</p>
 												<p>
 													Att egendom betraktas som enskild innebär i juridisk mening att make/maka till testamentstagaren inte har rätt till värdemässig hälftendelning av den enskilda egendomen vid en eventuell bodelning, till följd av separation (utifall den du testamenterar till är gift). Med andra ord innebär detta alternativet att personen du testamenterar din egendom till och som är gift kommer att få behålla egendom ifall personen i framtiden skiljer sig. Annars gäller att all makarnas respektive egendom är så kallat giftorättsgods och skall värdemässigt delas på hälften vid en skilsmässa. 
 												</p>
 											</div>
 										</div>
+									</div>
+									<div class="q-asw">
 										<div class="question">
 											<div class="checkboxThree">
-												<input type="checkbox" value="1" id="person_aws_specific_1_1" name="person[specific][1][person_aws_specific_1]" checked="checked" ng-model="person_aws_specific_1_1" class="ng-pristine ng-valid" ng-change="jumpQASpecific(1)">
-												<label for="person_aws_specific_1_1"></label>
+												<input type="checkbox" value="1" id="person_aws_2_1_specific" name="person[specific][1][person_aws_2_specific]" checked="checked" ng-model="person_aws_2_1_specific" class="ng-pristine ng-valid">
+												<label for="person_aws_2_1_specific"></label>
 											</div>
 										</div>
-									</div>
-
-									<div class="q-asw" style="display: none;">
 										<div class="asw">
 											<div class="condition_box">
 												<div class="condition_box02">
@@ -628,19 +624,19 @@
 													Jag önskar att även det som tillkommer i egendomens ställe skall vara enskild egendom
 												</p>
 												<p>
-													T.ex. Peter har ärvt en tavla som enskild egendom från sina morföräldrar med följdkravet att vad som träder i tavlans ställe även fortsatt skall vara Peters enskilda egendom. Om Peter säljer tavlan för att köpa en bil kommer därför även bilen att betraktas som Peters enskilda egendom. 
+													T.ex. Peter har ärvt en tavla som enskild egendom från sina morföräldrar med följdkravet att vad som träder i tavlans ställe även fortsatt skall vara Peters enskilda egendom. Om Peter säljer tavlan för att köpa en bil kommer därför även bilen att betraktas som Peters enskilda egendom.  
 												</p>
-											</div>
-										</div>
-										<div class="question">
-											<div class="checkboxThree">
-												<input type="checkbox" value="1" id="person_aws_specific_1_2" name="person[specific][1][person_aws_specific_2]" checked="checked" ng-model="person_aws_specific_1_2" class="ng-pristine ng-valid">
-												<label for="person_aws_specific_1_2"></label>
 											</div>
 										</div>
 									</div>
 
-									<div class="q-asw" style="display: none;">
+									<div class="q-asw">
+										<div class="question">
+											<div class="checkboxThree">
+												<input type="checkbox" value="1" id="person_aws_3_1_specific" name="person[specific][1][person_aws_3_specific]" checked="checked" ng-model="person_aws_3_1_specific" class="ng-pristine ng-valid">
+												<label for="person_aws_3_1_specific"></label>
+											</div>
+										</div>
 										<div class="asw">
 											<div class="condition_box">
 												<div class="condition_box02">
@@ -654,24 +650,17 @@
 												</p>
 											</div>
 										</div>
-										<div class="question">
-											<div class="checkboxThree">
-												<input type="checkbox" value="1" id="person_aws_specific_1_3" name="person[specific][1][person_aws_specific_3]" checked="checked" ng-model="person_aws_3_1_specific" class="ng-pristine ng-valid">
-												<label for="person_aws_3_1_specific"></label>
-											</div>
-										</div>
-										
 									</div>
 								</div><!-- person -->
 								<div class="fond">
 									<div class="fond_info1">
 										<div class="fond_info">
-											<input type="text" name="fond[specific][1][fond_name]" id="fond_name_specific_1" placeholder="namn"  class="register user" ng-model="fond_name_1_specific" disabled="disabled" > 
+											<input type="text" name="fond[specific][1][fond_name]" id="fond_name_1_specific" placeholder="namn"  class="register user" ng-model="fond_name_1_specific" disabled="disabled" > 
 											<p class="error_msg" id="error_fond_name_1_specific" ></p>
 										</div>
 										
 										<div class="fond_info">	
-											<input type="text" name="fond[specific][1][fond_account]" id="fond_account_specific_1" placeholder="konto"  class="register address" ng-model="fond_account_1_specific" disabled="disabled"> 
+											<input type="text" name="fond[specific][1][fond_account]" id="fond_account_1_specific" placeholder="konto"  class="register address" ng-model="fond_account_1_specific" disabled="disabled"> 
 											<p class="error_msg" id="fond_account_1_specific"></p>
 										</div>
 
@@ -681,32 +670,8 @@
 										<div class="question">
 											<div class="purpose">
 												<label>Ändamål:</label>
-												<textarea value="1" id="purpose_specific_1" name="fond[specific][1][purpose]" checked="checked" ng-model="purpose_specific_1" class="ng-pristine ng-valid" placeholder="Skriv här om medlen skall användas till något särskilt ändamål inom fonden/stiftelsen." > </textarea>
-												<label for="purpose_specific_1"></label>
-											</div>
-										</div>
-									</div>
-
-									<div class="q-asw">
-										<div class="asw">
-											<div class="condition_box">
-												<div class="condition_box02">
-													<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
-												</div>
-												<p>
-													Försök att fylla i så uppdaterad och tillförlitlig information som möjligt för att undvika framtida missförstånd eller funderingar. Glöm inte att vid egendomsbeskrivningen tillsätta det antal egendomen avser. 
-												</p>
-												<p>
-													T.ex. Min gröna soffa. Pengarna på mitt Nordea konto, kontonummer: XXXXX. Ericsson aktier, aktieslag B, antal 1000.
-												</p>
-											</div>
-										</div>
-
-										<div class="question">
-											<div class="purpose">
-												<label>Ejendoms Beskrivning :</label>
-												<textarea value="1" id="description_property_specific_1" name="fond[specific][1][description_property]" checked="checked" ng-model="description_property_specific_1" class="ng-pristine ng-valid" placeholder="" > </textarea>
-												<label for="description_property_specific_1"></label>
+												<textarea value="1" id="purpose_1_specific" name="fond[specific][1][purpose]" checked="checked" ng-model="purpose_1_specific" class="ng-pristine ng-valid" placeholder="Skriv här om medlen skall användas till något särskilt ändamål inom fonden/stiftelsen." > </textarea>
+												<label for="purpose_1_specific"></label>
 											</div>
 										</div>
 									</div>
@@ -717,7 +682,29 @@
 						</div>
 
 					</div><!-- form001 -->	
-					
+					<div class="percent" style="display: none;">
+						<div class="condition_box">
+							<div class="condition_box02">
+								<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Fördelning vid flera testamentestagare</span></a>
+							</div>
+							<p>
+								Vid val av flera testamentestagare skall egendomen fördelas: 
+							</p>
+							<p>
+								Lika fördelning mellan testamentstagarna innebär att egendomen fördelas jämnt mellan dem. Fördelning enligt procentsats innebär att testamentstagarna erhåller kvarlåtenskapen enligt en angiven procentsats. T.ex. Jan Svensson 30%, Moa Svensson 30%, Cancerfonden 40%. Var uppmärksam på att vid procentangivning tilldela totalt 100%. 
+
+							</p>
+							<ul>
+								<li>• dem lika emellan </li>
+								<li>
+									• dem lika emellan
+									<ul>
+										<li></li>
+									</ul> 
+								</li>
+							</ul>
+						</div>
+					</div>
 					<div class="action-new-people">
 						<p>Do you want to add new person/fond? </p>
 						<button addpeoplespecific>Add</button>
@@ -754,43 +741,26 @@
 			<div class="form01">
 				<div class="wrapper">
 					<div class="form001">
-						<p>Gåva and Begravning och Gravvård</p>
-						<div class="gift-container">
-							<div class="q-asw">
-								<div class="asw">
-									<div class="title">Skall eventuella gåvor under din livstid till bröstarvinge avräknas som förskott på arv(i)? </div>
-									<div class="condition_box">
-										<div class="condition_box02">
-											<a id="infoTrigger" style="cursor:pointer;"><img src="images/info.png"><span>Läs mer</span></a>
-										</div>
-										<p>
-											Bröstarvinge är arvlåtarens barn och barnbarn och så vidare i rakt nedstigande led (avkomlingar). 
-										</p>
-										<p>
-											Gåvor till bröstarvingar presumeras alltid vara förskott på arv. Skall gåvor som du under din livstid ger till något av dina bröstarvingar räknas bort från barnens arv efter ditt frånfälle?
-										</p>
-									</div>
-								</div>
-								<div class="question">
-									<div class="checkboxThree">
-										<input type="checkbox" value="1" id="gift_aws_1" name="gift_aws_1" checked="checked" ng-model="gift_aws_1" class="ng-pristine ng-valid">
-										<label for="gift_aws_1"></label>
-									</div>
-								</div>
-							</div>
-
-							<div class="q-asw" style="display: none;">
-								<div class="asw">
-									<div class="title">Gåvor upp till […] SEK skall inte räknas som förskott på arv. </div>
-								</div>
-								<div class="question">
-									<div class="">
-										<input type="text" id="gift_limit_number" name="gift_limit_number"  ng-model="gift_limit_number" class="ng-pristine ng-valid">
-										<label for="gift_limit_number"></label>
-									</div>
-								</div>
-							</div>
-						</div>
+						<div class="terms_conditions">
+							<h3>Meddelande</h3>
+							<a id="infoTrigger1" style="cursor:pointer;" ><img src="images/info.png"><span>Läs mer</span></a>
+							<textarea rows="4" cols="85" class="other_info" name="other_info" id="other_info" ></textarea>
+							<img src="images/terms.jpeg">
+							<p>Jag har härmed lämnat information för skapande av ett Samboavtal. Jag har läst och godkänner Stjärnelunds Juristhus juridiska villkor för användande av denna tjänst samt beställning härigenom. </p>
+							<div class="container-agree-terms" with="100%">
+								<div class="agree_terms">
+									<input type="radio" name="agree_terms" id="agree_terms_1" class="css-checkbox" checked="checked"/>
+										<label for="agree_terms_1" class="css-label radGroup1" value="1"  style="padding-left: 50px;height: 23px;">Jag godkänner</label>
+									
+									
+									<input type="radio" name="agree_terms" id="agree_terms_2" class="css-checkbox" value="0"/>
+										<label for="agree_terms_2" class="css-label radGroup1"  style="padding-left: 50px;height: 23px;">Jag godkänner inte</label>
+									 <a id="infoTrigger3" style="cursor:pointer;padding-top: 5px;" ><img src="images/info.png"><span>Läs mer</span></a>
+									<p class="error_msg" id="error_agree_terms"></p>
+								</div><!-- agree_terms -->
+							</div><!-- continer-agree_terms -->
+							
+						</div><!-- terms_conditions -->
 					</div><!-- form001 -->
 				</div><!-- wrapper -->
 			</div><!-- form01 -->
