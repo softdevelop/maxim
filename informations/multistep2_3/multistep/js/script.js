@@ -1,6 +1,7 @@
-$(document).ready(function(){
+$(document).ready(function() {
 	var completedForms = [0, 0, 0, 0, 0, 0, 0];
 	
+
 	$('input[name=distribute]').change(function () {
 		var val = $(this).val();
 		if (val == 3) {
@@ -213,25 +214,6 @@ $(document).ready(function(){
 		$('#infoCont3').hide();
 	});
 
-	/** ADD FOR FORM 2 **/
-	// $('#slice_3 .choose_box select').change(function() {
-	// 	var choose  = $( "select option:selected" ).val();
-	// 	if (choose == 1) 
-	// 	{
-	// 		$('.person').show();
-	// 		$('.person input').removeAttr('disabled');
-	// 		$('.fond').hide()
-	// 		$('.fond input').attr('disabled', 'disabled');
-
-	// 	}
-	// 	else 
-	// 	{
-	// 		$('.person').hide();
-	// 		$('.person input').attr('disabled', 'disabled');
-	// 		$('.fond').show();
-	// 		$('.fond input').removeAttr('disabled');
-	// 	}
-	// })
 		
 });
 
@@ -411,9 +393,6 @@ function prefillReview() {
 		}
 	});
 
-	// $('.review_cohabiting_date').html($('#cohabiting_date').val());
-	// $('.review_cohabiting_date_ip').val($('#cohabiting_date').val());
-	
 	var purpose = $('input[name=purpose]:checked').val();
 	$('.review_purpose').html(purpose);
 	$('.review_purpose_ip').val(purpose);
