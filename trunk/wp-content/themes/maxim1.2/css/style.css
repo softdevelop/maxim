@@ -1171,3 +1171,7 @@ border: 1px solid #ccc;
 .fliter_step006 .popup_top{
 	top: 52px;
 }
+.fix_step003 .popup_top{
+	width: 125px;
+	left: -40px;
+}

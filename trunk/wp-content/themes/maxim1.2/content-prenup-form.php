@@ -472,7 +472,7 @@
 						
 						<div class="fliter2_step001"><a class="navCircle" id="sl3Navigate_1" style="cursor:pointer;"><h2>1</h2><div class="popup_top" ><p>Personuppgifter</p></div></a></div>
 						<div class="fliter3_step002"><a class="navCircle" id="sl3Navigate_2" style="cursor:pointer;"><h2>2</h2><div class="popup_top" ><p>Samboregler</p></div></a></div>
-						<div class="fliter_step003"><a class="parallelNav" id="sl_3_Navigate_3" ><h2>3</h2><div class="popup_top" style="display:block;"><p>Egendomsbeskrivning</p></div></a></div>
+						<div class="fliter_step003 fix_step003"><a class="parallelNav" id="sl_3_Navigate_3" ><h2>3</h2><div class="popup_top" style="display:block;"><p>Egendomsbeskrivning</p></div></a></div>
 						<div class="fliter_step004"><a class="parallelNav" id="sl_3_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Meddelande</p></div></a></div>
 						<div class="fliter_step005"><a class="parallelNav" id="sl_3_Navigate_5" ><h2>5</h2></a></div>
 						<div class="fliter_step006"><a class="parallelNav" id="sl_3_Navigate_6" ><h2>End</h2></a></div>
