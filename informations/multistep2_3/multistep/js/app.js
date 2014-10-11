@@ -73,7 +73,7 @@
 			}
 
 	  		var people_num = $scope.numItems() - 1;
-			var name = angular.element('<li><div class="radio_option"><input type="radio" name="choose_one" id="choose_one_' + people_num + '" class="css-checkbox prop_answers" value="3"><label for="choose_one_' + people_num + '" class="css-label radGroup1"></label></div>{{person_first_name_' + people_num + '}}{{fond_name_' + people_num  + '}}</li>');
+			var name = angular.element('<li><div class="radio_option"><input type="radio" name="choose_one" id="choose_one_' + people_num + '" class="css-checkbox prop_answers" value="3"><label for="choose_one_' + people_num + '" class="css-label radGroup1"></label></div><span>{{person_first_name_' + people_num + '}}{{fond_name_' + people_num  + '}}</span></li>');
 			$compile(name)($scope).appendTo($('#slice_3 .list_people'));
 
 	  	}]);
@@ -131,7 +131,7 @@
 
 					// show list people
 					var people_num = scope.numItems() - 1;
-					var name = angular.element('<li><div class="radio_option"><input type="radio" name="choose_one" id="choose_one_' + people_num + '" class="css-checkbox prop_answers" value="3"><label for="choose_one_' + people_num + '" class="css-label radGroup1"></label></div>{{person_first_name_' + people_num + '}}{{fond_name_' + people_num  + '}}</li>');
+					var name = angular.element('<li><div class="radio_option"><input type="radio" name="choose_one" id="choose_one_' + people_num + '" class="css-checkbox prop_answers" value="3"><label for="choose_one_' + people_num + '" class="css-label radGroup1"></label></div><span>{{person_first_name_' + people_num + '}}{{fond_name_' + people_num  + '}}</span></li>');
 					$compile(name)(scope).appendTo($('#slice_3 .list_people'));
 
 					
