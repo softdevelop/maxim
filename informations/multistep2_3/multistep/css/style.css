@@ -66,7 +66,7 @@ background:#ecf0f1;
 .fliter_step004 h2{padding: 10px 17px 20px;color:#fff;font-size:18px;font-family:'Open Sans';}
 .fliter_step005{background:url("images/step01.png") no-repeat ;float:left;margin-left: 90px;margin-top: 0px;margin-right: 0px;position: relative;}
 .fliter_step005 h2{padding: 19px 17px 19px;color: #fff;font-size: 12px;font-family: 'Open Sans';font-weight: 100;}
-.popup_top{position:absolute;top:50px;background:url("images/popup_top_box.png") no-repeat center;padding: 9px 0px 0px;width: 100px;left: -24px;display:none;text-align:center;}
+.popup_top{position:absolute;top:45px;background:url("images/popup_top_box.png") no-repeat center;padding: 9px 0px 0px;width: 100px;left: -28px;display:none;text-align:center;}
 .fliter_step001:hover .popup_top{display:block;}
 .fliter_step002:hover .popup_top{display:block;}
 .fliter_step003:hover .popup_top{display:block;}
@@ -1245,4 +1245,12 @@ border: 1px solid #ccc;
 	width: 697px;
 	float: left;
 	margin-left: 20px;
+}
+.fliter_step003 .popup_top,.fliter_step004 .popup_top{
+	width: 120px;
+	left: -38px;
+}
+.fliter_step005 .popup_top{
+	width: 200px;
+	left: -78px;
 }
