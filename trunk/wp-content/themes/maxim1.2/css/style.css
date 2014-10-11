@@ -66,7 +66,7 @@ background:#ecf0f1;
 .fliter_step004 h2{padding: 10px 17px 20px;color:#fff;font-size:18px;font-family:'Open Sans';}
 .fliter_step005{background:url("images/step01.png") no-repeat ;float:left;margin-left: 90px;margin-top: 0px;margin-right: 0px;position: relative;}
 .fliter_step005 h2{padding: 19px 17px 19px;color: #fff;font-size: 12px;font-family: 'Open Sans';font-weight: 100;}
-.popup_top{position:absolute;top:50px;background:url("images/popup_top_box.png") no-repeat center;padding: 9px 0px 0px;width: 100px;left: -24px;display:none;text-align:center;}
+.popup_top{position:absolute;top:45px;background:url("images/popup_top_box.png") no-repeat center;padding: 9px 0px 0px;min-width: 100px;left: -28px;display:none;text-align:center;}
 .fliter_step001:hover .popup_top{display:block;}
 .fliter_step002:hover .popup_top{display:block;}
 .fliter_step003:hover .popup_top{display:block;}
@@ -218,6 +218,7 @@ input:hover:-moz-placeholder,input:focus:-moz-placeholder,input:hover::-moz-plac
 
 .condition01{float:left;width:730px;position:relative;}
 .condition01 p{float:left;width:320px;text-align: left;padding: 0px 0px 0px 20px;}
+.condution_fix p{width:200px;}
 .condition01 img{float:right;padding-top: 2px;}
 .condition02{float:left;width:730px;}
 .condition02 p{float:left;width: 365px;text-align: left;padding: 20px 0px 0px 20px;font-family:'Open Sans';}
@@ -478,7 +479,7 @@ input[type=checkbox] {
 
 .mans_info1{float:left;padding-bottom:0px;width:730px;}
 .mans_info1 h1{font-size: 15px;line-height: 15px;}
-.mans_info1 p{float:left;padding: 0px 0px 0px 30px;font-family:'Open Sans';text-align:left;font-size: 12px;width:210px;line-height: 15px;}
+.mans_info1 p{float:left;padding: 0px 0px 0px 30px;font-family:'Open Sans';text-align:left;font-size: 12px;width:500px;line-height: 15px;}
 .mans_info1 b{float:left;width: 100px;text-align: left;font-weight: 600;font-family:'Open Sans';line-height: 15px;}
 .mans_info1 input{float:left;}
 
@@ -682,8 +683,8 @@ letter-spacing: 1px;
 line-height: 30px;
 margin: 0 auto;
 text-align: center;
-top: 38px;
-left: 277px;
+top: 25px;
+left: 200px;
 display: none;
 padding: 0 20px;
 position: absolute;
@@ -941,7 +942,7 @@ border: 1px solid #ccc;
 }
 #slice_3 .form001 .uppgifter .contain-switch .contain-switch-item{
 	display: inline-block;
-	width: 730px;
+	width: 727px;
 }
 #slice_3 .form001 .uppgifter .contain-switch .contain-switch-item p{
 	width: 400px;
@@ -1154,4 +1155,23 @@ border: 1px solid #ccc;
 	background: #FFF;
 	top: 200px;
 	right: 10px;
+}
+.popup_step002{
+	width: 250px;
+	left: -103px;
+}
+.condution_fix img{
+	float: right;
+}
+.contant-fix span{
+	display: block;
+	font-size: 11px;
+	line-height: 17px;
+}
+.fliter_step006 .popup_top{
+	top: 52px;
+}
+.fix_step003 .popup_top{
+	width: 125px;
+	left: -40px;
 }
