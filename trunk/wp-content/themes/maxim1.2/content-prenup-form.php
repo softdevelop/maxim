@@ -1,6 +1,3 @@
-<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/script.js"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/css/style.css">
-
 <?php
 	// handle post
 	if (!empty($_POST)) 
@@ -177,13 +174,13 @@
 						
 						<div class="fliter_step001 step"><h2>1</h2><div class="popup_top" ><p>Personuppgifter</p></div></div><!-- fliter_step001 -->
 						
-						<div class="fliter_step002 step"><h2>2</h2><div class="popup_top"><p>OMFATTING AV AKTENSKAPSFORORDET</p></div></div>
+						<div class="fliter_step002 step"><h2>2</h2><div class="popup_top popup_step002"><p>OMFATTING AV AKTENSKAPSFORORDET</p></div></div>
 						
-						<div class="fliter_step003 step"><h2>3</h2><div class="popup_top"><p>Översikt</p></div></div>
+						<div class="fliter_step003 step"><h2>3</h2><div class="popup_top"><p>Egendomsbeskrivning</p></div></div>
 						
-						<div class="fliter_step004 step"><h2>4</h2><div class="popup_top"><p>Meddelande</p></div></div>
+						<div class="fliter_step004 step"><h2>4</h2><div class="popup_top"><p>Översikt</p></div></div>
 						
-						<div class="fliter_step005 step"><h2>5</h2><div class="popup_top"><p>Meddelande</p></div></div>
+						<div class="fliter_step005 step"><h2>5</h2><div class="popup_top"><p>villkor</p></div></div>
 
 						<div class="fliter_step006 step"><h2>End</h2></div>
 						
@@ -226,8 +223,8 @@
 						
 						<div class="fliter1_step001"><a class="parallelNav" id="sl_1_Navigate_1" ><h2>1</h2><div class="popup_top" style="display:block;"><p>Personuppgifter</p></div></a></div>
 						<div class="fliter1_step002"><a class="parallelNav" id="sl_1_Navigate_2" ><h2>2</h2><div class="popup_top" ><p>Samboregler</p></div></a></div>
-						<div class="fliter_step003"><a class="parallelNav" id="sl_1_Navigate_3" ><h2>3</h2><div class="popup_top"><p>Översikt</p></div></a></div>
-						<div class="fliter_step004"><a class="parallelNav" id="sl_1_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Meddelande</p></div></a></div>
+						<div class="fliter_step003"><a class="parallelNav" id="sl_1_Navigate_3" ><h2>3</h2><div class="popup_top"><p>Egendomsbeskrivning</p></div></a></div>
+						<div class="fliter_step004"><a class="parallelNav" id="sl_1_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Översikt</p></div></a></div>
 						<div class="fliter_step005"><a class="parallelNav" id="sl_1_Navigate_5" ><h2>5</h2></a></div>
 						<div class="fliter_step006"><a class="parallelNav" id="sl_1_Navigate_6" ><h2>End</h2></a></div>
 						
@@ -342,8 +339,8 @@
 						
 						<div class="fliter2_step001"><a class="navCircle" id="sl2Navigate_1" style="cursor:pointer;"><h2>1</h2><div class="popup_top" ><p>Personuppgifter</p></div></a></div>
 						<div class="fliter1_step002"><a class="parallelNav" id="sl_2_Navigate_2" ><h2>2</h2><div class="popup_top" style="display:block;"><p>Samboregler</p></div></a></div>
-						<div class="fliter_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2><div class="popup_top"><p>Översikt</p></div><a></div>
-						<div class="fliter_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Meddelande</p></div></a></div>
+						<div class="fliter_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2><div class="popup_top"><p>Egendomsbeskrivning</p></div><a></div>
+						<div class="fliter_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Översikt</p></div></a></div>
 						<div class="fliter_step005"><a class="parallelNav" id="sl_2_Navigate_5" ><h2>5</h2></a></div>
 						<div class="fliter_step006"><a class="parallelNav" id="sl_2_Navigate_6" ><h2>End</h2></a></div>
 					</div><!-- filter001 -->
@@ -355,7 +352,7 @@
 		<div class="form01">
 			<div class="wrapper">
 				<div class="form001">
-					<div class="condition01">
+					<div class="condition01 condution_fix">
 						<p>Är ni gifta sedan tidigare? <a id="infoTrigger2" style="cursor:pointer;" ><img src="
 
 <?php echo get_template_directory_uri();?>/images/info.png"><span>Läs mer</span></a></p>
@@ -470,12 +467,12 @@
 		<div class="header1">
 			<div class="wrapper">
 				<div class="header01">
-					<h1>Översikt</h1>
+					<h1>Egendomsbeskrivning</h1>
 					<div class="filter004">
 						
 						<div class="fliter2_step001"><a class="navCircle" id="sl3Navigate_1" style="cursor:pointer;"><h2>1</h2><div class="popup_top" ><p>Personuppgifter</p></div></a></div>
 						<div class="fliter3_step002"><a class="navCircle" id="sl3Navigate_2" style="cursor:pointer;"><h2>2</h2><div class="popup_top" ><p>Samboregler</p></div></a></div>
-						<div class="fliter_step003"><a class="parallelNav" id="sl_3_Navigate_3" ><h2>3</h2><div class="popup_top" style="display:block;"><p>Översikt</p></div></a></div>
+						<div class="fliter_step003"><a class="parallelNav" id="sl_3_Navigate_3" ><h2>3</h2><div class="popup_top" style="display:block;"><p>Egendomsbeskrivning</p></div></a></div>
 						<div class="fliter_step004"><a class="parallelNav" id="sl_3_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Meddelande</p></div></a></div>
 						<div class="fliter_step005"><a class="parallelNav" id="sl_3_Navigate_5" ><h2>5</h2></a></div>
 						<div class="fliter_step006"><a class="parallelNav" id="sl_3_Navigate_6" ><h2>End</h2></a></div>
@@ -544,7 +541,7 @@
 					</div><!-- womens_info1 -->
 					
 					<div class="uppgifter">
-						<div class="contain-switch">
+						<div class="contain-switch contant-fix">
 							<p>Övriga uppgifter <span> (välj de alternativ som passar er bäst)</span> </p>
 							<div class="contain-switch-item">
 								<p>Vi önskar att eventuell avkastning från enskild egendom skall vara enskild.</p>
@@ -586,12 +583,12 @@
 		<div class="header1">
 			<div class="wrapper">
 				<div class="header01">
-					<h1>Juridiska Villkor</h1>
+					<h1>Översikt</h1>
 					<div class="filter005">
 						<div class="fliter2_step001"><a class="navCircle" id="sl2Navigate_1" style="cursor:pointer;"><h2>1</h2><div class="popup_top" ><p>Personuppgifter</p></div></a></div>
 						<div class="fliter3_step002"><a class="parallelNav" id="sl_2_Navigate_2" ><h2>2</h2><div class="popup_top"><p>Samboregler</p></div></a></div>
-						<div class="fliter4_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2><div class="popup_top" ><p>Översikt</p></div></a></div>
-						<div class="fliter_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" style="display:block;" ><p>Meddelande</p></div></a></div>
+						<div class="fliter4_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2><div class="popup_top" ><p>Egendomsbeskrivning</p></div></a></div>
+						<div class="fliter_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" style="display:block;" ><p>Översikt</p></div></a></div>
 						<div class="fliter_step005"><a class="parallelNav" id="sl_2_Navigate_5" ><h2>5</h2></a></div>
 						<div class="fliter_step006"><a class="parallelNav" id="sl_2_Navigate_6" ><h2>End</h2></a></div>
 					</div><!-- filter001 -->
@@ -706,13 +703,13 @@
 		<div class="header1">
 			<div class="wrapper">
 				<div class="header01">
-					<h1>Betalning</h1>
+					<h1>villkor</h1>
 					<div class="filter006">
 						<div class="fliter2_step001"><a class="navCircle" id="sl2Navigate_1" style="cursor:pointer;"><h2>1</h2><div class="popup_top" ><p>Personuppgifter</p></div></a></div>
 						<div class="fliter3_step002"><a class="parallelNav" id="sl_2_Navigate_2" ><h2>2</h2><div class="popup_top"><p>Samboregler</p></div></a></div>
-						<div class="fliter4_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2><div class="popup_top"><p>Översikt</p></div></a></div>
-						<div class="fliter5_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Meddelande</p></div></a></div>
-						<div class="fliter_step005"><a class="parallelNav" id="sl_2_Navigate_5" ><h2>5</h2><div class="popup_top" style="display: block;"><p>Översikt</p></div></a></div>
+						<div class="fliter4_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2><div class="popup_top"><p>Egendomsbeskrivning</p></div></a></div>
+						<div class="fliter5_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Översikt</p></div></a></div>
+						<div class="fliter_step005"><a class="parallelNav" id="sl_2_Navigate_5" ><h2>5</h2><div class="popup_top" style="display: block;"><p>villkor</p></div></a></div>
 						<div class="fliter_step006"><a class="parallelNav" id="sl_2_Navigate_6" ><h2>End</h2></a></div>
 					</div><!-- filter001 -->
 				</div><!-- header01 -->
@@ -773,7 +770,7 @@
 						<div class="fliter4_step003"><a class="parallelNav" id="sl_2_Navigate_3" ><h2>3</h2></a></div>
 						<div class="fliter5_step004"><a class="parallelNav" id="sl_2_Navigate_4" ><h2>4</h2><div class="popup_top" ><p>Meddelande</p></div></a></div>
 						<div class="fliter6_step005"><a class="parallelNav" id="sl_2_Navigate_5" ><h2>5</h2></a></div>
-						<div class="fliter_step006"><a class="parallelNav" id="sl_2_Navigate_6" ><h2>End</h2><div class="popup_top" style="display:block;"><p>End</p></div></a></div>	
+						<div class="fliter_step006"><a class="parallelNav" id="sl_2_Navigate_6" ><h2>End</h2><div class="popup_top" style="display:block;"><p>Betalning</p></div></a></div>	
 					</div><!-- filter001 -->
 				</div><!-- header01 -->
 			</div><!-- wrapper -->
